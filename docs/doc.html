@@ -61,6 +61,15 @@
 
 
   <script>
+    var wrapContent = function(startNode) {
+      var nextSibling;
+      console.log(startNode.nextSibling);
+      while (nextSibling = startNode.nextSibling) {
+        console.log(nextSibling);
+      }
+    };
+
+
     window.$docsify = {
       basePath: '/',
       themeColor: '#34495e',
@@ -85,10 +94,23 @@
       formatUpdated: '{DD}/{MM}/{YY} {HH}:{mm}',
 
       plugins: [
+        // footer plugin (for when footer is needed)
         function (hook) {
           var footer = '<footer>' + document.getElementsByTagName('footer')[0].innerHTML + '</footer>';
           hook.afterEach(function (html) {
             return html + footer
+          })
+        },
+
+        // wrap content plugin
+        function (hook) {
+
+          hook.doneEach(function () {
+            var starts = document.querySelectorAll('porism[type="start"]');
+            console.log(starts);
+            for (var i = 0; i < starts.length; i++) {
+              wrapContent(starts[i]);
+            }
           })
         }
       ]
