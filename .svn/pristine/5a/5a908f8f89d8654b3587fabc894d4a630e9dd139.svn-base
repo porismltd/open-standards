@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>porism standards</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <link rel="stylesheet" href="/css/core.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <header>
+    <div class="center">
+      <a class="logo" href="https://porism.com">
+        <img src="/images/porism.logo.header.colour.small.png" alt="porism" />
+      </a>
+    </div>
+  </header>
+  <main>
+    <header>
+      <div class="center">
+        <h1>Tools and Processes for Open Data Standards (DRAFT)</h1>
+        <p>
+          This document describes the processes and techniques to be applied in developing an open standard for the interchange of
+          data. It is written and maintained by Porism Limited based on experience in the public sector, mainly local government,
+          in England and other parts of the European Union.
+        </p>
+      </div>
+    </header>
+    <section class="table-of-contents">
+      <div class="center">
+        <ol class="table-of-contents">
+
+          <li>
+            <h2>
+              <a href="doc.html#/?id=_0-what-is-a-standard">What is a standard</a>
+            </h2>
+            <p>Where we define the basics</p>
+          </li>
+
+          <li>
+            <h2>
+              <a href="doc.html#/?id=_1-processes-for-open-standards">Processes for open standards</a>
+            </h2>
+            <p>Where we talk about when and why we would need standards, and how we go about creating them</p>
+          </li>
+
+          <li>
+            <h2>
+              <a href="doc.html#/?id=_2-techniques">Techniques</a>
+            </h2>
+            <p>The technicalities of creating standards</p>
+          </li>
+
+          <li>
+            <h2>
+              <a href="doc.html#/?id=_3-tools">Tool</a>
+            </h2>
+            <p>Where we talk about tools we might use, data modeling, file format and validation</p>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+  </main>
+  <footer>
+    
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>standards</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="http://unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="/css/core.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <header>
+    <h1>porism standards guides</h1>
+  </header>
+  <section>
+    <ol class="categories-list">
+      <li>
+        <h3><a href="/browse/benefits">Benefits</a></h3>
+        <p>Includes eligibility, appeals, tax credits and Universal Credit</p>
+      </li>
+      <li>
+        <h3><a href="/browse/births-deaths-marriages">Births, deaths, marriages and care</a></h3>
+        <p>Parenting, civil partnerships, divorce and Lasting Power of Attorney</p>
+      </li>
+      <li>
+        <h3><a href="/browse/business">Business and self-employed</a></h3>
+        <p>Tools and guidance for businesses</p>
+      </li>
+      <li>
+        <h3><a href="/browse/childcare-parenting">Childcare and parenting</a></h3>
+        <p>Includes giving birth, fostering, adopting, benefits for children, childcare and schools</p>
+      </li>
+      <li>
+        <h3><a href="/browse/citizenship">Citizenship and living in the UK</a></h3>
+        <p>Voting, community participation, life in the UK, international projects</p>
+      </li>
+      <li>
+        <h3><a href="/browse/justice">Crime, justice and the law</a></h3>
+        <p>Legal processes, courts and the police</p>
+      </li>
+    </ol>
+  </section>
+</body>
+
+</html>

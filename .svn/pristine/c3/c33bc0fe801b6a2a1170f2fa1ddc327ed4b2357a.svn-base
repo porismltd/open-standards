@@ -1,0 +1,552 @@
+Tools and Processes for Open Data Standards (DRAFT)
+================================
+**This is only half the document, because the export tool is failing on the second half; cover disabled whilst in development**
+
+
+
+This document describes the processes and techniques to be applied in developing an open standard for the interchange of data.  It is written and maintained by Porism Limited based on experience in the public sector, mainly local government, in England and other parts of the European Union.
+
+The closed document for sharing feedback with the ODI is [Por10295 - Open standards - Strengths, Weaknesses and Lessons Learned (for ODI)](https://docs.google.com/a/esd.org.uk/document/d/10TpLonQ8O1HmLw8ydQ2saHAea1vqvgPQMDf-QmQXW34/edit?usp=sharing).
+
+Wiki version to credit ODI and contributing organisations.
+
+Include a glossary of terms
+
+# **0. What is a standard**
+
+The International Standards Organisation ([ISO](https://www.iso.org/)) defines a standard as 'a documented agreement containing technical spdctecifications or other precise criteria to be used consistently as rules, guidelines, or definitions of characteristics to ensure that materials, products, processes and services are fit for their purpose'. Consider if this should be a footnote or a more subtle reference somewhere.
+
+Here we are considering *data *standards which we define as :
+
+An explicitly defined means of expressing data such that it can be exchanged and interpreted consistently by people and machines within and between organisations.
+
+So a standard is for data interchange.  It does not necessarily reflect the way the data is stored in a database for processing by an application.
+
+A standard is documented in human and machine readable formats via:
+
+* Guidance documents
+
+* Schemas that define the data structure with rules on cardinality and encoded lists of values that may be used
+
+* Vocabularies of uniquely identifiable concepts and data items that are maintained elsewhere
+
+The World Wide Web Consortium (W3C) expresses standards as "Recommendations" with precise rules expressed as “normative” sections and guidance as “non-normative”.
+
+# **1. Processes for open standards**
+
+These three UK bodies publish processes for creating a standard:
+
+* The Open Data Institute: [Creating new standards](https://docs.google.com/document/d/1lsfdhY8IK8qrS22fS4Rpx8WM89wCXaIDUcuQJLzRJeU/edit?usp=sharing)
+
+* Government Digital Service: [Open standards for government data and technology](https://www.gov.uk/government/collections/open-standards-for-government-data-and-technology)
+
+* iStandUK: [Process for Standards Adoption](http://e-sd.org/OCjay)  
+
+Porism and the Local Government Association (LGA) have a common audience (ie local government organisations) to iStandUK and so normally apply the iStandUK process which is guided by these three template documents, examples of which are given by links below:
+
+* [Requirement](http://e-sd.org/mVeEe) 	
+
+* [Landscape](http://e-sd.org/jnz38)  	
+
+* [Approach](http://e-sd.org/mABCS)
+
+The process for standard creation is described in generic terms below followed by steps needed to maintain a standard over time.
+
+Knowledge and examples given below draw on experience of:
+
+* schemas defined by the [LGA](http://schemas.opendata.esd.org.uk/?publisher=LGA), the [Department for Communities and Local Government (DCLG)](http://schemas.opendata.esd.org.uk/?publisher=DCLG) and [GDS](http://schemas.opendata.esd.org.uk/?publisher=GDS+%E2%80%93+Government+Digital+Service)
+
+* controlled vocabularies making up [esd-standards](http://standards.esd.org.uk/?) with particular emphasis on the [Local Government Services List](http://id.esd.org.uk/list/englishAndWelshServices).
+
+Section 4 gives a full list of the standards referenced in this document.
+
+Integrate diagrams in [Por30016 - Processes for creating a standard](https://docs.google.com/presentation/d/13uXMFuClJMB2GCcM4etgpHEdmBjtkunOwsqwKhYyQyA/edit?usp=sharing)
+
+## **1.1 Identifying the need for a standard**
+
+The main reasons for having a standard are:
+
+* Data is published by one organisation or person for consumption by another, so the structure and meaning of the data must be documented unambiguously.  Consumers of data may be developers of software that adds value to the data.  
+
+* Similar data is issued from multiple publishers for use by one another or third parties who need to be able to combine datasets across publishers
+
+* To remove misunderstandings between team members and over time (with staff turnover) when working with data on sizeable projects
+
+The need for a standard may be identified when publication of a new type of data is planned or when multiple similar datasets already exist.
+
+### **1.1.1 Is publishing to a standard desirable or desired?**
+
+If there is a need to standardise data from many publishers, it does not necessarily follow that they should all publish data compliant with the standard.  Some business models rely on taking data from many sources and standardising it to add value and make money.  These data intermediaries and/or end consumers of data can apply algorithms (including artificial intelligence) to standardise data.  The resultant datasets may conform to a public standard or they may just conform to an organisation’s an internal standard to gain competitive advantage.
+
+Published data must at least avoid ambiguity - so terms need to be defined and it should be possible to convert them to a common vocabulary.  You must then assess if the task of further standardisation should be the responsibility of publishers or consumers.  If consumers, do they need to conform to a standard and need that standard be open? It is easier to standardise if a new dataset is being published rather than an existing one opened.  Standardising existing datasets can improve their quality.
+
+## **1.2 Defining the requirement**
+
+The requirement is documented in broad terms covering:
+
+* The nature of the data
+
+* The need met by the standard
+
+* Who definite and possible publishers are
+
+* Who the definite and possible consumers are
+
+* Other interested parties (aka stakeholders)
+
+* Predicted benefits of the standards, typically one or more of:
+
+    * improved availability of information
+
+    * improved comparability and analysis of information
+
+    * improved service for the customer
+
+    * reduced avoidable contact
+
+    * reduced transaction costs
+
+    * reduced fraud and error
+
+    * improved data quality through validation
+
+    * increased confidence in data quality
+
+Stakeholders are types of person or organisation, but specific ones should be named for involvement in the standard creation process.
+
+The requirement should state the types of expertise needed to create the standard. Expertise will be needed both from practitioners in the field covered by the standard and from people who will define the standard in technical terms.
+
+If an existing standard might be a candidate for adoption or a model for the proposed standard, it should be named at this stage.
+
+It is also useful to record the most likely data formats (CSV, XML, JSON, KML, etc) in which the schema should be expressed so the type of guidance and the ultimate schema formats needed are known.  However, if the standard is well defined independent of format, output of a format specific rendering should not be hard.
+
+## **1.3 Reviewing what exists**
+
+A "Standards Landscape" review shows what else exists globally that is relevant to the proposed standard.  It may identify a schema that can be used as is or in part.  Alternatively it might establish that there is no suitable standard and so a new one needs developing.
+
+If a pre-existing standard is identified, you need to establish its quality and longevity, how open it is and how responsive its owners are to feedback from others.  From this information, you can determine if you use the standard as-is or fork a copy which might diverge from the original.
+
+If no pre-existing standard is identified, there might be elements of existing ones that can be drawn on.  For example, schema.org offers class definitions that might form part of a larger new schema.  An analysis of the basic concepts (eg service, organisation, person, building) that the data describes will help identify if schemas might exist to define them.  It will also lead you to vocabularies that describe those concepts so you can determine their relevance to your requirement.
+
+In defining the [Service Directory standard](http://schemas.opendata.esd.org.uk/ServiceDirectory) for the LGA , reference was made to these pre-existing schemas that are relevant to describing services:
+
+* [schema.org](http://schema.org/) 
+
+* [open311](http://www.open311.org/)
+
+* [openReferral](https://openreferral.org/ )
+
+* [Local Links](http://www.localdigitalcoalition.uk/links­support/)
+
+* [European Community ‘SERVICE’ core vocabulary](https://joinup.ec.europa.eu/asset/core_public_service/asset_release/core­public­serv ice­vocabulary­0)
+
+The analysis of concepts identified that these vocabularies/lists are relevant:
+
+* [Service types](http://id.esd.org.uk/list/services) from LGA
+
+* [Function types](http://id.esd.org.uk/list/functions) from LGA
+
+* [Local Authorities](http://opendatacommunities.org) (organisations) from DCLG
+
+* [Statistical geographies](http://statistics.data.gov.uk/) from the Office of National Statistics (ONS)
+
+* [Administrative geographies](http://data.ordnancesurvey.co.uk/ontology/admingeo/) from Ordnance Survey (OS)
+
+At this stage it is worth communicating with suppliers of systems that store the type of data you plan to standardise; they may have schemas which define their data structures, whether these are made public or not. Avoid adopting existing standards whose licensing might constrain adoption and beware of commercial interests biasing a standard towards the interests of particular organisations.
+
+Irrespective as to whether a standard exists, you should examine real life examples of relevant data to see how much standardisation is included and what the scope of a standard should be.  That scope might involve adoption or creation of new vocabularies or data classes with a view to building an ecosystem of reusable standard elements   Consider how valuable new assets might be beyond the immediate need identified in the first stage
+
+## **1.4 Specifying an approach**
+
+Having defined what the requirement is and what already exists, the team proposing to undertake the work should specify the project approach This specification:
+
+* can be used to tell others, who may also be considering similar work, that the work is going on
+
+* gives some assurances about the nature and status of the assets that will be created
+
+The project approach document may be seen as an outline project plan describing:
+
+* What is to be delivered, eg schemas, registers, lists of concepts, guidances, sample data, case studies
+
+* Roles and responsibilities of in the development process.  This includes defining the overall manager, experts in relevant fields and stakeholders who will be consulted. 
+
+* Time scales
+
+* Principles for development (eg in the open, secure group)
+
+* Assumptions on which the work is based and dependencies on other standards
+
+* Consultation processes
+
+* Ownership of the outputs
+
+* Quality criteria to be applied
+
+* Intended audience of the data, likely usage and usage trends.  Applications under development or planned that will consume standardised data
+
+* Ongoing responsibilities for maintenance (by an identified custodian) and extension of the deliverables
+
+The scope of deliverables will have been established from the review of what exists, it may include a schema and one or more vocabularies.  Dependencies on other schemas and vocabularies should be documented.
+
+## **1.5 Consultation**
+
+Consultation can be divided into broad publicity to engage with people whom you might not have previously identified and detailed discussion with stakeholders and experts.
+
+Broad publicity is via news articles and social media aimed at data experts but, more importantly, specialists in fields that publish or use the data.  Hence user groups, trade bodies, associations and public-responsible bodies should be considered for communication directly in addition to contact via  specialist online forums and mailing lists.  In local government the special interest groups in the [Knowledge Hub](https://khub.net/group/guest) provide a good means of communicating with experts.  Ideally some broad publicity should happen while you’re assessing the standards landscape so people have the opportunity to bring to your attention standards of which you were not aware.
+
+Detailed consultation should be via a working group that might meet physically and/or have online meetings, be members of a dedicated forum or mailing list and share documents as they are drafted.  The group should include the "owner" of the standard and representatives of:
+
+* Data publishers
+
+* Data consumers
+
+* Experts in the field of the data
+
+* Data standards experts
+
+The team developing a Service Directory schema consulted:
+
+* Standards experts - iStandUK (including reference to DWP standards) and NHS Digital
+
+* Porism Limited’s expert in local government services
+
+* Membership organisations of councils -  LGA, iNetwork, Local Digital Coalition, Regional Improvement Networks, National Association of Local Councils (NALC),
+
+* A selection of councils of different types (County, District and Unitary) who collate data and publish it and use it to direct people who need services
+
+* Local health organisations who gather and use information on health and wellbeing services
+
+* ODI who were running a parallel project on leisure activity and sports data with an overlapping audience
+
+* Service Directory application providers who deliver the software in which councils and other organisations record services
+
+* Software developers interested in building commercial services from service data merged from many providers and accepted by public sector organisations
+
+## **1.6 Draft standard**
+
+Develop the standard applying relevant techniques and tools described in later sections  of this document.  Normally you would go through multiple iterations of the draft and give working group members an opportunity to comment on each.  The group might be sub-divided according to specialisms for consultation on specific parts of the standard, such as the data structure, data quality checks and the content of vocabularies created or modified.
+
+When the draft standard is sufficiently mature and you have accessible guidance documentation, open it up to potential users using the same channels as for the broad publicity at the start of the work.
+
+An open issue logging system, eg using GitHub issues, ensures issues raised are managed systematically, can be considered by everyone and supported or modified by people other than those who raised them.  Note that GitHub is largely a developer tool and is not adopted by most non-IT people.  Issues need to be gathered via multiple channels and transcribed to a single issue management platform such as GitHub.  Get contributions from and provide feedback to a many interested parties to secure buy-in and later take-up. 
+
+## **1.7 Test the standard**
+
+Test how well the standard is suited to real data by asking different publishers to output their data in the standard or take their data in native format and convert to a format for which you have a draft schema.  Use a checking tool (see below) to verify that the data conforms to the schema.  If it doesn’t, you may have to modify the way sample data is formatted or change the schema, eg if data for a mandatory property is missing.  Check that schema changes do not impede its usefulness.
+
+At this stage you can identify if controlled vocabularies are fit for purpose. Text labels used in source data will need to be converted to identifiers for things (concepts and tangible things) which have preferred and alternative labels.  You may add new alternative labels for the different ways in which different publishers describe the same things.
+
+It may be useful to develop helper tools to convert data from a proprietary format to the standard format.  Such tools might be made  permanent deliverables for use throughout the life of the standard.
+
+Potential data consumers should test data merged from more than one publisher to ensure the standard is sufficiently generic.
+
+## **1.8 Publish the standard**
+
+Publish the standard on a platform accessible to its users.  In the case of an open public standard, that means a web address that can be accessed anonymously.
+
+Publish the schema under a web domain that denotes authenticity and which you know will not be withdrawn or changed and so invalidate schema references.  .gov and .gov.uk domain names are tightly controlled and indicate that content is official.  .org and .org.uk denote ownership by community or public interest groups.  These may be less subject to change than ones managed by organisations under political control.  A persistent uniform resource locator (PURL) allows you to use an address which can be changed to redirect to a schema (and associated resources) hosted in  different places over time.
+
+Publish the standard with metadata that describes its purpose, licensing, quality and audience.  Use standard properties drawn from Dublin Core Terms ([DCTerms](http://dublincore.org/documents/dcmi-terms/)), Simple Knowledge Organization System ([SKOS](https://www.w3.org/TR/skos-reference/)) and quality properties taken from [Designing URI sets for the UK public sector](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector).  Quality properties are more extensive for controlled vocabularies which include data:for which provenance and timeliness is important.  Properties describing the intended audience, timeliness of updates and other information relevant to maintenance of the standard are important in helping potential users decide if they should adopt the standard.  See section 2.1.1 Metadata for more details. Remove any duplication between this text and that section in the Wiki.
+
+[The Linked Data page for the Local Government Services List](http://standards.esd.org.uk/?uri=list%2FenglishAndWelshServices&tab=linked) gives standard metadata for that controlled vocabulary.  Note that properties such as "completeness" and timeliness should be populated realistically, rather than set false expectations for users.
+
+Add a reference to the standard to registers of standards used within the domain.  For example, the [LGA’s open data schemas page](http://schemas.opendata.esd.org.uk/) provides a searchable list of schemas for local authority open data.
+
+The licence under which the standard is published (expressed as the [Dublin Core rights property](http://purl.org/dc/terms/rights)) is key to informing potential users when and how it can be used.  The property should reference the URI (or failing that the URL) of a licence where full details are given.  The UK [Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/) is suitable for open data that can be freely used with few constraints.
+
+## **1.9 Reviewing adoption of the standard**
+
+You can assess the take-up of a standard by informal communication with publishers and consumers or formal recording mechanisms.
+
+Via harvesting of datasets published against the schemas to which they conform (see section 3.2.3) you can assess how much your schema is being used.
+
+We recommend a, preferably open, flow line system to record progress adopting a standard, especially for initiatives being coordinated from the centre to. Such a system will encourage involvement, identify core contacts, show progress and identify where help is needed.
+
+For example, the LGA’s [Local open data incentive scheme submissions](http://incentive.opendata.esd.org.uk/submission) page shows English councils that published data according to the [planning applications](http://schemas.opendata.esd.org.uk/PlanningApplications), [premises licences](http://schemas.opendata.esd.org.uk/PremisesLicences) and [public toilets](http://schemas.opendata.esd.org.uk/PublicToilets) schemas. For each submission a colour coded submissions page (eg for [Leeds planning applications](http://incentive.opendata.esd.org.uk/submission/detail?mode=view&theme=Planning&identifier=Leeds)) shows progress through the six steps involved in working with the LGA which provided technical guidance and verification of data published and channeled government money contributed towards publishers’ costs.
+
+![image alt text](image_0.png)
+
+If you setup a means of data consumers recording their use of the standard and/or datasets which conform to it, you can monitor usage, involve consumers in changes and help publicise their work.
+
+Case studies for specific users can advance the case for it and help you understand how it should be maintained and improved.
+
+## **1.10 Publicise the standard**
+
+Standards channels for publicity for a standard (social media, newsletters, articles in specialist magazines, etc) can be used to make the standard known to its intended audience.  At present there is no mature mechanism for systematic sharing and discovery of standards - something that is badly needed.
+
+Case studies showing how it is applied and emphasising the benefits are useful.
+
+## **1.11 Maintain the standard**
+
+The standard should be maintained according to the quality criteria defined in its metadata with clear responsibility for upkeep and means of providing feedback.
+
+Use the mechanisms described in section 1.9 to identify who has an interest in the standards so they can be informed of any changes and invited to participate in future consultations.  
+
+Working groups used during standard creation can be kept going for ongoing reviews and forums used during creation provide a good way of supporting ongoing discussion.
+
+Each revision to a standard should go through a mini-version of the consultation / draft / test process used when it was created.  Even if members of the original working group become dormant, they should be given an opportunity to comment on proposed revisions and people who are known to have adopted the standard should be consulted.
+
+You need a policy for version control and processes for sticking to the policy. You may keep every version and map every change or just maintain the latest version and logs of changes between versions. Backwards incompatibilities need to be noted and avoided where possible.  Deprecate rather than remove old terms/properties where possible.  The Dublin Core terms properties [dct:replaces](http://dublincore.org/documents/dcmi-terms/#terms-replaces) and [dct:isReplacedBy](http://dublincore.org/documents/dcmi-terms/#terms-isReplacedBy) can be used to help migration from deprecated terms.
+
+A formal published review schedule and procedure helps keep a standard current and gives adopters more confidence in it.
+
+### **1.11.1 Having your standard adopted for other purposes**
+
+When other groups are considering creating a new standard, there needs to be a balance between discouraging creation of a new standard for the same purpose and changing your own standard to shoehorn it to fit a different purpose.  The original landscaping and, signed off,  scoping exercises should help show how suited your standard is for adoption elsewhere..  Here are some examples:
+
+DCLG’s [Open Data Communities](http://opendatacommunities.org/) provides URIs for English local authorities. The [GDS register of English Local Authorities provides](https://local-authority-eng.register.gov.uk/) a different set of dereferencable identifiers for the same organisations a few years later. [The Government Transformation strategy](https://www.gov.uk/government/publications/government-transformation-strategy-2017-to-2020/government-transformation-strategy) commits by 2020 to  "building a national data infrastructure of registers (authoritative lists that are held once across government) and ensuring they are secured appropriately", so migration to the register might be inferred to be recommended, but no official guidance is given and the longevity of either source of identifiers is not expressed as metadata.  Note that registers are deliberately kept narrow in scope and only define things under the control of their custodians.  By breaking standard reference data into a set of narrowly-scoped but linked and definitive registers, we are more likely to achieve a consistent set of reference data.
+
+The [Local Government Services List](http://id.esd.org.uk/list/englishAndWelshServices). provides a list of types of service delivered by English and Welsh local authorities.  Definitions of services are subjective, but links to legal powers and duties to deliver services (via their legislation.gov.uk URIs) help identify distinct service types.  Different audiences tend to define services in different ways and often want a concise list that might, for example, match a council’s departmental structure, represent service groupings on a council’s website or act as broad headings to categorise open data.  The approach adopted is to have a highly granular list of almost 1000 types of service.  Service types are then grouped by a number of other hierarchies lists that sit on top of it and map to the detailed services covered.  Two such lists of groupings maintained by the LGA are the [Functions List](http://id.esd.org.uk/list/functions) and the [Website Navigation List](http://id.esd.org.uk/list/navigation).  Hence it avoids encouragement to change the core service list for a specific purpose.
+
+## **1.12 Tips for making a standard succeed**
+
+**1. Make sure a ****standard is really needed**
+
+Consider if the objectives for data sharing can be met efficiently without a data standard.  Can consumers standardise the data rather than rely on it being published in a standard way?  Can natural language processing and artificial intelligence be used to derive a standards interpretation of that has not been published in a standard way?
+
+**2. Start simple but design for complexity**
+
+Make your standard sufficiently simple to not be too daunting to publishers.  But design with a full data model in mind so that later extensions do not invalidate standard data published by early adopters.
+
+**3. ****Motivate the publisher**
+
+Establish a commercial and/or regulatory framework that motivates data owners to publisher according to the standard. Or design the standard such that it reduces burdens on publishers.  For example a standard might cater for data that might otherwise need to be reported in multiple other ways.  Publishers can also be relieved of responsibilities for providing web pages and apps that process their data if innovators pick up standardised data and use it in their own apps.
+
+Promote the work of publishers that follow the standard.
+
+**4. Promote quick wins**
+
+Sizable gains from standards can sometimes only be achieved after widespread adoption.  So try to identify shorter term goals that can be achieved and publicised to kick start adoption.  Standards from [schema.org](http://schema.org/) have achieved success because they help adopters improve web search engine rankings.
+
+**5. Don’t lose sight of your objectives**
+
+Define use cases for the standard and refer to them (and representative users) throughout the standard development process.  This does not preclude innovative use cases being identified and accommodated during standard development so long as they don’t compromise the main objectives.
+
+Consider an agile approach to standards development with explicitly defined roles of: team lead, team member, standard owner, technical expert, domain expert, independent tester and other stakeholders.
+
+# **2. Techniques**
+
+## **2.1 Semantics and data properties**
+
+### **2.1.1 Metadata**
+
+Metadata is the data that describes a dataset rather than the actual data being published.  In practice the distinction is not always clear and a rich schema may define properties that both describe and form part of the data.
+
+Metadata will describe the subject matter, status, ownership, format and quality of a dataset.  The Open Knowledge Foundation’s [Linked Open Vocabularies (LOV)](http://lov.okfn.org/dataset/lov/) page shows popular vocabularies from which metadata properties can be drawn.   Use this resource to identify the most common definitions of properties you wish to publish and to consider what metadata meets your users’ needs.
+
+You should use properties from these vocabularies where they match you own requirements so that naming is familiar to users, properties are precisely defined in human and machine readable formats, and metadata data can be compared and combined with metadata from elsewhere.  If a property does not exist in an established vocabulary, you can define your own.  Ideally you should define it as linked data with its own URI. Be clear of responsibility and that they may be superseded.
+
+Even if you don’t use link data to describe your metadata or even make it available in a machine readable format, try to use the same terminology as common established vocabularies.
+
+The vocabularies most useful for metadata are:
+
+* Dublin Core Terms ([dct](http://dublincore.org/documents/dcmi-terms)) - for basic descriptive properties and ones describing the roles of organisations or people
+
+* Simple Knowledge Organisation System ([skos](http://www.w3.org/2004/02/skos/core)) - for properties describing concept schemes (ie lists of intangible things)
+
+* Data Catalogue ([dcat](http://www.w3.org/TR/vocab-dcat/)) - for properties defining published datasets
+
+* Resource description framework ([rdf](https://www.w3.org/TR/rdf11-concepts/)) - for base properties from which others are derived
+
+* electronic service delivery ([esd](http://def.esd.org.uk/)) - defined terms used in UK local government that are recommended in [Designing URI sets for the UK public sector](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector) but not defined in any other mainstream vocabulary
+
+#### **2.1.1.1 Identifiers**
+
+Use the property [dct:identifier](http://dublincore.org/documents/dcmi-terms/#terms-identifier) -  a Uniform Resource Identifier or globally unique identifier that can be dereferenced over the web.  
+
+Identifiers normally comprise a base (or stub) web address and alpha-numeric identifier. For example the UK’s Office for National Statistics (ONS) identifier for England is [http://statistics.data.gov.uk/id/statistical-geography/E92000001](http://statistics.data.gov.uk/id/statistical-geography/E92000001).
+
+The base address of [http://statistics.data.gov.uk/id/statistical-geography/](http://statistics.data.gov.uk/id/statistical-geography/) denotes the type of item identified.  Sometimes the base address is removed from identifiers to make data more human readable.  In such cases an abbreviation for the base address (such as "stat." for  [http://statistics.data.gov.uk/id/statistical-geography/](http://statistics.data.gov.uk/id/statistical-geography/E92000001)) is defined elsewhere as a Compact URI (CURIE), also known as a namespace. So the URI would be expressed as [stat.E9200000](http://statistics.data.gov.uk/id/statistical-geography/E92000001)1 In spreadsheet data, a column heading can be associated with a CURIE to abbreviate URIs given in each row of data.  Alternatively the base web address and identifiers can be expressed as separate alternate or additional columns.
+
+The alphanumeric identifier is unique within the the base address.  Avoid putting any meaning into an identifier such that it might become invalid if the thing identified changed.
+
+#### **2.1.1.1 Important metadata properties**
+
+Consider using each of these properties:
+
+Subject matter
+
+* [skos:prefLabel](http://www.w3.org/2004/02/skos/core#prefLabel) - the preferred label / name.  Alternatively you may use [dct:title](http://dublincore.org/documents/dcmi-terms/#terms-title)
+
+* [skos:altLabel](https://www.w3.org/2009/08/skos-reference/skos.html#altLabel) - other names by which the dataset might be know.  This helps search engines find it. Alternatively you may use [dct:alternative](http://dublincore.org/documents/dcmi-terms/#terms-alternative).
+
+* [dct:description ](http://dublincore.org/documents/dcmi-terms/#terms-description)- free text description
+
+* [dct:spatial](http://dublincore.org/documents/dcmi-terms/#terms-spatial) - the geographical area covered by the data
+
+Status
+
+* [dct:created](http://dublincore.org/documents/dcmi-terms/#terms-created) -  the date of creation
+
+* [dct:modified](http://dublincore.org/documents/dcmi-terms/#terms-modified) - the date changed.  This is usually limited to the date of the last change
+
+Created and modified dates (or dates and times) can apply to a whole dataset and to individual items of data.
+
+You may wish to add version and status properties within the context of your use case. (eg version: 0.01, status: for review by project team; version 1.00, status: accepted by standards body)
+
+Ownership
+
+* [dct:creator](http://dublincore.org/documents/dcmi-terms/#terms-creator) - organisation, role or person responsible for creating
+
+* [dct:publisher](http://dublincore.org/documents/dcmi-terms/#terms-publisher) -  organisation, role or person responsible for publishing and so normally taking responsibility for content subject to stated quality criteria
+
+* [dct:rights](http://dublincore.org/documents/dcmi-terms/#terms-rights) - a statement about property rights indicating who is entitled to use the dataset and any attribution required. 
+
+* [dct:license](http://dublincore.org/documents/dcmi-terms/#terms-license) - a legal document giving permission to use the dataset. The UK [Open Government Licence](http://reference.data.gov.uk/id/open-government-licence) is a suitable value for open datasets which can be used for commercial purposes
+
+Format
+
+* [dct:conformsTo](http://dublincore.org/documents/dcmi-terms/#terms-conformsTo) - standard to which the dataset conforms, ideally this should be the URI of the data schema (discuss somewhere schema URIs) . For data that corresponds with a pre-existing structure defined in linked data, use [rdf:type](https://www.w3.org/1999/02/22-rdf-syntax-ns#type).
+
+* [dct:format](http://dublincore.org/documents/dcmi-terms/#elements-format) - the format of the dataset
+
+The format properties refer to a rendering of a dataset.  The native format may be different for different publishers and different from the format in which data is interchanged.  A data structure described as a class model (see ... below) may be expressed as different in different formats, each with its own schema, as given by the conformsTo property.
+
+Quality 
+
+* [esd:accuracy](http://def.esd.org.uk/accuracy) - a statement of how closely the data can be expected to reflect objective facts
+
+* [dct:audience](http://dublincore.org/documents/dcmi-terms/#terms-audience) - the intended consumers of the data.This is not supposed to limit its use, but it gives an indication as to relevant the data might be to a particular need
+
+* [esd:intendedLongevity](http://def.esd.org.uk/intendedLongevity) - for how long you might expect the dataset to be made available and to be maintained
+
+* [esd:timeliness](http://def.esd.org.uk/timeliness) - how up-to-date the dataset is expected to be.
+
+* [dct:provenance](http://dublincore.org/documents/dcmi-terms/#terms-provenance) - where the data comes from and any changes in creation and ownership over time that might affect its quality
+
+* [dct:source](http://dublincore.org/documents/dcmi-terms/#terms-source) - a source from which the data is derived.  This may be used if a dataset contains values generated by processing of data sourced from another dataset
+
+Quality data is often subjective and can represent intentions or firm commitments.  It is important in helping potential users for a view as to how much they might rely on data for a use case.
+
+The above properties are described in the UK government’s document [Designing URI sets for the UK public sector](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector) and suggested in the W3C Web Best Practices Working Group wiki [Quality and Granularity Description Vocabulary](https://www.w3.org/2013/dwbp/wiki/Quality_and_Granularity_Description_Vocabulary) page.
+
+**Example:** the [Local Government Service List metadata properties](http://standards.esd.org.uk/?uri=list/englishAndWelshServices&tab=linked) draw on the vocabularies described above. Colour code examples in the wiki to distinguish from the main body of the text.
+
+### **2.1.2 Statistical data**
+
+The Local Government Association’s LG Inform Plus (formerly esd-toolkit) database holds statistics that are useful to local authorities wishing to compare performance and demographics with other authorities and between small areas within their own boundaries.  Such data allows them to see how effective they are and to target services (such as those to improve public health) at relevant people rather than using a scatter-gun approach.
+
+The data is an amalgamation of public data from disparate national sources supplemented by data gathered locally.  A standard way of structuring the data is needed to overcome differences in how it is represented by the many source organisations (eg Office of National Statistics), Department for Education, Public Health England).  
+
+The standard was defined by analysing data from various sources, which is normally presented in spreadsheets or via Application Programming Interfaces (APIs).  We also looked at the database structure of existing data reporting tools, including the Audit Commission’s Value for Money tool.
+
+In abstract terms, each data point is represented by a value (typically a number or a category) that has a number of properties which can be grouped in dimensions.  The Statistical Data and Metadata eXchange (SDMX) provides a generic standard for exchanging statistical data.  Because of a lack of familiarity with SDMX, because others had not used it and because it is so generic, we chose a model with three fixed dimensions that always apply to the data. 
+
+ These dimensions are:
+
+* Area 
+
+* Time period
+
+* Metric (or indicator) type
+
+An individual data item has a precise value for each of these dimensions.  For example, a single bicycle theft has a count of one with a specific date and time, a point on the map and a metric type denoting bicycle theft.  But much data is only available at an aggregated level, so data might contain a count of thefts in general within an area (eg a police neighbourhood) over a time period (eg a calendar month).
+
+The data structure therefore needs to record data at the most detailed level at which it is available and needed.  Aggregations over longer time periods, bigger areas and broader metric types may be generated on the fly (as in a spreadsheet’s pivot table) or aggregated in batch and stored for future reference.
+
+These are the three dimensions in more detail:
+
+**Area **has an area type which is a point (as given by x and y map coordinates) or a named polygon.  Hierarchies of areas define how data can be aggregated up from small to larger areas.  An example of a hierarchy of area types used from official statistics in England is (from large to small):
+
+* [Country](http://neighbourhoods.esd.org.uk/#?areaType=Country&tab=ViewAreaType)
+
+* [Region](http://neighbourhoods.esd.org.uk/#?areaType=Region&tab=ViewAreaType)
+
+* [Fire authority](http://neighbourhoods.esd.org.uk/#?areaType=FireAuthority&tab=ViewAreaType)
+
+* [County](http://neighbourhoods.esd.org.uk/#?areaType=County&tab=ViewAreaType)
+
+* [District](http://neighbourhoods.esd.org.uk/#?areaType=District&tab=ViewAreaType)
+
+* [Medium level super output area](http://neighbourhoods.esd.org.uk/#?areaType=MLSOA&tab=ViewAreaType) (MSOA)
+
+* [Lower level super output area](http://neighbourhoods.esd.org.uk/#?areaType=LLSOA&tab=ViewAreaType) (LSOA)
+
+* [Output area](http://neighbourhoods.esd.org.uk/#?areaType=OutputArea&tab=ViewAreaType)
+
+Links from the above area types are to the LGA’s Natural Neighbourhoods area type page which shows parent and child area types and "same as" relationships for equivalent area type definitions elsewhere.  
+
+Area types can be polyhierarchical (eg a district is broken down by both MSOAs and wards) and sometimes the fit of areas within their parent is only approximate, in which case a measure of degree of fit can be useful.
+
+Where data describes an area, care is needed to avoid double counting across overlapping areas (eg adding the population of a county to that the districts it contains).  However, sometimes an area is used as a proxy for the organisation governing it. In theses cases data pertaining to the organisations can be added.  For example spending on roads by a local authority and spending by the Highways Agency in the same area should be totalled to get overall spending on roads.
+
+**Time period **has a time period type such as calendar month, calendar year, financial year, academic year.  Metrics values may be aggregated over a time period (eg all crimes in a month) or represent a count at a point in time that is sampled for each time period (eg population for a census year).  The former can be aggregated over time (eg add the crimes in each month to get the year’s crime figures); the latter cannot.
+
+**Metric type** is a broad definition of what the statistics define. Hierarchies of metric type can be defined in the same way as hierarchies of areas can. For example, crime can be defined from broad to narrow as:
+
+* [Overall crime](http://id.esd.org.uk/metricType/1068)
+
+* [Theft crime](http://id.esd.org.uk/metricType/3813)
+
+* [Bicycle theft](http://id.esd.org.uk/metricType/4536)
+
+Sometimes metric types break down in multiple ways. So employment data can be defined by:
+
+* [Employment contract type](http://id.esd.org.uk/circumstanceCollection/Workcontract) (part-time, full-time, ...)
+
+* [Working hours](http://id.esd.org.uk/circumstanceCollection/WorkingHours) (temporary, permanent, ...)
+
+* Employee [gender](http://id.esd.org.uk/circumstanceCollection/Gender) (female, male, ...)
+
+Detailed metric types, such as the [number of female part time employees who are temporary](http://id.esd.org.uk/metricType/579), define figures which can be aggregated to derive different summaries according to how metric types are related.
+
+Relationships between metric types are given by the circumstances they define, such as [Employment contract type](http://id.esd.org.uk/circumstanceCollection/Workcontract), [Working hours](http://id.esd.org.uk/circumstanceCollection/WorkingHours) and [Gender](http://id.esd.org.uk/circumstanceCollection/Gender).  By standardising these in a [circumstance types list](http://id.esd.org.uk/list/circumstances) according to standard rules for vocabularies, we can relate metrics from different sources sources that use the same breakdowns and hence analyse for patterns in the data.
+
+The structure described above allows for data items (ie metric values) to be queried by:
+
+* Area or a group of areas (eg all wards in a district)
+
+* Time period or a groups of time periods (eg the last twelve months)
+
+* Metric type or a group of metric types (eg all metric types in the dimension defined by the crime types circumstance)
+
+Separate queries on areas, periods and metric types are provided.  As well as raw data values, statistical functions are performed (eg total, mean, standard deviation thresholds) for ranges of values) applying rules for what metric values can meaningfully be aggregated over time and area.
+
+### **2.1.3 Geographical data**
+
+Data describing an area has little meaning if that area is not precisely defined. The county of [Nottinghamshire](http://id.esd.org.uk/neighbourhood/E10000024) largely excludes the major town/city of [Nottingham](http://id.esd.org.uk/neighbourhood/J01000067) - [see comparison](http://neighbourhoods.esd.org.uk/#?areaType=County&area=E10000024&overlayType=TOWNCITY&tab=Map).  Town centres within major cities or counties are often not defined in machine readable terms (or in any open way beyond a name).
+
+Unique identifiers (see 2.1.1.1) are essential to give geographical data meaning.  The types of those identifiers show what kind of geographies you are talking about (administrative, statistical, electoral, health, education, parks, etc).  Link to the big UK geographies diagram.
+
+ 
+
+Administrative organisations need to be distinguished from the geographical areas they govern, although it is often correct to assume the spatial coverage of an organisation’s data is the area it governs.
+
+If an area changes, for example because of changes enacted in the UK by the  Local Government Boundary Commission for England ([LGBCE](https://www.lgbce.org.uk/)), it should be assigned a new unique identifier with corresponding boundary.  Such changes can make data series hard to monitor over time, but they avoid incorrect comparisons being made over time of areas which might keep the same name but change boundaries..  
+
+Geographies may be defined sub-dividing statistics.  In the UK the Office for National Statistics ([ONS](https://www.ons.gov.uk/)) defines output areas ([OA](http://statistics.data.gov.uk/id/statistical-entity/E00)s), which have up to about 150 households, for publishing detailed data.   These areas are grouped into super output areas ([LSOA](http://statistics.data.gov.uk/id/statistical-entity/E01)s and [MSOA](http://statistics.data.gov.uk/id/statistical-entity/E02)s) for aggregate statistics, including those which cannot be published at OA level without disclosing personal data.  The same groupings areas are often used for defining the coverage of third party data.  
+
+Understanding the relationships between area types allows aggregation and comparison of data.  Areas of one type contain (ie are the parents of) or are contained by (ie are the children of).areas of another area type  The diagram to the side shows the hierarchy of official UK statistical geographies relevant to local government.
+
+Note that the "contains" relationship might not be exact.  ONS publishes a “best fit” between OAs and electoral wards, indicating the OAs that are mostly contained within electoral geographies.
+
+Either integrate or cut the following para and diagram
+
+Any geography is defined by firstly its area type and secondly the areas which belong to that area type.  Area types may be hierarchical i.e. one area type may fit inside a parent area type and may also be the parent of other (smaller) area types.  This is illustrated by the administrative geography in England which has a multi-tier structure as shown in the diagram below.
+
+![image alt text](image_1.png)
+
+There may be many areas defined for any area type.  An area is an actual physical location as defined by a boundary on a map.  For example for the administrative area type of ‘London Borough’ there are 32 defined areas such as ‘Lambeth, Westminster, Barnet etc.
+
+To be able to identify an area and understand its exact geographical location the following properties need to be defined:
+
+* Identifier/URI
+
+* Label.  The name or a label describing the area e.g. Lambeth, Birmingham, Cumbria
+
+* Boundary of the area.  Typically published in one or more of these digital formats such as Shapefile, KML, GeoJSON, WMS (Web Map Service).
+
+* Parent area(s) of a type which contains the type of the area being defined
+
+* Child area(s) of a type which is contained by the type of the area being defined.
+
+If areas are not defined by a reliable third party (such as ONS), you need to define them yourself with, as a minimum, the above properties.  This is often the case for organisational sub-divisions within local authorities, such as children’s services areas or town centres.  It is also the case for natural neighbourhoods, which reflect real life communities based on geographies that don’t conform to official boundaries.
+
+The Natural Neighbourhoods tool, described in section 3.1.2 below, allows anyone to record their own areas as open data and to relate them to other official and unofficial areas.
+
+
+
+
+
+
+

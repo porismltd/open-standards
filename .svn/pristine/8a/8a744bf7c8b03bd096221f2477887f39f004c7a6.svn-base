@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <handlers>
+            <add name="md files" path="*.md" verb="*" modules="StaticFileModule,DefaultDocumentModule,DirectoryListingModule" resourceType="File" />
+        </handlers>
+        <staticContent>
+            <mimeMap fileExtension=".md" mimeType="text/markdown" />
+        </staticContent>
+    </system.webServer>
+</configuration>

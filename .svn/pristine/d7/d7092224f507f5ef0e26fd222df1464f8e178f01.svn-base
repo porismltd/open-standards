@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>standards</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="http://unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="css/cover.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<script id="template_footer" type="template/html">
+
+  <footer>
+    <div class="markdown-section">
+      LOGOS GO HERE
+    </div>
+  </footer>
+
+</script>
+
+<body>
+  <div id="app"></div>
+  <script>
+
+    window.$docsify = {
+
+      plugins: [
+        function (hook) {
+          // plugin to remove the cover inline style
+          hook.ready(function () {
+            document.querySelector('section.cover').removeAttribute('style');
+          });
+        },
+        function (hook) {
+          var footer = document.getElementById('template_footer').innerHTML;
+          hook.afterEach(function (html) {
+            console.log(html);
+            return html + footer;
+          });
+        }
+      ],
+
+      name: 'standards',
+      repo: '',
+      themeColor: '#00A0EA',
+      coverpage: 'cover.md'
+    };
+  </script>
+  <script src="http://unpkg.com/docsify/lib/docsify.min.js"></script>
+</body>
+
+</html>
