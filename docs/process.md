@@ -8,7 +8,7 @@ These three UK-based bodies publish processes for creating a standard.
 
 * iStandUK: ‘[Process for Standards Adoption](http://e-sd.org/OCjay)’.
 
-Porism and the Local Government Association (LGA) have a common audience (i.e. local government organisations) to iStandUK and so normally apply the iStandUK process which is guided by three templates, pre-filled examples of which are given by links below:
+Porism and the Local Government Association (LGA) have a common audience (i.e. local government organisations) to iStandUK and so normally apply the iStandUK process which is guided by three templates, pre-filled examples of which are given by links below.
 
 * [Requirement](http://e-sd.org/mVeEe) 	
 
