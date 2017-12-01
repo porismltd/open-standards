@@ -60,7 +60,7 @@
 
 
   <script>
-    var wrapContent = function(startNode) {
+    var wrapContent = function (startNode) {
       var nextSibling;
       console.log(startNode);
       console.log(startNode.nextSibling);
@@ -84,12 +84,13 @@
       name: 'Creating and maintaining open standards',
       search: {
         noData: {
-          '/': 'No results!'
+          '/': 'No results'
         },
         paths: 'auto',
         placeholder: {
           '/': 'Search'
-        }
+        },
+        depth: 4
       },
       formatUpdated: '{DD}/{MM}/{YY} {HH}:{mm}',
 
@@ -104,13 +105,25 @@
 
         // wrap content plugin
         function (hook) {
-
           hook.doneEach(function () {
             var starts = document.querySelectorAll('porism[type="start"]');
             console.log(starts);
             for (var i = 0; i < starts.length; i++) {
               wrapContent(starts[i]);
             }
+          })
+        },
+
+        // modify search
+        function (hook) {
+          hook.ready(function () {
+            
+            alert($docsify.plugins);
+
+            var search = document.querySelector('aside.sidebar div.search');
+            var headerForm = document.querySelector('body > header form');
+            var headerInput = headerForm.getElementsByTagName('input')[0];
+            headerForm.replaceChild(search, headerInput);
           })
         }
       ]
