@@ -1,12 +1,7 @@
 # Creating and maintaining open standards
 
-**This is only half the document, because the export tool is failing on the second half; cover disabled whilst in development**
+Guidance on the processes and techniques to be applied in developing an open data standard. Written and maintained by Porism in partnership with the ODI and the LGA.
 
+## Contributing to the guidance
 
-This document describes the processes and techniques to be applied in developing an open standard for the interchange of data.  It is written and maintained by Porism Limited based on experience in the public sector, mainly local government, in England and other parts of the European Union.
-
-The closed document for sharing feedback with the ODI is [Por10295 - Open standards - Strengths, Weaknesses and Lessons Learned (for ODI)](https://docs.google.com/a/esd.org.uk/document/d/10TpLonQ8O1HmLw8ydQ2saHAea1vqvgPQMDf-QmQXW34/edit?usp=sharing).
-
-Wiki version to credit ODI and contributing organisations.
-
-Include a glossary of terms
+You can make contributions and suggestions to this project on the [Github repository](https://github.com/porismltd/open-standards) by forking a copy and making a pull request. You can also create an issue to be discussed on the [Issues](https://github.com/porismltd/open-standards/issues) page. 

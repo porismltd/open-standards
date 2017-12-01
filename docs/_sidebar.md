@@ -1,4 +1,4 @@
-- [What is a standard](whatisastandard.md)
+- [What is a standard?](whatisastandard.md)
 - [Processes for open standards](process.md)
 - [Techniques](techniques.md)
 - [Tools](tools.md)
