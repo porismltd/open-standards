@@ -611,7 +611,7 @@ When the class model for data is explicit, it is a straightforward mechanistic j
 As part of a project to standardise elections data, the emerging [Election Results schema](http://schemas.opendata.esd.org.uk/ElectionResults) has been developed. It is expressed as a schema for comma separated values (CSV) format data used for spreadsheet data. Implicit in the design is a class model, without which rules for cardinality could not be given and it would not be clear when data must be repeated between rows or split into multiple values in one cell.
 
 The simplified class model can be expressed as three main classes.
-<br />
+
 <table>
   <tr>
     <td>Class</td>
@@ -619,25 +619,25 @@ The simplified class model can be expressed as three main classes.
   </tr>
   <tr>
     <td>Election</td>
-    <td>Date<br />
-Organisation (f)<br />
-Elected body (f)<br />
+    <td>Date
+Organisation (f)
+Elected body (f)
 Contact information</td>
   </tr>
   <tr>
     <td>Election area</td>
-    <td>Election<br />
-Area (f)<br />
-Returning officer<br />
+    <td>Election
+Area (f)
+Returning officer
 Rejected ballots</td>
   </tr>
   <tr>
     <td>Candidate</td>
-    <td>Election area<br />
-Candidate name<br />
-Candidate description<br />
-Political party (f)<br />
-Votes won<br />
+    <td>Election area
+Candidate name
+Candidate description
+Political party (f)
+Votes won
 Elected or not</td>
   </tr>
 </table>
@@ -762,7 +762,6 @@ Business rules can also be built into an XML schema, for example, if one field h
 #### JavaScript Object Notation (JSON)
 
 JSON is a format used for describing data and other formats such as the [JSON table schema](http://specs.frictionlessdata.io/table-schema/) for defining spreadsheet data. JSON is described as a ‘lightweight’ format. It uses a simple notation to represent rich data structures with string, null, boolean and numeric values, nested elements and arrays. [JSON Schema](http://json-schema.org/) is a language, itself written in JSON, for validating JSON.
-
 
 { 
 
