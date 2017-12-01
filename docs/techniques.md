@@ -362,7 +362,9 @@ Geographies may be defined by sub-dividing statistics. In the UK the Office for 
 
 Understanding the relationships between area types allows aggregation and comparison of data. Areas of one type contain (i.e. are the parents of) or are contained by (i.e. are the children of) areas of another area type The diagram below shows a hierarchy of official UK statistical geographies relevant to local government. (Though it’s not a list of all the types of area available, it demonstrates the relationship between geographies.)
 
-MISSING IMAGE MISSING IMAGE MISSING IMAGE MISSING IMAGE
+<div class="center">
+    ![geography hierarchy](/images/geography-hierarchy.png)
+</div>
 
 Note that the `contains` relationship might not be exact. ONS publishes a best-fit relationship between OAs and electoral wards, indicating the OAs that are mostly contained within electoral geographies.
 
@@ -589,7 +591,9 @@ The PAS describes relationships between the concepts it defines and so it gives 
 
 For example, a `case` such as a building inspection might form part of a building permit `service` with a site inspection `event` as part of the `case`’s `plan`. The relationships are illustrated in the concept model’s relationships diagram shown below.
 
-MISSING IMAGE MISSING IMAGE MISSING IMAGE MISSING IMAGE
+<div class="center">
+    ![concept model](/images/concept-model.png)
+</div>
 
 The distinctions are important in defining clean data models that avoid conflating physical things with the role they play in a transaction. So, for example, a `person` or an `organization` may act as a customer *or* a service provider (or both in different agreements).
 
@@ -765,41 +769,23 @@ JSON is a format used for describing data and other formats such as the [JSON ta
 
 
 { 
-
- "ElectionDate" : "2017-05-04",
-
- "ElectoralAreaLabel" : "Abbey ward",
-
- "candidates" : [
-
- {
-
-  "CandidateSurname" : "Jones",
-
-  "VotesWon" : 1234 
-
- },
-
- {
-
-  "CandidateSurname" : "Patel",
-
-  "VotesWon" : 2345 
-
- },
-
- {
-
-  "CandidateSurname" : "Smith",
-
-  "VotesWon" : 4567 
-
- }
-
- ],
-
- "BallotsRejectedUnmarked" : 12
-
+    "ElectionDate" : "2017-05-04",
+    "ElectoralAreaLabel" : "Abbey ward",
+    "candidates" : [
+    {
+    "CandidateSurname" : "Jones",
+    "VotesWon" : 1234
+    },
+    {
+    "CandidateSurname" : "Patel",
+    "VotesWon" : 2345 
+    },
+    {
+    "CandidateSurname" : "Smith",
+    "VotesWon" : 4567 
+    }
+    ],
+    "BallotsRejectedUnmarked" : 12
  }
 
 *Example of simplified JSON data for election for candidates and spoilt ballots (**see above for **how this might be expressed as a spreadsheet)* 
@@ -812,7 +798,7 @@ Linked Data provides the most flexible way of expressing data. It does so at the
 
 At the heart of Linked Data is the ‘semantic triple’ whereby every piece of data is expressed using the simple subject-predicate-object expression. Here are two examples.
 
-MISSING IMAGE MISSING IMAGE MISSING IMAGE MISSING IMAGE
+![triples example](/images/triples-example.png)
 
 Every subject (e.g. `election`), predicate (e.g. `hasCandidate`, `hasSpoiltBallot`) and object (e.g. `candidate`, `53`) is represented by a URI or a literal value of a base type such as an integer or a string. By querying each linked URI in turn you can explore the data and understand how it relates to other Linked Data on the web. 
 
@@ -874,13 +860,13 @@ An inventory describes published and unpublished datasets which contain data and
 
 * **Datasets **are sets of records however structured – not just datasets according to standard database terminology. Datasets contain:
 
-    * **data resources**, which are files or feeds/streams of data records available in zero, one or more:
+* **data resources**, which are files or feeds/streams of data records available in zero, one or more:
 
-        * **renditions**, which are different formats of the data, such as: CSV, XML and PDF. Renditions may represent physical files or API calls. 
+* **renditions**, which are different formats of the data, such as: CSV, XML and PDF. Renditions may represent physical files or API calls. 
 
-    * **document resources**, which are files or web pages describing datasets. They may include an API page for a dataset and documents describing a dataset (e.g. rules for data inclusion, how data was redacted). Document resources are expressed as one or more:
+* **document resources**, which are files or web pages describing datasets. They may include an API page for a dataset and documents describing a dataset (e.g. rules for data inclusion, how data was redacted). Document resources are expressed as one or more:
 
-        * **renditions**, which are different formats of the data, such as: ODF, PDF and HTML.
+* **renditions**, which are different formats of the data, such as: ODF, PDF and HTML.
 
 The Inventory standard is supported by DataShare and [DataPress's plugin](https://github.com/datapressio/ckanext-lga-inventory) for CKAN. Both Data.gov.uk and the LGA’s [open data site](http://opendata.esd.org.uk/) are configured to harvest catalogues from sites that are registered as supporting the Inventory standard. [This page](http://opendata.esd.org.uk/) shows the sites registered with the LGA.
 
