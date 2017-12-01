@@ -1,0 +1,156 @@
+<div class="warn">
+    <p>Because SDMX is so generic, the LGA chose a model with three fixed dimensions that always apply to the metrics data that
+        drives its reporting tool.</p>
+    <p>The LGA’s
+        <a href="http://lginformplus.local.gov.uk" target="_blank">LG Inform Plus</a> (formerly esd-toolkit) database holds statistics that are useful to local authorities wishing
+        to compare performance and demographics with other authorities and between small areas within their own boundaries.
+        Such data allows them to see how effective they are and to target services (such as those to improve public health)
+        at relevant people rather than using a scatter-gun approach.</p>
+    <p>The data is an amalgamation of public data from disparate national sources supplemented by data gathered locally. A standard
+        way of structuring the data is needed to overcome differences in how it is represented by the many source organisations
+        (e.g. Office of National Statistics, Department for Education, Public Health England). </p>
+    <p>The standard was defined by analysing data from various sources, which is normally presented in spreadsheets or via application
+        programming interfaces (APIs). We also looked at the database structure of existing data reporting tools, including
+        the Audit Commission’s Value for Money tool.</p>
+    <p>In abstract terms, each data point is represented by a value (typically a number or a category) that has a number of
+        properties which can be grouped in dimensions. The Statistical Data and Metadata eXchange (SDMX) provides a generic
+        standard for exchanging statistical data. Because of a lack of familiarity with SDMX, because others had not used
+        it and because it is so generic, we chose a model with three fixed dimensions that always apply to the data. </p>
+    <p>
+    These dimensions are</p>
+    <ul>
+        <li>
+            <p>area,</p>
+        </li>
+        <li>
+            <p>time period, and</p>
+        </li>
+        <li>
+            <p>metric (or indicator) type.</p>
+        </li>
+    </ul>
+    <p>An individual data item has a precise value for each of these dimensions. For example, a single bicycle theft has a count
+        of one with a specific date and time, a point on the map and a metric type denoting bicycle theft. But much data
+        is only available at an aggregated level, so data might contain a count of thefts in general within an area (e.g.
+        a police neighbourhood) over a time period (e.g. a calendar month).</p>
+    <p>The data structure therefore needs to record data at the most detailed level at which it is available and needed. Aggregations
+        over longer time periods, bigger areas and broader metric types may be generated on the fly (as in a spreadsheet’s
+        pivot table) or aggregated in batch and stored for future reference.</p>
+    <p>Let’s look at the three dimensions in more detail.</p>
+    <p>Area
+        <strong> </strong>has an area type which is a point (as given by
+        <em>x</em> and
+        <em>y</em> map co-ordinates) or a named polygon. Hierarchies of areas define how data can be aggregated up from small
+        to larger areas. Here is an example of a hierarchy of area types used from official statistics in England (from large
+        to small).</p>
+    <ul>
+        <li>
+            <p>
+                <a href="http://neighbourhoods.esd.org.uk/#?areaType=Country&amp;tab=ViewAreaType" target="_blank">Country</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <a href="http://neighbourhoods.esd.org.uk/#?areaType=Region&amp;tab=ViewAreaType" target="_blank">Region</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <a href="http://neighbourhoods.esd.org.uk/#?areaType=FireAuthority&amp;tab=ViewAreaType" target="_blank">Fire authority</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <a href="http://neighbourhoods.esd.org.uk/#?areaType=County&amp;tab=ViewAreaType" target="_blank">County</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <a href="http://neighbourhoods.esd.org.uk/#?areaType=District&amp;tab=ViewAreaType" target="_blank">District</a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <a href="http://neighbourhoods.esd.org.uk/#?areaType=MLSOA&amp;tab=ViewAreaType" target="_blank">Medium level super output area</a> (MSOA)</p>
+        </li>
+        <li>
+            <p>
+                <a href="http://neighbourhoods.esd.org.uk/#?areaType=LLSOA&amp;tab=ViewAreaType" target="_blank">Lower level super output area</a> (LSOA)</p>
+        </li>
+        <li>
+            <p>
+                <a href="http://neighbourhoods.esd.org.uk/#?areaType=OutputArea&amp;tab=ViewAreaType" target="_blank">Output area</a>
+            </p>
+        </li>
+    </ul>
+    <p>Links from the above area types are to the LGA’s Natural Neighbourhoods area type page which shows parent and child area
+        types and ‘same as’ relationships for equivalent area type definitions elsewhere. </p>
+    <p>Area types can be polyhierarchical, e.g. a district is broken down by both MSOAs and wards, and sometimes the fit of
+        areas within their parent is only approximate, in which case a measure of degree of fit can be useful.</p>
+    <p>Where data describes an area, care is needed to avoid double counting across overlapping areas, e.g. adding the population
+        of a county to that the districts it contains. However, sometimes an area is used as a proxy for the organisation
+        governing it. In theses cases data pertaining to the organisations can be added. For example, spending on roads by
+        a local authority and spending by the Highways Agency in the same area should be totalled to get overall spending
+        on roads.</p>
+    <p>Time period
+        <strong> </strong>has a time period type such as calendar month, calendar year, financial year, academic year, etc.. Metrics
+        values may be aggregated over a time period, e.g. all crimes in a month, or represent a count at a point in time
+        that is sampled for each time period, e.g. population for a census year. The former can be aggregated over time,
+        e.g. add the crimes in each month to get the year’s crime figures; the latter cannot.</p>
+    <p>Metric type is a broad definition of what the statistics define. Hierarchies of metric type can be defined in the same
+        way as hierarchies of areas can. For example, crime can be defined from broad to narrow as</p>
+    <ul>
+        <li>
+            <p>
+                <a href="http://id.esd.org.uk/metricType/1068" target="_blank">overall crime</a>,</p>
+        </li>
+        <li>
+            <p>
+                <a href="http://id.esd.org.uk/metricType/3813" target="_blank">theft crime</a>, and</p>
+        </li>
+        <li>
+            <p>
+                <a href="http://id.esd.org.uk/metricType/4536" target="_blank">bicycle theft</a>.</p>
+        </li>
+    </ul>
+    <p>Sometimes metric types break down in multiple ways. For example, employment data can be defined by</p>
+    <ul>
+        <li>
+            <p>
+                <a href="http://id.esd.org.uk/circumstanceCollection/Workcontract" target="_blank">employment contract type</a> (part-time, full-time, etc.),</p>
+        </li>
+        <li>
+            <p>
+                <a href="http://id.esd.org.uk/circumstanceCollection/WorkingHours" target="_blank">working hours</a> (temporary, permanent, etc.), and</p>
+        </li>
+        <li>
+            <p>employee
+                <a href="http://id.esd.org.uk/circumstanceCollection/Gender" target="_blank">gender</a> (female, male, etc.).</p>
+        </li>
+    </ul>
+    <p>Detailed metric types, such as the
+        <a href="http://id.esd.org.uk/metricType/579" target="_blank">number of female part-time employees who are temporary</a>, define figures which can be aggregated to derive different
+        summaries according to how metric types are related.</p>
+    <p>Relationships between metric types are given by the circumstances they define, such as
+        <a href="http://id.esd.org.uk/circumstanceCollection/Workcontract"
+            target="_blank">employment contract type</a>,
+        <a href="http://id.esd.org.uk/circumstanceCollection/WorkingHours" target="_blank">working hours</a> and
+        <a href="http://id.esd.org.uk/circumstanceCollection/Gender" target="_blank">gender</a>, as detailed above. By standardising these in a
+        <a href="http://id.esd.org.uk/list/circumstances" target="_blank">circumstance types list</a> according to standard rules for taxonomies, we can relate metrics from different sources
+        that use the same breakdowns and hence analyse for patterns in the data.</p>
+    <p>The structure described above allows for data items (i.e. metric values) to be queried by</p>
+    <ul>
+        <li>
+            <p>area or a group of areas (e.g. all wards in a district),</p>
+        </li>
+        <li>
+            <p>time period or a groups of time periods (e.g. the last twelve months), and</p>
+        </li>
+        <li>
+            <p>metric type or a group of metric types (e.g. all metric types in the dimension defined by the crime types circumstance).</p>
+        </li>
+    </ul>
+    <p>Separate queries on areas, periods and metric types are provided. As well as raw data values, statistical functions are
+        performed (e.g. total, mean, standard deviation thresholds, etc.) for ranges of values, applying rules for what metric
+        values can meaningfully be aggregated over time and area.</p>
+</div>
