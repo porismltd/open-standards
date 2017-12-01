@@ -4,9 +4,9 @@ The International Organisation for Standardisation (ISO) defines a standard as '
 
 Here we are considering standards for data, which we define as
 
-An explicitly defined means of expressing data such that it can be exchanged and interpreted consistently by people and machines within and between organisations and individuals.
+> an explicitly defined means of expressing data such that it can be exchanged and interpreted consistently by people and machines within and between organisations and individuals.
 
-So a standard is for data interchange. It does not necessarily reflect the way the data is stored in a database for processing by an application.
+A standard is for data interchange. It does not necessarily reflect the way the data is stored in a database for processing by an application.
 
 A standard is documented in human and machine readable formats via
 

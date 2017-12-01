@@ -8,11 +8,11 @@ You can make contributions and suggestions to this project on the [Github reposi
 
 Alternatively, you can fork a copy of the repo, edit the guidance and make a pull request to share your changes. You can find the guidance in these files.
 
-* ./docs/whatisastandard.md
+* [whatisastandard.md](whatisastandard.md)
 
-* ./docs/process.md
+* [process.md](process.md)
 
-* ./docs/techniques.md
+* [techniques.md](techniques.md)
 
-* ./docs/tools.md
+* [tools.md](tools.md)
 
