@@ -11,33 +11,32 @@
   <link rel="stylesheet" href="/css/core.css">
   <link rel="stylesheet" href="/css/doc.css">
   <link rel="stylesheet" href="/css/doc.layout.css">
-  <link rel="stylesheet" href="/css/search.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88876718-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88876718-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'UA-88876718-2');
-  </script>
+  gtag('config', 'UA-88876718-2');
+</script>
 </head>
 
 <body>
   <div id="app">Loading ...</div>
 
   <header>
-      <div class="center">
-          <a class="logo" href="/" title="Porism standards">
-              <img src="/images/porism.logo.header.colour.small.png" class="wideOnly" alt="Porism" />
-              <img src="/images/porism.logo.header.notext.colour.small.png" class="thinOnly" alt="Porism" />
-          </a>
-          <form v-on:submit.prevent="search">
-              <input type="text" name="q" placeholder="search" autocomplete="off" v-model="q" />
-              <button type="submit">
-                  <img src="/images/find.png" alt="search" />
-              </button>
-          </form>
-      </div>
+    <div class="center">
+      <a class="logo" href="/" title="Porism standards">
+        <img src="/images/porism.logo.header.colour.small.png" class="wideOnly" alt="Porism" />
+        <img src="/images/porism.logo.header.notext.colour.small.png" class="thinOnly" alt="Porism" />
+      </a>
+      <form>
+        <input type="text" name="q" placeholder="search" />
+        <button type="submit">
+          <img src="/images/find.png" alt="search" />
+        </button>
+      </form>
+    </div>
   </header>
 
   <footer>
@@ -116,7 +115,7 @@
         function (hook) {
           hook.doneEach(function () {
             var starts = document.querySelectorAll('porism[type="start"]');
-
+            console.log(starts);
             for (var i = 0; i < starts.length; i++) {
               wrapContent(starts[i]);
             }
@@ -125,23 +124,21 @@
 
         // modify search
         function (hook) {
-          // hook.ready(function () {
+          hook.ready(function () {
+            
+            console.log($docsify.plugins[0]);
 
-          //   var search = document.querySelector('aside.sidebar div.search');
-          //   var headerForm = document.querySelector('body > header form');
-          //   var headerInput = headerForm.getElementsByTagName('input')[0];
-          //   headerForm.replaceChild(search, headerInput);
-
-          //   var searchInput = search.getElementsByTagName('input')[0];
-          // })
+            var search = document.querySelector('aside.sidebar div.search');
+            var headerForm = document.querySelector('body > header form');
+            var headerInput = headerForm.getElementsByTagName('input')[0];
+            headerForm.replaceChild(search, headerInput);
+          })
         }
       ]
     }
   </script>
-  <script src="//unpkg.com/vue/dist/vue.min.js"></script>
-  <script src="/scripts/setup.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <script src="/scripts/plugins/porism.search.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-nginx.min.js"></script>

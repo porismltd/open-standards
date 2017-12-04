@@ -23,17 +23,12 @@ body .sidebar {
     top: 6rem;
 }
 
-.markdown-section h1 a,
 .markdown-section h2 a,
 .markdown-section h3 a,
 .markdown-section h4 a,
 .markdown-section h5 a,
 .markdown-section h6 a {
     padding-top: 7rem;
-}
-
-.markdown-section h1 a {
-    margin-top: -1rem;
 }
 
 aside.sidebar h1 {
@@ -198,4 +193,62 @@ aside.sidebar h1 {
     .sidebar-toggle {
         bottom: 10rem;
     }
+}
+
+
+
+body > header form div.search {
+    margin-bottom: 0;
+    padding: 0;
+    border-bottom: none;
+}
+
+body > header form div.search div.results-panel.show  {
+    background-color: white;
+    
+    overflow-y: auto;
+    max-height: 26rem;
+
+    border: solid 1px #ccc;
+}
+
+@media screen and (min-height: 640px) {
+    body > header form div.search div.results-panel.show  {
+        max-height: 44rem;
+    }
+}
+
+@media screen and (min-height: 768px) {
+    body > header form div.search div.results-panel.show  {
+        max-height: 56rem;
+    }
+}
+
+body > header form div.search div.results-panel a {
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem;
+    display: inline-block;
+
+    max-width: 20rem;
+}
+
+@media screen and (min-width: 768px) {
+    body > header form div.search div.results-panel a {   
+        max-width: 50rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body > header form div.search div.results-panel a {   
+        max-width: 70rem;
+    }
+}
+
+body > header form div.search .matching-post:hover {
+    background: #eee;
+}
+
+body > header form div.search .matching-post:last-child {
+    border: none;
 }

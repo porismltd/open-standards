@@ -23,24 +23,18 @@
 </head>
 
 <body>
-
-  <template src="/templates/header.html"></template>
-
   <header>
-      <div class="center">
-          <a class="logo" href="/" title="Porism standards">
-              <img src="/images/porism.logo.header.colour.small.png" class="wideOnly" alt="Porism" />
-              <img src="/images/porism.logo.header.notext.colour.small.png" class="thinOnly" alt="Porism" />
-          </a>
-          <form v-on:submit.prevent="search">
-              <input type="text" name="q" placeholder="search" autocomplete="off" v-model="q" />
-              <button type="submit">
-                  <img src="/images/find.png" alt="search" />
-              </button>
-          </form>
-      </div>
+    <div class="center">
+      <a class="logo" href="/" title="Porism standards">
+        <img src="/images/porism.logo.header.colour.small.png" class="wideOnly" alt="Porism" />
+        <img src="/images/porism.logo.header.notext.colour.small.png" class="thinOnly" alt="Porism" />
+      </a>
+      <form class="search">
+        <input type="text" name="q" placeholder="search" />
+        <button type="submit"><img src="/images/find.png" alt="search" /></button>
+      </form>
+    </div>
   </header>
-
   <main>
     <header>
       <div class="center">
@@ -87,7 +81,6 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="center">
       <ol class="logos">
@@ -114,9 +107,6 @@
       </ol>
     </div>
   </footer>
-
-  <script src="//unpkg.com/vue/dist/vue.min.js"></script>
-  <script src="/scripts/setup.js"></script>
 </body>
 
 </html>
