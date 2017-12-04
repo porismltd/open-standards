@@ -23,6 +23,15 @@ body > header form div.results-panel.show  {
     z-index: 10;
 }
 
+body > header form div.results-panel h1,
+body > header form div.results-panel h2,
+body > header form div.results-panel h3,
+body > header form div.results-panel h4,
+body > header form div.results-panel h5,
+body > header form div.results-panel h6 {
+    font-weight: 600;
+}
+
 body > header form div.results-panel .matching-post {
     border-bottom: solid 1px #eee;
 }
