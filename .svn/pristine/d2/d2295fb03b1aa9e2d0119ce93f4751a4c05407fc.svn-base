@@ -5,28 +5,42 @@
   <meta charset="UTF-8">
   <title>Creating and maintaining data standards - Porism</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Guidance on processes and techniques for  developing an open standards for data. Written and maintained by Porism from content developed for and owned by the Open Data Institute with contributions from many others.">
+  <meta name="description" content="Guidance on the processes and techniques to be applied in developing an open data standard. Written and maintained by Porism in partnership with the ODI and the LGA.">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
   <link rel="icon" href="/favicon.ico" />
 
   <link rel="stylesheet" href="/css/core.css">
   <link rel="stylesheet" href="/css/index.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88876718-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-88876718-2');
+</script>
 </head>
 
 <body>
+
+  <template src="/templates/header.html"></template>
+
   <header>
-    <div class="center">
-      <a class="logo" href="/" title="Porism standards">
-        <img src="/images/porism.logo.header.colour.small.png" class="wideOnly" alt="Porism" />
-        <img src="/images/porism.logo.header.notext.colour.small.png" class="thinOnly" alt="Porism" />
-      </a>
-      <form class="search">
-        <input type="text" name="q" placeholder="search" />
-        <button type="submit"><img src="/images/find.png" alt="search" /></button>
-      </form>
-    </div>
+      <div class="center">
+          <a class="logo" href="/" title="Porism standards">
+              <img src="/images/porism.logo.header.colour.small.png" class="wideOnly" alt="Porism" />
+              <img src="/images/porism.logo.header.notext.colour.small.png" class="thinOnly" alt="Porism" />
+          </a>
+          <form v-on:submit.prevent="search">
+              <input type="text" name="q" placeholder="search" autocomplete="off" v-model="q" />
+              <button type="submit">
+                  <img src="/images/find.png" alt="search" />
+              </button>
+          </form>
+      </div>
   </header>
+
   <main>
     <header>
       <div class="center">
@@ -43,7 +57,7 @@
 
           <li>
             <h2>
-              <a href="doc.html#/whatisastandard">What is a standard</a>
+              <a href="doc.html#/whatisastandard">What is a standard?</a>
             </h2>
             <p>Learn about the formal definition of a standard, and specifically data standards as covered by this website</p>
           </li>
@@ -73,6 +87,7 @@
       </div>
     </section>
   </main>
+
   <footer>
     <div class="center">
       <ol class="logos">
@@ -99,6 +114,9 @@
       </ol>
     </div>
   </footer>
+
+  <script src="//unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="/scripts/setup.js"></script>
 </body>
 
 </html>

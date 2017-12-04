@@ -1,6 +1,6 @@
 # Creating and maintaining open standards
 
-Guidance on the processes and techniques to be applied in developing an open data standard. Written and maintained by [Porism](http://porism.com) in partnership with the [Open Data Institute](https://theodi.org/) and the [Local Government Association](https://www.local.gov.uk/).
+Guidance on processes and techniques for  developing an open standards for data. Written and maintained by [Porism](http://porism.com) from content developed for and owned by the [Open Data Institute](https://theodi.org/) with contributions from many others.
 
 ## Contributing to the guidance
 
