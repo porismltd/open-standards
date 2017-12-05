@@ -1,4 +1,14 @@
 
+# Vue demo
+
+<button-counter></button-counter>
+
+<format-sample tab="xml"></format-sample>
+
+<ul>
+  <li v-for="i in 10">{{ i }}</li>
+</ul>
+
 # h1 header
 
 content content content content 

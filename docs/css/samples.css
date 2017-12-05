@@ -1,0 +1,112 @@
+.format-samples, .format-samples * {
+    box-sizing: border-box;
+}
+
+.format-samples {
+    background-color: #1E1E1E;
+    height: 36rem;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+
+    position: relative;
+}
+
+.format-samples ol.tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+
+    height: 4rem;
+    line-height: 4rem;
+
+    position: absolute;
+    top: 36rem;
+    right: 0;
+}
+
+.format-samples ol.tabs li {
+    display: block;
+    width: 6rem;
+    background-color: #ccc;
+    text-align: center;
+    padding: 0 1rem;
+    cursor: pointer;
+    border-left: solid 1px #aaa;
+
+    user-select: none;
+}
+
+.format-samples ol.tabs li:first-child {
+    border-left: none;
+}
+
+.format-samples ol.tabs li:hover {
+    background-color: #bbb;
+}
+
+.format-samples ol.tabs li.selected,
+.format-samples ol.tabs li.selected:hover {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+    cursor: inherit;
+}
+
+.format-samples .sample {
+    position: absolute;
+    background-color: transparent;
+    color: #D4D4D4;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition: opacity 1s ease-in-out;
+}
+
+.format-samples .sample.selected {
+    z-index: 1;
+    opacity: 1;
+}
+
+.format-samples pre {
+    background-color: transparent;
+    padding: 0;
+    line-height: normal;
+    margin: 0;
+}
+
+.sample.json,
+.sample.xml .hljs-tag {
+    color: #D4D4D4;
+}
+
+.sample.json .hljs-attr,
+.sample.xml .hljs-name {
+    color: #9CDCFE;
+    font-weight: normal;
+}
+
+.sample.json .hljs-string,
+.sample.xml {
+    color: #CE9178;
+}
+
+.sample.json .hljs-number {
+    color: #B5CEA8;
+}
+
+.sample.csv .hljs-name {
+    color: #9CDCFE;
+}
+.sample.csv .hljs-value {
+    color: #CE9178;
+}

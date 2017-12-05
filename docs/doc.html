@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/css/doc.css">
   <link rel="stylesheet" href="/css/doc.layout.css">
   <link rel="stylesheet" href="/css/search.css">
+  <link rel="stylesheet" href="/css/samples.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88876718-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,24 +21,90 @@
 
     gtag('config', 'UA-88876718-2');
   </script>
+
+
+  <script id="template-format-samples" type="template/html">
+    <section class="format-samples">
+      <section class="sample csv" v-bind:class="{ selected: selected === 'csv' }">
+        <pre>
+<span class="hljs-name">ElectionDate</span>,<span class="hljs-name">ElectoralAreaLabel</span>,<span class="hljs-name">CandidateSurname</span>,<span class="hljs-name">VotesWon</span>,<span class="hljs-name">BallotsRejectedUnmarked</span>
+<span class="hljs-value">2017-05-04</span>,<span class="hljs-value">Abbey ward</span>,<span class="hljs-value">Jones</span>,<span class="hljs-value">1234</span>,<span class="hljs-value">12</span>
+<span class="hljs-value">2017-05-04</span>,<span class="hljs-value">Abbey ward</span>,<span class="hljs-value">Patel</span>,<span class="hljs-value">2345</span>,<span class="hljs-value">12</span>
+<span class="hljs-value">2017-05-04</span>,<span class="hljs-value">Abbey ward</span>,<span class="hljs-value">Smith</span>,<span class="hljs-value">5678</span>,<span class="hljs-value">12</span>
+        </pre>
+      </section>
+      <section class="sample xml" v-bind:class="{ selected: selected === 'xml' }">
+        <pre>
+<span class="hljs-tag">&lt;<span class="hljs-name">Election</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ElectionDate</span>&gt;</span>2017-05-04<span class="hljs-tag">&lt;/<span class="hljs-name">ElectionDate</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ElectoralAreaLabel</span>&gt;</span>Abbey ward<span class="hljs-tag">&lt;/<span class="hljs-name">ElectoralAreaLabel</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Candidates</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Candidate</span>&gt;</span> 
+      <span class="hljs-tag">&lt;<span class="hljs-name">CandidateSurname</span>&gt;</span>Jones<span class="hljs-tag">&lt;/<span class="hljs-name">CandidateSurname</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">VotesWon</span>&gt;</span>1234<span class="hljs-tag">&lt;/<span class="hljs-name">VotesWon</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Candidate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Candidate</span>&gt;</span> 
+      <span class="hljs-tag">&lt;<span class="hljs-name">CandidateSurname</span>&gt;</span>Patel<span class="hljs-tag">&lt;/<span class="hljs-name">CandidateSurname</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">VotesWon</span>&gt;</span>2345<span class="hljs-tag">&lt;/<span class="hljs-name">VotesWon</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Candidate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Candidate</span>&gt;</span> 
+      <span class="hljs-tag">&lt;<span class="hljs-name">CandidateSurname</span>&gt;</span>Smith<span class="hljs-tag">&lt;/<span class="hljs-name">CandidateSurname</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">VotesWon</span>&gt;</span>3456<span class="hljs-tag">&lt;/<span class="hljs-name">VotesWon</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Candidate</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Candidates</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">BallotsRejectedUnmarked</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-name">BallotsRejectedUnmarked</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Election</span>&gt;</span>
+              </pre>
+      </section>
+      <section class="sample json" v-bind:class="{ selected: selected === 'json' }">
+        <pre>
+{
+  <span class="hljs-attr">"ElectionDate"</span>: <span class="hljs-string">"2017-05-04"</span>,
+  <span class="hljs-attr">"ElectoralAreaLabel"</span>: <span class="hljs-string">"Abbey ward"</span>,
+  <span class="hljs-attr">"Candidates"</span>: [
+    {
+      <span class="hljs-attr">"CandidateSurname"</span>: <span class="hljs-string">"Jones"</span>,
+      <span class="hljs-attr">"VotesWon"</span>: <span class="hljs-number">1234</span>
+    },
+    {
+      <span class="hljs-attr">"CandidateSurname"</span>: <span class="hljs-string">"Patel"</span>,
+      <span class="hljs-attr">"VotesWon"</span>: <span class="hljs-number">2345</span>
+    },
+    {
+      <span class="hljs-attr">"CandidateSurname"</span>: <span class="hljs-string">"Smith"</span>,
+      <span class="hljs-attr">"VotesWon"</span>: <span class="hljs-number">4567</span>
+    }
+  ],
+  <span class="hljs-attr">"BallotsRejectedUnmarked"</span>: <span class="hljs-number">12</span>
+}
+              </pre>
+      </section>
+      <ol class="tabs">
+        <li v-on:click="select('csv')" v-bind:class="{ selected: selected === 'csv' }">csv</li>
+        <li v-on:click="select('xml')" v-bind:class="{ selected: selected === 'xml' }">xml</li>
+        <li v-on:click="select('json')" v-bind:class="{ selected: selected === 'json' }">json</li>
+      </ol>
+    </section>
+  </script>
+
 </head>
 
 <body>
   <div id="app">Loading ...</div>
 
   <header>
-      <div class="center">
-          <a class="logo" href="/" title="Porism standards">
-              <img src="/images/porism.logo.header.colour.small.png" class="wideOnly" alt="Porism" />
-              <img src="/images/porism.logo.header.notext.colour.small.png" class="thinOnly" alt="Porism" />
-          </a>
-          <form v-on:submit.prevent="search">
-              <input type="text" name="q" placeholder="search" autocomplete="off" v-model="q" />
-              <button type="submit">
-                  <img src="/images/find.png" alt="search" />
-              </button>
-          </form>
-      </div>
+    <div class="center">
+      <a class="logo" href="/" title="Porism standards">
+        <img src="/images/porism.logo.header.colour.small.png" class="wideOnly" alt="Porism" />
+        <img src="/images/porism.logo.header.notext.colour.small.png" class="thinOnly" alt="Porism" />
+      </a>
+      <form v-on:submit.prevent="search">
+        <input type="text" name="q" placeholder="search" autocomplete="off" v-model="q" />
+        <button type="submit">
+          <img src="/images/find.png" alt="search" />
+        </button>
+      </form>
+    </div>
   </header>
 
   <footer>
@@ -87,7 +154,7 @@
       themeColor: '#34495e',
       homepage: 'whatisastandard.md',
       auto2top: true,
-      executeScript: false,
+      executeScript: true,
       loadSidebar: true,
       /*loadNavbar: true,
       mergeNavbar: true,*/
@@ -113,31 +180,17 @@
           hook.afterEach(function (html) {
             return html + footer
           })
-        },
-
-        // wrap content plugin
-        function (hook) {
-          hook.doneEach(function () {
-            var starts = document.querySelectorAll('porism[type="start"]');
-
-            for (var i = 0; i < starts.length; i++) {
-              wrapContent(starts[i]);
-            }
-          })
-        },
-
-        // modify search
-        function (hook) {
-          // hook.ready(function () {
-
-          //   var search = document.querySelector('aside.sidebar div.search');
-          //   var headerForm = document.querySelector('body > header form');
-          //   var headerInput = headerForm.getElementsByTagName('input')[0];
-          //   headerForm.replaceChild(search, headerInput);
-
-          //   var searchInput = search.getElementsByTagName('input')[0];
-          // })
         }
+
+        // // wrap content plugin
+        // function (hook) {
+        //   hook.doneEach(function () {
+        //     var starts = document.querySelectorAll('porism[type="start"]');
+        //     for (var i = 0; i < starts.length; i++) {
+        //       wrapContent(starts[i]);
+        //     }
+        //   })
+        // }
       ]
     }
   </script>

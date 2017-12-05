@@ -733,39 +733,7 @@ XML is a meta language, used for defining other languages such as xHTML and KML 
 
 Data represented in XML format can be much richer than spreadsheet data, it can closely match the data structure and so it’s more easily self-documenting, rather than relying on reference to a separate description of the structure; it can include metadata. It can include encoding schemas of valid terms and reference external vocabularies via namespaces that point to their full online definitions.
 
-<Election>
-
- <ElectionDate>2017-05-04</ElectionDate>
-
- <ElectoralAreaLabel>Abbey ward</ElectoralAreaLabel>
-
- <Candidate> 
-
-  <CandidateSurname>Jones</CandidateSurname>
-
-  <VotesWon>1234</VotesWon>
-
- </Candidate>
-
- <Candidate> 
-
-  <CandidateSurname>Patel</CandidateSurname>
-
-  <VotesWon>2345</VotesWon>
-
- </Candidate>
-
- <Candidate> 
-
-  <CandidateSurname>Smith</CandidateSurname>
-
-  <VotesWon>3456</VotesWon>
-
- </Candidate>
-
- <BallotsRejectedUnmarked>12</BallotsRejectedUnmarked>
-
-</Election>
+<format-sample tab="xml"></format-sample>
 
 *Example of simplified XML data for election for candidates and spoilt ballots (**see above for **how this might be expressed as a spreadsheet)*
 
@@ -775,26 +743,7 @@ Business rules can also be built into an XML schema, for example, if one field h
 
 JSON is a format used for describing data and other formats such as the [JSON table schema](http://specs.frictionlessdata.io/table-schema/) for defining spreadsheet data. JSON is described as a ‘lightweight’ format. It uses a simple notation to represent rich data structures with string, null, boolean and numeric values, nested elements and arrays. [JSON Schema](http://json-schema.org/) is a language, itself written in JSON, for validating JSON.
 
-
-{ 
-    "ElectionDate" : "2017-05-04",
-    "ElectoralAreaLabel" : "Abbey ward",
-    "candidates" : [
-    {
-    "CandidateSurname" : "Jones",
-    "VotesWon" : 1234
-    },
-    {
-    "CandidateSurname" : "Patel",
-    "VotesWon" : 2345 
-    },
-    {
-    "CandidateSurname" : "Smith",
-    "VotesWon" : 4567 
-    }
-    ],
-    "BallotsRejectedUnmarked" : 12
- }
+<format-sample tab="json"></format-sample>
 
 *Example of simplified JSON data for election for candidates and spoilt ballots (**see above for **how this might be expressed as a spreadsheet)* 
 
@@ -806,7 +755,9 @@ Linked Data provides the most flexible way of expressing data. It does so at the
 
 At the heart of Linked Data is the ‘semantic triple’ whereby every piece of data is expressed using the simple subject-predicate-object expression. Here are two examples.
 
+<div class="text-center">
 ![triples example](/images/triples-example.png)
+</div>
 
 Every subject (e.g. `election`), predicate (e.g. `hasCandidate`, `hasSpoiltBallot`) and object (e.g. `candidate`, `53`) is represented by a URI or a literal value of a base type such as an integer or a string. By querying each linked URI in turn you can explore the data and understand how it relates to other Linked Data on the web. 
 
@@ -880,4 +831,4 @@ The Inventory standard is supported by DataShare and [DataPress's plugin](https:
 
 Unlike the current DCAT recommendation, the Inventory standard links each dataset to the schema to which it conforms. This facilitates a search for datasets by schema at data.gov.uk and allows the LGA’s pages of [schemas](http://schemas.opendata.esd.org.uk/) and [datasets](http://datasets.opendata.esd.org.uk/) to cross-reference one another. The LGA’s aggregator (see (‘Data harvesting and aggregation’)[link to it]) relies on knowing which datasets conform to the same CSV schema. 
 
-**The ability to discover both datasets and schemas ****to to to**** associate the two is fundamental to an ecosystem of converging standards.**
+**The ability to discover both datasets and schemas and to associate the two is fundamental to an ecosystem of converging standards.**
