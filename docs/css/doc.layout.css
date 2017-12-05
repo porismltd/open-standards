@@ -23,6 +23,37 @@ body .sidebar {
     top: 6rem;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.margin-center {
+    margin: auto 0;
+}
+
+.half-left {
+    float: left;
+    width: 50%;
+    padding-right: 1rem;
+}
+
+.half-right {
+    float: right;
+    width: 50%;    
+}
+
+img.half-right {
+    padding-left: 2rem;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.clear-both {
+    clear: both;
+}
+
 .markdown-section h1 a,
 .markdown-section h2 a,
 .markdown-section h3 a,
@@ -48,6 +79,12 @@ aside.sidebar h1 {
     background-color: #333333;
     height: 10rem;
     overflow: hidden;
+}
+
+div.tip p:last-child,
+div.warn p:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .markdown-section p.tip {

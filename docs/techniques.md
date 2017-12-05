@@ -207,8 +207,9 @@ Separate queries on areas, periods and metric types are provided. As well as raw
         standard for exchanging statistical data. Because of a lack of familiarity with SDMX, because others had not used
         it and because it is so generic, we chose a model with three fixed dimensions that always apply to the data. </p>
     <p>
+    <img src="/images/dimensions.png" title="dimensions example" alt="dimensions example" class="half-right" />
     These dimensions are</p>
-    <ul>
+    <ul class="half-left">
         <li>
             <p>area,</p>
         </li>
@@ -219,10 +220,11 @@ Separate queries on areas, periods and metric types are provided. As well as raw
             <p>metric (or indicator) type.</p>
         </li>
     </ul>
-    <p>An individual data item has a precise value for each of these dimensions. For example, a single bicycle theft has a count
+    <p class="text-justify">An individual data item has a precise value for each of these dimensions. For example, a single bicycle theft has a count
         of one with a specific date and time, a point on the map and a metric type denoting bicycle theft. But much data
         is only available at an aggregated level, so data might contain a count of thefts in general within an area (e.g.
         a police neighbourhood) over a time period (e.g. a calendar month).</p>
+        
     <p>The data structure therefore needs to record data at the most detailed level at which it is available and needed. Aggregations
         over longer time periods, bigger areas and broader metric types may be generated on the fly (as in a spreadsheet’s
         pivot table) or aggregated in batch and stored for future reference.</p>
@@ -362,7 +364,7 @@ Geographies may be defined by sub-dividing statistics. In the UK the Office for 
 
 Understanding the relationships between area types allows aggregation and comparison of data. Areas of one type contain (i.e. are the parents of) or are contained by (i.e. are the children of) areas of another area type The diagram below shows a hierarchy of official UK statistical geographies relevant to local government. (Though it’s not a list of all the types of area available, it demonstrates the relationship between geographies.)
 
-<div class="center">
+<div class="text-center">
     ![geography hierarchy](/images/geography-hierarchy.png)
 </div>
 
@@ -591,7 +593,7 @@ The PAS describes relationships between the concepts it defines and so it gives 
 
 For example, a `case` such as a building inspection might form part of a building permit `service` with a site inspection `event` as part of the `case`’s `plan`. The relationships are illustrated in the concept model’s relationships diagram shown below.
 
-<div class="center">
+<div class="text-center">
     ![concept model](/images/concept-model.png)
 </div>
 
@@ -616,47 +618,53 @@ As part of a project to standardise elections data, the emerging [Election Resul
 
 The simplified class model can be expressed as three main classes.
 <br />
-<table>
-  <tr>
-    <td>Class</td>
-    <td>Properties</td>
-  </tr>
-  <tr>
-    <td>Election</td>
-    <td>Date<br />
-Organisation (f)<br />
-Elected body (f)<br />
-Contact information</td>
-  </tr>
-  <tr>
-    <td>Election area</td>
-    <td>Election<br />
-Area (f)<br />
-Returning officer<br />
-Rejected ballots</td>
-  </tr>
-  <tr>
-    <td>Candidate</td>
-    <td>Election area<br />
-Candidate name<br />
-Candidate description<br />
-Political party (f)<br />
-Votes won<br />
-Elected or not</td>
-  </tr>
-</table>
+<br />
+
+    <table>
+        <tr>
+            <td>Class</td>
+            <td>Properties</td>
+        </tr>
+        <tr>
+            <td>Election</td>
+            <td>
+                Date<br />
+                Organisation (f)<br />
+                Elected body (f)<br />
+                Contact information
+            </td>
+        </tr>
+        <tr>
+            <td>Election area</td>
+            <td>
+                Election<br />
+                Area (f)<br />
+                Returning officer<br />
+                Rejected ballots
+            </td>
+        </tr>
+        <tr>
+            <td>Candidate</td>
+            <td>
+                Election area<br />
+                Candidate name<br />
+                Candidate description<br />
+                Political party (f)<br />
+                Votes won<br />
+                Elected or not
+            </td>
+        </tr>
+    </table>
 
 
-(f), used to represent ‘foreign key’ in a relational database, here indicates that a property of the class relates to an externally maintained class for which a URI set or register might be maintained.
+(f), used to represent ‘foreign key’ in a relational database, here indicates that a property of the class relates to an externally maintained class for which a URI set or register might be maintained.<br /><br />
 
-* Organisation is a local, national or transnational organisation that governs an area, e.g. London Borough of Lambeth. 
-
-* Elected body is taken from a list of types of governed area, e.g. London borough. 
-
-* Area is the geospatial area for which the election is being held, e.g. E09000022.
-
-* Political party gives the political affiliation of a candidate which, in the UK, will correspond with a party registered with the Electoral Commission. 
-
+<ul>
+    <li>Organisation is a local, national or transnational organisation that governs an area, e.g. London Borough of Lambeth.</li>
+    <li>Elected body is taken from a list of types of governed area, e.g. London borough.</li>
+    <li>Area is the geospatial area for which the election is being held, e.g. E09000022.</li>
+    <li>Political party gives the political affiliation of a candidate which, in the UK, will correspond with a party registered with the Electoral Commission.</li>
+</ul>
 </div>
 
 If a reliable source can be used to maintain data on these external classes, it is sufficient to just reference them rather than manage within the data structure, data which is not fundamental to its function. For example, an elections database would not normally hold the polygons of the election areas but just reference them elsewhere.

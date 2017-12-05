@@ -280,8 +280,7 @@ We recommend a flow line system to record progress adopting a standard, especial
 
 
 ?> For example, the LGA’s [Local Open Data Incentive Scheme](http://incentive.opendata.esd.org.uk) encouraged English councils to publish open data on three themes. Participants received technical guidance and had their published data verified, developing open data skills in each authority. The LGA channelled Government money to the authorities, contributing towards the publisher’s costs. The [Submissions](http://incentive.opendata.esd.org.uk/submission) page shows English councils that published data according to the [planning applications](http://schemas.opendata.esd.org.uk/PlanningApplications), [premises licences](http://schemas.opendata.esd.org.uk/PremisesLicences) and [public toilets](http://schemas.opendata.esd.org.uk/PublicToilets) schemas. For each submission a colour coded submissions page (e.g. for [Leeds planning applications](http://incentive.opendata.esd.org.uk/submission/detail?mode=view&theme=Planning&identifier=Leeds)) shows progress through the six steps involved in the scheme.
-<br /><br />![image alt text](/images/planningApplications.png)
-
+<br /><br />![planning applications](/images/planning-applications.png "planning applications")
 
 If you set up a means of data consumers recording their use of the standard and/or datasets which conform to it, you can monitor usage, involve consumers in changes and help publicise their work.
 
