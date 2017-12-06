@@ -16,21 +16,21 @@ Even if you don’t use Linked Data to describe your metadata or even make it av
 
 The vocabularies most useful for metadata are:
 
-* Dublin Core Terms (`[dct](http://dublincore.org/documents/dcmi-terms)`) – for basic descriptive properties and ones describing the roles of organisations or people;
+* Dublin Core Terms ([`dct`](http://dublincore.org/documents/dcmi-terms)) – for basic descriptive properties and ones describing the roles of organisations or people;
 
-* Simple Knowledge Organisation System (`[skos](http://www.w3.org/2004/02/skos/core)`) – for properties describing taxonomies, also known as concept schemes (i.e. lists of intangible things);
+* Simple Knowledge Organisation System ([`skos`](http://www.w3.org/2004/02/skos/core)) – for properties describing taxonomies, also known as concept schemes (i.e. lists of intangible things);
 
-* Data Catalogue (`[dcat](http://www.w3.org/TR/vocab-dcat/)`) – for properties defining published datasets;
+* Data Catalogue ([`dcat`](http://www.w3.org/TR/vocab-dcat/)) – for properties defining published datasets;
 
-* Resource Description Framework (`[rdf](https://www.w3.org/TR/rdf11-concepts/)`) – for base properties from which others are derived; and
+* Resource Description Framework ([`rdf`](https://www.w3.org/TR/rdf11-concepts/)) – for base properties from which others are derived; and
 
-* Electronic Service Delivery (`[esd](http://def.esd.org.uk/)`) – defined terms used in UK local government that are recommended in ‘[Designing URI sets for the UK public sector](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector)’ but not defined in any other mainstream vocabulary.
+* Electronic Service Delivery ([`esd`](http://def.esd.org.uk/)) – defined terms used in UK local government that are recommended in ['Designing URI sets for the UK public sector'](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector) but not defined in any other mainstream vocabulary.
 
 #### Identifiers
 
-Identifiers normally comprise a base (or stub) web address and an alpha-numeric identifier. For example the UK’s Office for National Statistics (ONS) identifier for England is `E92000001`. The base address is `http://statistics.data.gov.uk/id/statistical-geography/`, which denotes the type of item identified – in this case a statistical geography. Joining the identifier to the stub creates a Unique Resource Identifier (URI), a globally unique identifier that can be dereferenced over the web, e.g. `[http://statistics.data.gov.uk/id/statistical-geography/E92000001](http://statistics.data.gov.uk/id/statistical-geography/E92000001)`. This would be assigned to the `[dct:identifier](http://dublincore.org/documents/dcmi-terms/#terms-identifier)` property  . 
+Identifiers normally comprise a base (or stub) web address and an alpha-numeric identifier. For example the UK’s Office for National Statistics (ONS) identifier for England is `E92000001`. The base address is `http://statistics.data.gov.uk/id/statistical-geography/`, which denotes the type of item identified – in this case a statistical geography. Joining the identifier to the stub creates a Unique Resource Identifier (URI), a globally unique identifier that can be dereferenced over the web, e.g. [`http://statistics.data.gov.uk/id/statistical-geography/E92000001`](http://statistics.data.gov.uk/id/statistical-geography/E92000001). This would be assigned to the [`dct:identifier`](http://dublincore.org/documents/dcmi-terms/#terms-identifier) property  . 
 
-Sometimes the base address is removed from identifiers to make data more human readable. In such cases an abbreviation for the base address is defined elsewhere as a Compact URI (CURIE), also known as a namespace. For example `"stat.`" could be a CURIE for `http://statistics.data.gov.uk/id/statistical-geography/`, so the URI would be expressed as `stat.E92000001`. In spreadsheet data, a column heading can be associated with a CURIE to abbreviate URIs given in each row of data. Alternatively the base web address and identifiers can be expressed as separate alternate or additional columns.
+Sometimes the base address is removed from identifiers to make data more human readable. In such cases an abbreviation for the base address is defined elsewhere as a Compact URI (CURIE), also known as a namespace. For example `stat` could be a CURIE for `http://statistics.data.gov.uk/id/statistical-geography/`, so the URI would be expressed as `stat.E92000001`. In spreadsheet data, a column heading can be associated with a CURIE to abbreviate URIs given in each row of data. Alternatively the base web address and identifiers can be expressed as separate alternate or additional columns.
 
 !> The alphanumeric identifier is unique within the the base address. Avoid putting any meaning into an identifier such that it might become invalid if the thing identified changed.
 
@@ -40,61 +40,60 @@ Consider using each of these properties in a standard that defines a dataset.
 
 **Subject matter**
 
-* **`**[skos:prefLabel](http://www.w3.org/2004/02/skos/core#prefLabel)` – the preferred label or name. Alternatively you may use `[dct:title](http://dublincore.org/documents/dcmi-terms/#terms-title)`.
+* [`skos:prefLabel`](http://www.w3.org/2004/02/skos/core#prefLabel) – the preferred label or name. Alternatively you may use [`dct:title`](http://dublincore.org/documents/dcmi-terms/#terms-title).
 
-* `[skos:altLabel](https://www.w3.org/2009/08/skos-reference/skos.html#altLabel)` – other names by which the dataset might be known. This helps search engines find it. Alternatively you may use `[dct:alternative](http://dublincore.org/documents/dcmi-terms/#terms-alternative)`.
+* [`skos:altLabel`](https://www.w3.org/2009/08/skos-reference/skos.html#altLabel) – other names by which the dataset might be known. This helps search engines find it. Alternatively you may use [`dct:alternative`](http://dublincore.org/documents/dcmi-terms/#terms-alternative).
 
-* `[dct:description](http://dublincore.org/documents/dcmi-terms/#terms-description)` – free text description.
+* [`dct:description`](http://dublincore.org/documents/dcmi-terms/#terms-description) – free text description.
 
-* `[dct:spatial](http://dublincore.org/documents/dcmi-terms/#terms-spatial)` – the geographical area covered by the data.
+* [`dct:spatial`](http://dublincore.org/documents/dcmi-terms/#terms-spatial) – the geographical area covered by the data.
 
 **Status**
 
-* **`**[dct:created](http://dublincore.org/documents/dcmi-terms/#terms-created)` – the date of creation.
+* [`dct:created`](http://dublincore.org/documents/dcmi-terms/#terms-created) – the date of creation.
 
-* `[dct:modified](http://dublincore.org/documents/dcmi-terms/#terms-modified)` – the date changed. This is usually limited to the date of the last change.
+* [`dct:modified`](http://dublincore.org/documents/dcmi-terms/#terms-modified) – the date changed. This is usually limited to the date of the last change.
 
-!> Created and modified dates (or dates and times) can apply to a whole dataset and to individual items of data.
-
-!> You may wish to add version and status properties within the context of your use case, e.g. `version: 0.01, status: for review by project team`. After the review it would be become `version 1.00, status: accepted by standards body`.
+!> Created and modified dates (or dates and times) can apply to a whole dataset and to individual items of data.</br>
+</br>You may wish to add version and status properties within the context of your use case, e.g. `version: 0.01, status: for review by project team`. After the review it would be become `version 1.00, status: accepted by standards body`.
 
 **Ownership**
 
-* **`**[dct:creator](http://dublincore.org/documents/dcmi-terms/#terms-creator)` – organisation, role or person responsible for creating.
+* [`dct:creator`](http://dublincore.org/documents/dcmi-terms/#terms-creator) – organisation, role or person responsible for creating.
 
-* `[dct:publisher](http://dublincore.org/documents/dcmi-terms/#terms-publisher)` – organisation, role or person responsible for publishing and so normally taking responsibility for content subject to stated quality criteria.
+* [`dct:publisher`](http://dublincore.org/documents/dcmi-terms/#terms-publisher) – organisation, role or person responsible for publishing and so normally taking responsibility for content subject to stated quality criteria.
 
-* `[dct:rights](http://dublincore.org/documents/dcmi-terms/#terms-rights)` – a statement about property rights indicating who is entitled to use the dataset and any attribution required. 
+* [`dct:rights`](http://dublincore.org/documents/dcmi-terms/#terms-rights) – a statement about property rights indicating who is entitled to use the dataset and any attribution required. 
 
-* `[dct:license](http://dublincore.org/documents/dcmi-terms/#terms-license)` – a legal document giving permission to use the dataset. The UK [Open Government Licence](http://reference.data.gov.uk/id/open-government-licence) is a suitable value for open datasets which can be used for commercial purposes.
+* [`dct:license`](http://dublincore.org/documents/dcmi-terms/#terms-license) – a legal document giving permission to use the dataset. The UK [Open Government Licence](http://reference.data.gov.uk/id/open-government-licence) is a suitable value for open datasets which can be used for commercial purposes.
 
 **Format**
 
-* **`**[dct:conformsTo](http://dublincore.org/documents/dcmi-terms/#terms-conformsTo)` – standard to which the dataset conforms, ideally this should be the URI of the data schema. For data that corresponds with a pre-existing structure defined in Linked Data, use `[rdf:type](https://www.w3.org/1999/02/22-rdf-syntax-ns#type)`.
+* [`dct:conformsTo`](http://dublincore.org/documents/dcmi-terms/#terms-conformsTo) – standard to which the dataset conforms, ideally this should be the URI of the data schema. For data that corresponds with a pre-existing structure defined in Linked Data, use [`rdf:type`](https://www.w3.org/1999/02/22-rdf-syntax-ns#type).
 
-* `[dct:format](http://dublincore.org/documents/dcmi-terms/#elements-format)` – the format of the dataset.
+* [`dct:format`](http://dublincore.org/documents/dcmi-terms/#elements-format) – the format of the dataset.
 
-!> The format properties refer to a rendering of a dataset. The native format may be different for different publishers and different from the format in which data is interchanged. A data structure described as a class model (see (‘Class models’)[link to it]) may be expressed differently in different formats, each with its own schema, as given by the `conformsTo` property.
+!> The format properties refer to a rendering of a dataset. The native format may be different for different publishers and different from the format in which data is interchanged. A data structure described as a class model (see [Class models](#class-models)) may be expressed differently in different formats, each with its own schema, as given by the `conformsTo` property.
 
 **Quality** 
 
-* `[esd:accuracy](http://def.esd.org.uk/accuracy)` – a statement of how closely the data can be expected to reflect objective facts.
+* [`esd:accuracy`](http://def.esd.org.uk/accuracy) – a statement of how closely the data can be expected to reflect objective facts.
 
-* `[dct:audience](http://dublincore.org/documents/dcmi-terms/#terms-audience)` – the intended consumers of the data.This is not supposed to limit its use, but it gives an indication as to relevant the data might be to a particular need.
+* [`dct:audience`](http://dublincore.org/documents/dcmi-terms/#terms-audience) – the intended consumers of the data.This is not supposed to limit its use, but it gives an indication as to relevant the data might be to a particular need.
 
-* `[esd:intendedLongevity](http://def.esd.org.uk/intendedLongevity)` – for how long you might expect the dataset to be made available and to be maintained.
+* [`esd:intendedLongevity`](http://def.esd.org.uk/intendedLongevity) – for how long you might expect the dataset to be made available and to be maintained.
 
-* `[esd:timeliness](http://def.esd.org.uk/timeliness)` – how up-to-date the dataset is expected to be.
+* [`esd:timeliness`](http://def.esd.org.uk/timeliness) – how up-to-date the dataset is expected to be.
 
-* `[dct:provenance](http://dublincore.org/documents/dcmi-terms/#terms-provenance)` – where the data comes from and any changes in creation and ownership over time that might affect its quality.
+* [`dct:provenance`](http://dublincore.org/documents/dcmi-terms/#terms-provenance) – where the data comes from and any changes in creation and ownership over time that might affect its quality.
 
-* `[dct:source](http://dublincore.org/documents/dcmi-terms/#terms-source)` – a source from which the data is derived. This may be used if a dataset contains values generated by processing of data sourced from another dataset.
+* [`dct:source`](http://dublincore.org/documents/dcmi-terms/#terms-source) – a source from which the data is derived. This may be used if a dataset contains values generated by processing of data sourced from another dataset.
 
 !> Quality data is often subjective and can represent intentions or firm commitments. It is important in helping potential users for a view as to how much they might rely on data for a use case.
 
-The above properties are described in the UK Government’s document ‘[Designing URI sets for the UK public sector](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector)’ and suggested in the W3C Web Best Practices Working Group wiki [Quality and Granularity Description Vocabulary](https://www.w3.org/2013/dwbp/wiki/Quality_and_Granularity_Description_Vocabulary) page.
+The above properties are described in the UK Government’s document ['Designing URI sets for the UK public sector'](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector) and suggested in the W3C Web Best Practices Working Group wiki [Quality and Granularity Description Vocabulary](https://www.w3.org/2013/dwbp/wiki/Quality_and_Granularity_Description_Vocabulary) page.
 
-?> The [Local Government Service List metadata properties](http://standards.esd.org.uk/?uri=list/englishAndWelshServices&tab=linked) draw on the vocabularies described above. Pre-existing quality properties were used where possible.  Properties for accuracy, intended longevity and timeliness did not exist, however, so these were created and can now be used by others.
+?> The [Local Government Service List metadata properties](http://standards.esd.org.uk/?uri=list/englishAndWelshServices&tab=linked) draw on the vocabularies described above. Pre-existing quality properties were used where possible. Properties for accuracy, intended longevity and timeliness did not exist, however, so these were created and can now be used by others.
 
 ### Statistical data
 
@@ -198,7 +197,7 @@ Separate queries on areas, periods and metric types are provided. As well as raw
         at relevant people rather than using a scatter-gun approach.</p>
     <p>The data is an amalgamation of public data from disparate national sources supplemented by data gathered locally. A standard
         way of structuring the data is needed to overcome differences in how it is represented by the many source organisations
-        (e.g. Office of National Statistics, Department for Education, Public Health England). </p>
+        (e.g. ONS, Department for Education, Public Health England). </p>
     <p>The standard was defined by analysing data from various sources, which is normally presented in spreadsheets or via application
         programming interfaces (APIs). We also looked at the database structure of existing data reporting tools, including
         the Audit Commission’s Value for Money tool.</p>
@@ -350,17 +349,15 @@ Separate queries on areas, periods and metric types are provided. As well as raw
 
 ### Geographical data
 
-Data describing an area has little meaning if that area is not precisely defined. The county of [Nottinghamshire](http://id.esd.org.uk/neighbourhood/E10000024) largely excludes the major town/city of [Nottingham](http://id.esd.org.uk/neighbourhood/J01000067) ([see comparison](http://neighbourhoods.esd.org.uk/#?areaType=County&area=E10000024&overlayType=TOWNCITY&tab=Map)). Town centres within major cities or counties are often not defined in machine readable terms (or in any open way beyond a name).
+Data describing an area has little meaning if that area is not precisely defined. The county of Nottinghamshire largely excludes the major town/city of Nottingham – [see comparison](http://neighbourhoods.esd.org.uk/#?areaType=County&area=E10000024&overlayType=TOWNCITY&tab=Map). Town centres within major cities or counties are often not defined in machine readable terms (or in any open way beyond a name).
 
-Unique identifiers (see (‘Important metadata properties’)[link to it]) are essential to give geographical data meaning. The types of those identifiers show what kind of geographies you are talking about (administrative, statistical, electoral, health, education, parks, etc.). [Link to the big UK geographies diagram.](https://digitalblog.ons.gov.uk/2014/08/20/ons-api-understanding-geography/)
+Unique identifiers – as mentioned in [Important metadata properties](#important-metadata-properties) – are essential to give geographical data meaning. The types of those identifiers show what kind of geographies you are talking about (administrative, statistical, electoral, health, education, parks, etc.). A diagram showing the hierarchy of statistical geographies is available from [ONS Digital](https://digitalblog.ons.gov.uk/2014/08/20/ons-api-understanding-geography/), which makes the complex nature of these levels apparent.
 
- 
-
-Administrative organisations need to be distinguished from the geographical areas they govern, although it is often correct to assume the spatial coverage of an organisation’s data is the area it governs.
+Administrative organisations need to be distinguished from the geographical areas they govern, although it is often correct to assume the spatial coverage of an organisation's data is the area it governs.
 
 If an area changes, for example because of changes enacted by the Local Government Boundary Commission for England ([LGBCE](https://www.lgbce.org.uk/)), it should be assigned a new unique identifier with corresponding boundary. Such changes can make data series hard to monitor over time, but they avoid incorrect comparisons being made over time of areas which might keep the same name but change boundaries. 
 
-Geographies may be defined by sub-dividing statistics. In the UK the Office for National Statistics ([ONS](https://www.ons.gov.uk/)) defines output areas ([OAs](http://statistics.data.gov.uk/id/statistical-entity/E00)), which have up to about 150 households, for publishing detailed data. These areas are grouped into super output areas ([LSOAs](http://statistics.data.gov.uk/id/statistical-entity/E01) and [MSOAs](http://statistics.data.gov.uk/id/statistical-entity/E02)) for aggregating statistics. Some data is only published at these higher levels to avoid identifying individuals or households that could be exposed if the data were published at OA-level. The same area groupings are often used for defining the coverage of third party data. 
+Geographies may be defined by sub-dividing statistics. In the UK, the ONS defines output areas ([OAs](http://statistics.data.gov.uk/id/statistical-entity/E00)), which have up to about 150 households, for publishing detailed data. These areas are grouped into super output areas ([LSOAs](http://statistics.data.gov.uk/id/statistical-entity/E01) and [MSOAs](http://statistics.data.gov.uk/id/statistical-entity/E02)) for aggregating statistics. Some data is only published at these higher levels to avoid identifying individuals or households that could be exposed if the data were published at OA-level. The same area groupings are often used for defining the coverage of third party data. 
 
 Understanding the relationships between area types allows aggregation and comparison of data. Areas of one type contain (i.e. are the parents of) or are contained by (i.e. are the children of) areas of another area type The diagram below shows a hierarchy of official UK statistical geographies relevant to local government. (Though it’s not a list of all the types of area available, it demonstrates the relationship between geographies.)
 
@@ -382,35 +379,35 @@ To be able to identify an area and understand its exact geographical location th
 
 * Child area(s) of a type which is contained by the type of the area being defined
 
-If areas are not defined by a reliable third party (such as ONS), you need to define them yourself with, as a minimum, the above properties. This is often the case for organisational sub-divisions within local authorities, such as children’s services areas or town centres. It is also the case for ‘natural’ neighbourhoods, which reflect real-life communities based on geographies that don’t conform to official boundaries.
+If areas are not defined by a reliable third party (such as ONS), you need to define them yourself with, as a minimum, the above properties. This is often the case for organisational sub-divisions within local authorities, such as children’s services areas or town centres. It is also the case for 'natural' neighbourhoods, which reflect real-life communities based on geographies that don’t conform to official boundaries.
 
-The [Natural Neighbourhoods](http://neighbourhoods.esd.org.uk/) tool, described in (‘Defining your own areas’)[link to it], allows anyone to record their own areas as open data and to relate them to other official and unofficial areas.
+The [Natural Neighbourhoods](http://neighbourhoods.esd.org.uk/) tool, described in [Defining your own areas](tools#defining-your-own-areas), allows anyone to record their own areas as open data and to relate them to other official and unofficial areas.
 
 ### URI sets and registers
 
 We need consistent ways of defining identifying the same things referenced in different data sources when they are combined and compared. This is essential to data merged from over 50 publishers in the LG Inform reporting tool and its accompanying API. It also applies to data published according to schemas for local authority spending, election results, brownfield land, etc., where data consumers need to be able to interpret references (or local authorities, parliamentary parties, areas, etc.) and link them to data with the same references in other dataset.
 
-Hence, the UK Government has approved the standard for [persistent resolvable identifiers](https://www.gov.uk/government/publications/open-standards-for-government/persistent-resolvable-identifiers), promoting URLs as identifiers which resolve to pages describing the thing they identify. This is in the same vein as W3C’s ‘[Cool URIs for the Semantic Web](https://www.w3.org/TR/cooluris/)’ which describes the URI that uniquely defines something and, in a web browser, resolves to a page which describes that thing. The Government also published the ‘[Designing URI sets for the UK public sector](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector)’ guidance.
+Hence, the UK Government has approved the standard for [persistent resolvable identifiers](https://www.gov.uk/government/publications/open-standards-for-government/persistent-resolvable-identifiers), promoting URLs as identifiers which resolve to pages describing the thing they identify. This is in the same vein as W3C's ['Cool URIs for the Semantic Web'](https://www.w3.org/TR/cooluris/) which describes the URI that uniquely defines something and, in a web browser, resolves to a page which describes that thing. The Government also published the ['Designing URI sets for the UK public sector'](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector) guidance.
 
  
 
-URIs are fundamental to Linked Data techniques whereby all data is defined by triples of subject-predicate-object (e.g. mySchool-hasCatchementArea-myVillage). Every subject, predicate (or property) and object is given by a URI or a basic data type (such as text or a number). But even when data is not expressed in [5-star Linked Data](http://5stardata.info/en/) format as triples, URIs are important to provide unambiguous identifiers.
+URIs are fundamental to Linked Data techniques whereby all data is defined by triples of subject-predicate-object (e.g. mySchool-hasCatchmentArea-myVillage). Every subject, predicate (or property) and object is given by a URI or a basic data type (such as text or a number). But even when data is not expressed in [5-star Linked Data](http://5stardata.info/en/) format as triples, URIs are important to provide unambiguous identifiers.
 
-The term ‘URI set’ defines a collection of identifiers which may be grouped in a register of tangible things (e.g. schools, areas, countries, etc.) or in a concept scheme that defines a taxonomy of abstract concepts. ((‘URI sets referenced in this document’)[link to it] gives a list of URI sets referenced by English local government.)
+The term 'URI set' defines a collection of identifiers which may be grouped in a register of tangible things (e.g. schools, areas, countries, etc.) or in a concept scheme that defines a taxonomy of abstract concepts. ([URI sets referenced in this document](appendices#referenced-schemas) gives a list of URI sets referenced by English local government.)
 
 Each concept scheme contains a list of concepts, each of which has a URI and is linked to the scheme and other concepts using properties defined by the SKOS standard.
 
-The Natural Neighbourhoods tool assigns a URI to each area type and each area. The URIs resolve in a browser to representations on a map and other tabs of the web page present properties as text and links. ‘Same as’ relationships link to URIs for the same area types and areas maintained by other organisations, such as UK Office of National Statistics URIs from `statistics.gov.uk`.
+The Natural Neighbourhoods tool assigns a URI to each area type and each area. The URIs resolve in a browser to representations on a map and other tabs of the web page present properties as text and links. 'Same as' relationships link to URIs for the same area types and areas maintained by other organisations, such as ONS URIs from `statistics.gov.uk`.
 
 The UK Government’s Government Digital Service (GDS) is introducing [registers](https://registers.cloudapps.digital/registers) for commonly referenced things, such as [English local authorities](https://local-authority-eng.register.gov.uk/) and [countries](https://country.register.gov.uk/). These may not be queried as Linked Data but the registers and each of their entries (e.g. [Birmingham City Council](https://local-authority-eng.register.gov.uk/record/BIR), [The Gambia](https://country.register.gov.uk/record/GM), etc.) has a URI that resolves to a descriptive web page and other formats.
 
-(‘Schemas referencing specific URI sets’)[link to it] lists schemas developed by co-operation between Porism, the LGA and iStandUK defining formats for open data with fields that must be populated from given URI sets. 
+[Schemas referencing specific URI sets](appendices#schemas-referencing-specific-uri-sets) lists schemas developed by co-operation between Porism, the LGA and iStandUK defining formats for open data with fields that must be populated from given URI sets. 
 
 #### URI sets vs. encoded lists
 
 URI sets should be used for lists that are long, likely to change frequently and referenced in multiple datasets that there is potential for linking.
 
-Encoded lists are small lists of terms (e.g. status codes) that are mainly relevant just to one dataset and will not change frequently. Encoded lists can be built into a schema rather than being referenced as an external set (sometimes referred to as a ‘scheme’).
+Encoded lists are small lists of terms (e.g. status codes) that are mainly relevant just to one dataset and will not change frequently. Encoded lists can be built into a schema rather than being referenced as an external set (sometimes referred to as a 'scheme').
 
 ### Taxonomies
 
@@ -418,9 +415,9 @@ A taxonomy is a list of terms representing concepts which can be used to index i
 
 Taxonomies should be defined according to the Simple Knowledge Organization System ([SKOS](https://www.w3.org/TR/skos-reference/)) standard using its properties where appropriate plus others for specialist (domain-specific) properties.
 
-Taxonomies should be of type `[skos:ConceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme)` and their items of type `[skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)`, or a custom class that is an `[rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf)` of `[skos:Concept](http://www.w3.org/2004/02/skos/core#Concept)`. Similarly the mappings between taxonomies should be direct or sub classes of `[skos:mappingRelation](https://www.w3.org/2009/08/skos-reference/skos.html#mappingRelation)`.
+Taxonomies should be of type [`skos:ConceptScheme`](http://www.w3.org/2004/02/skos/core#ConceptScheme) and their items of type [`skos:Concept`](http://www.w3.org/2004/02/skos/core#Concept), or a custom class that is an [`rdfs:subClassOf`](http://www.w3.org/2000/01/rdf-schema#subClassOf) of [`skos:Concept`](http://www.w3.org/2004/02/skos/core#Concept). Similarly the mappings between taxonomies should be direct or sub classes of [`skos:mappingRelation`](https://www.w3.org/2009/08/skos-reference/skos.html#mappingRelation).
 
-A hierarchical taxonomy has terms which are related to each other in parent–child relationships using the `[skos:broader](http://www.w3.org/2004/02/skos/core#broader)` term and `[skos:narrower](http://www.w3.org/2004/02/skos/core#narrower)` properties.
+A hierarchical taxonomy has terms which are related to each other in parent–child relationships using the [`skos:broader`](http://www.w3.org/2004/02/skos/core#broader) term and [`skos:narrower`](http://www.w3.org/2004/02/skos/core#narrower) properties.
 
 For any taxonomy it is necessary to define the rules for each of the following properties.
 
@@ -430,7 +427,7 @@ For any taxonomy it is necessary to define the rules for each of the following p
 
 * The number of levels in the hierarchy of a taxonomy. You may just say that a hierarchy can have an indefinite number of levels or you may constrain it for readability or for software applications.
 
-* The levels of granularity. The level of detail in any ‘branch’ of the hierarchy of a taxonomy. This should be consistent throughout any taxonomy. Where one term in a taxonomy can be broken down into more detail, the taxonomy owner should decide whether to stop at the less detailed term or to add a further level in the taxonomy hierarchy (which may not be used for all terms). The more detailed terms should not be added at the higher level as this would result in an inconsistency in the granularity of the taxonomy.
+* The levels of granularity. The level of detail in any 'branch' of the hierarchy of a taxonomy. This should be consistent throughout any taxonomy. Where one term in a taxonomy can be broken down into more detail, the taxonomy owner should decide whether to stop at the less detailed term or to add a further level in the taxonomy hierarchy – which may not be used for all terms. The more detailed terms should not be added at the higher level as this would result in an inconsistency in the granularity of the taxonomy.
 
 * Capitalisation of labels. For example, capitalisation of the first letter of any label only except where a term in the label is a proper noun.
 
@@ -438,7 +435,7 @@ For any taxonomy it is necessary to define the rules for each of the following p
 
 * Whether the taxonomy is mono- or polyhierarchical. A taxonomy is monohierarchical when each term except the top term has one and only one broader term, otherwise the taxonomy is polyhierarchical. 
 
-* Use of subsets. You may define parts of a taxonomy as separate taxonomies in their own right so that only terms relevant to a specific audience need be exposed to that audience. This is achieved simply by defining more than one `[skos:conceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme)` and applying the` [skos:inScheme](https://www.w3.org/2009/08/skos-reference/skos.html#inScheme)` property more than once to relevant terms. For example, the [Local Government Services List for England and Wales](http://id.esd.org.uk/list/englishAndWelshServices) is a subset of the wider [Local Government Services List](http://id.esd.org.uk/list/services), which has local government service types shared by many European countries.
+* Use of subsets. You may define parts of a taxonomy as separate taxonomies in their own right so that only terms relevant to a specific audience need be exposed to that audience. This is achieved simply by defining more than one [`skos:conceptScheme`](http://www.w3.org/2004/02/skos/core#ConceptScheme) and applying the [`skos:inScheme`](https://www.w3.org/2009/08/skos-reference/skos.html#inScheme) property more than once to relevant terms. For example, the [Local Government Services List for England and Wales](http://id.esd.org.uk/list/englishAndWelshServices) is a subset of the wider [Local Government Services List](http://id.esd.org.uk/list/services), which has local government service types shared by many European countries.
 
 ## Data structure and formats
 
@@ -446,7 +443,7 @@ For any taxonomy it is necessary to define the rules for each of the following p
 
 A concept is a generalisation of a type of abstract or physical thing, describing its main features. It is less specific than a class although concepts may be viewed as base classes from which more specialised classes are derived.
 
-The British Standards Institute’s [Publicly Available Specification (PAS) 182](http://shop.bsigroup.com/pas182) describes the ‘Smart city concept model’ which gives a set of concepts from which any data model may be constructed. 
+The British Standards Institute's [Publicly Available Specification (PAS) 182](http://shop.bsigroup.com/pas182) describes the 'Smart city concept model' which gives a set of concepts from which any data model may be constructed. 
 
 <table>
   <tr>
@@ -591,7 +588,7 @@ By building data classes based on these concepts, participants in a ‘smart cit
 
 The PAS describes relationships between the concepts it defines and so it gives the relationships one might expect or require between classes which are based on specific concepts.
 
-For example, a `case` such as a building inspection might form part of a building permit `service` with a site inspection `event` as part of the `case`’s `plan`. The relationships are illustrated in the concept model’s relationships diagram shown below.
+For example, a `case` such as a building inspection might form part of a building permit `service` with a site inspection `event` as part of the `case`'s `plan`. The relationships are illustrated in the concept model's relationships diagram shown below.
 
 <div class="text-center">
     ![concept model](/images/concept-model.png)
@@ -599,7 +596,7 @@ For example, a `case` such as a building inspection might form part of a buildin
 
 The distinctions are important in defining clean data models that avoid conflating physical things with the role they play in a transaction. So, for example, a `person` or an `organization` may act as a customer *or* a service provider (or both in different agreements).
 
-?> A common confusion in local government is between a local authority, which is an `organization`, and the `place` it [governs](http://opendatacommunities.org/def/local-government/governs). So, for example, the `organisation` [Hampshire County Council](http://opendatacommunities.org/id/county-council/hampshire) governs the `place`* *[Hampshire](http://data.ordnancesurvey.co.uk/id/7000000000017765). If you design a dataset that will reference ‘Hampshire’, you need to be explicit as to where you’re referencing: the organisation or the place.
+?> A common confusion in local government is between a local authority, which is an `organization`, and the `place` it [`governs`](http://opendatacommunities.org/def/local-government/governs). So, for example, the `organisation` [Hampshire County Council](http://opendatacommunities.org/id/county-council/hampshire) governs the `place` [Hampshire](http://data.ordnancesurvey.co.uk/id/7000000000017765). If you design a dataset that will reference ‘Hampshire’, you need to be explicit as to where you’re referencing: the organisation or the place.
 
 In practice it is subjective as to how a concept model is broken down and the Smart Cities model is just one example. However, it is important to have a common understanding of basic concepts between the parties likely to be involved in sharing data within a particular community (defined as a group with common characteristics). 
 
@@ -609,7 +606,7 @@ When the general concepts that make up a data model have been defined, we move o
 
 A Unified Modelling Language (UML) class diagram provides a diagrammatic way of representing a data structure with ambiguous relationships between classes. An entity relation diagram (ERD) for a relational database performs a similar function and the metadata of a Structured Query Language (SQL) database expresses the database structure.
 
-When the class model for data is explicit, it is a straightforward mechanistic job to express the data in a particular format such as comma separated values (CSV)  or eXtensible Markup Language (XML). The class model disambiguates the structure, making it easier to convert from one format to another, to express via an API or to populate a database (see (‘Data formats’)[link to it]).
+When the class model for data is explicit, it is a straightforward mechanistic job to express the data in a particular format such as comma separated values (CSV)  or eXtensible Markup Language (XML). The class model disambiguates the structure, making it easier to convert from one format to another, to express via an API or to populate a database (see [Data formats](#data-formats)).
 
 
 <div class="warn">
@@ -721,7 +718,7 @@ Spreadsheets are easy for people to understand and spreadsheet tools allow peopl
 </table>
 
 
-*Example of spreadsheet data with one row per candidate and a column for spoilt ballots that applies to the whole election and so all rows (**see below** how this might be expressed better in XML or JSON)*
+*Example of spreadsheet data with one row per candidate and a column for spoilt ballots that applies to the whole election and so all rows (see below how this might be expressed better in XML or JSON)*
 
 When expressing data in a spreadsheet, you need to decide where multiple values are expressed by repeating rows and where they are expressed by multiple values within a single cell using a different delimiter such as the pipe symbol (|). Again the full data model has to be documented to be able to interpret the rows and cells.
 
@@ -735,7 +732,7 @@ Data represented in XML format can be much richer than spreadsheet data, it can 
 
 <format-sample tab="xml"></format-sample>
 
-*Example of simplified XML data for election for candidates and spoilt ballots (**see above for **how this might be expressed as a spreadsheet)*
+*Example of simplified XML data for election for candidates and spoilt ballots. Click the CSV tab to see the difference between CSV and XML formats*
 
 Business rules can also be built into an XML schema, for example, if one field has a null value a different field cannot have a null value. XML is a popular format with organisations transferring rich data between data-driven applications, such as those for processing benefits in local and national government.
 
@@ -745,7 +742,7 @@ JSON is a format used for describing data and other formats such as the [JSON ta
 
 <format-sample tab="json"></format-sample>
 
-*Example of simplified JSON data for election for candidates and spoilt ballots (**see above for **how this might be expressed as a spreadsheet)* 
+*Example of simplified JSON data for election for candidates and spoilt ballots. Click the tabs to see the difference between CSV, XML and JSON formats* 
 
 JSON data is popular with web programmers because it can be manipulated quickly by web browsers and server-side tools.
 
@@ -753,7 +750,7 @@ JSON data is popular with web programmers because it can be manipulated quickly 
 
 Linked Data provides the most flexible way of expressing data. It does so at the expense of simplicity to process and validate.
 
-At the heart of Linked Data is the ‘semantic triple’ whereby every piece of data is expressed using the simple subject-predicate-object expression. Here are two examples.
+At the heart of Linked Data is the 'semantic triple' whereby every piece of data is expressed using the simple subject-predicate-object expression. Here are two examples.
 
 <div class="text-center">
 ![triples example](/images/triples-example.png)
@@ -761,9 +758,9 @@ At the heart of Linked Data is the ‘semantic triple’ whereby every piece of 
 
 Every subject (e.g. `election`), predicate (e.g. `hasCandidate`, `hasSpoiltBallot`) and object (e.g. `candidate`, `53`) is represented by a URI or a literal value of a base type such as an integer or a string. By querying each linked URI in turn you can explore the data and understand how it relates to other Linked Data on the web. 
 
-The [Local Government Business Model](http://standards.esd.org.uk/LGBM) shows relationships between types of concept (service type, function type, circumstances, etc.) defined by the LGA as a family of taxonomies (see (‘Taxonomies’)[link to it]).
+The [Local Government Business Model](http://standards.esd.org.uk/LGBM) shows relationships between types of concept (service type, function type, circumstances, etc.) defined by the LGA as a family of taxonomies (see [Taxonomies](#taxonomies)).
 
-A set of linked triples defining some data is known as a ‘data graph’. The SPARQL RDF query language lets you extract data for defined graphs to bring together elements of Linked Data in one result set.
+A set of linked triples defining some data is known as a 'data graph'. The SPARQL RDF query language lets you extract data for defined graphs to bring together elements of Linked Data in one result set.
 
 In theory, a SPARQL query can be run across multiple web sites such that the whole web can be treated as one database. In practice, however, SPARQL can be slow for high volume data processing and queries are normally run on local dumps taken from external triple stores rather than querying over the web.
 
@@ -777,13 +774,13 @@ The Shapes Constraint Language (SHACL) can be used to define a kind-of schema wh
 
 Linked Data techniques can be applied to data whose structure is fluid and perhaps inconsistent between data items. A formal data structure does not need to be defined up-front. SPARQL provides a very quick and easy way to allow third parties to access your data without requiring a large investment in writing an API.
 
-[TIP]Use Linked Data with a SPARQL endpoint to expose data of an inconsistent structure (e.g. sections of legislation and the official organisations and roles to which it refers) which someone might want to explore in small amounts at a time. If data is natively in a more structured tabular format (e.g. population statistics for a number of areas), needing quick retrieval and analysis of many records, expose it via an API.[ENDTIP]
+!> Use Linked Data with a SPARQL endpoint to expose data of an inconsistent structure (e.g. sections of legislation and the official organisations and roles to which it refers) which someone might want to explore in small amounts at a time. If data is natively in a more structured tabular format (e.g. population statistics for a number of areas), needing quick retrieval and analysis of many records, expose it via an API.
 
 #### Geographical data formats
 
 Geographical data – data than can be expressed on a map – has point, line or polygon properties.
 
-A point has *x* and *y* co-ordinates defining a precise spot in two dimensions. A *z* co-ordinate can be used for a third dimension (usually altitude, but can also be thematic,like temperature). In the UK there are many ways of expressing *x* and *y* co-ordinates according to a geodetic datum or a map projection system. There are three geodetic datums that have specific relevance in UK.
+A point has *x* and *y* co-ordinates defining a precise spot in two dimensions. A *z* co-ordinate can be used for a third dimension (usually altitude, but can also be thematic, like temperature). In the UK there are many ways of expressing *x* and *y* co-ordinates according to a geodetic datum or a map projection system. There are three geodetic datums that have specific relevance in UK.
 
 * Global longitude and latitude, as defined by the [WGS84](http://en.wikipedia.org/wiki/WGS84) geodetic datum.
 
@@ -817,18 +814,18 @@ Inventory is a standard expressed in XML that was developed in co-operation betw
 
 An inventory describes published and unpublished datasets which contain data and document resources which are expressed by different renditions.
 
-* **Datasets **are sets of records however structured – not just datasets according to standard database terminology. Datasets contain:
+* **Datasets **are sets of records however structured – not just datasets according to standard database terminology. Datasets contain
 
-* **data resources**, which are files or feeds/streams of data records available in zero, one or more:
+    * **data resources**, which are files or feeds/streams of data records available in zero, one or more
 
-* **renditions**, which are different formats of the data, such as: CSV, XML and PDF. Renditions may represent physical files or API calls. 
+        * **renditions**, which are different formats of the data, such as CSV, XML and PDF. Renditions may represent physical files or API calls. 
 
-* **document resources**, which are files or web pages describing datasets. They may include an API page for a dataset and documents describing a dataset (e.g. rules for data inclusion, how data was redacted). Document resources are expressed as one or more:
+    * **document resources**, which are files or web pages describing datasets. They may include an API page for a dataset and documents describing a dataset (e.g. rules for data inclusion, how data was redacted). Document resources are expressed as one or more
 
-* **renditions**, which are different formats of the data, such as: ODF, PDF and HTML.
+        * **renditions**, which are different formats of the data, such as ODF, PDF and HTML.
 
 The Inventory standard is supported by DataShare and [DataPress's plugin](https://github.com/datapressio/ckanext-lga-inventory) for CKAN. Both Data.gov.uk and the LGA’s [open data site](http://opendata.esd.org.uk/) are configured to harvest catalogues from sites that are registered as supporting the Inventory standard. [This page](http://opendata.esd.org.uk/) shows the sites registered with the LGA.
 
-Unlike the current DCAT recommendation, the Inventory standard links each dataset to the schema to which it conforms. This facilitates a search for datasets by schema at data.gov.uk and allows the LGA’s pages of [schemas](http://schemas.opendata.esd.org.uk/) and [datasets](http://datasets.opendata.esd.org.uk/) to cross-reference one another. The LGA’s aggregator (see (‘Data harvesting and aggregation’)[link to it]) relies on knowing which datasets conform to the same CSV schema. 
+Unlike the current DCAT recommendation, the Inventory standard links each dataset to the schema to which it conforms. This facilitates a search for datasets by schema at data.gov.uk and allows the LGA’s pages of [schemas](http://schemas.opendata.esd.org.uk/) and [datasets](http://datasets.opendata.esd.org.uk/) to cross-reference one another. The LGA’s aggregator (see [Data harvesting and aggregation](tools#data-harvesting-and-aggregation)) relies on knowing which datasets conform to the same CSV schema. 
 
-**The ability to discover both datasets and schemas and to associate the two is fundamental to an ecosystem of converging standards.**
+> **The ability to discover both datasets and schemas and to associate the two is fundamental to an ecosystem of converging standards.**

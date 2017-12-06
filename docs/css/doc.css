@@ -807,8 +807,7 @@ section.cover.has-mask .mask {
 }
 
 .markdown-section ol,.markdown-section ul {
-    padding-left: 24px;
-    padding-left: 2.25rem
+    padding-left: 6rem
 }
 
 .markdown-section blockquote {
