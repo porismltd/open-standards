@@ -828,4 +828,4 @@ The Inventory standard is supported by DataShare and [DataPress's plugin](https:
 
 Unlike the current DCAT recommendation, the Inventory standard links each dataset to the schema to which it conforms. This facilitates a search for datasets by schema at data.gov.uk and allows the LGA's pages of [schemas](http://schemas.opendata.esd.org.uk/) and [datasets](http://datasets.opendata.esd.org.uk/) to cross-reference one another. The LGA's aggregator (see [Data harvesting and aggregation](tools#data-harvesting-and-aggregation)) relies on knowing which datasets conform to the same CSV schema. 
 
-The ability to discover both datasets and schemas and to associate the two is fundamental to an ecosystem of converging standards.**
+> **The ability to discover both datasets and schemas and to associate the two is fundamental to an ecosystem of converging standards.**
