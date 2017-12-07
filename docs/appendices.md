@@ -163,310 +163,310 @@ In addition to the above centrally managed schemas, tools identify many locally 
 
 <table>
   <tr>
-    <td>Schema</td>
-    <td>Schema for what format data</td>
-    <td>Field</td>
-    <td>Populated from URI set</td>
+    <td><strong>Schema</strong></td>
+    <td><strong>Schema for what format data</strong></td>
+    <td><strong>Field</strong></td>
+    <td><strong>Populated from URI set</strong></td>
   </tr>
   <tr>
-    <td>Inventory</td>
+    <td>[Inventory](http://schemas.opendata.esd.org.uk/Inventory)</td>
     <td>XML</td>
     <td>publisher </td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>spatial coverage</td>
-    <td>ONS geographies</td>
+    <td>[ONS geographies](http://statistics.data.gov.uk/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>creator</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>service</td>
-    <td>Service types list</td>
+    <td>[Service types list](http://id.esd.org.uk/list/englishAndWelshServices)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>function</td>
-    <td>Function types list</td>
+    <td>[Function types list](http://id.esd.org.uk/list/functions)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>subject</td>
-    <td>Other schemes which may include circumstance type list</td>
+    <td>Other schemes which may include [Circumstance type list](http://id.esd.org.uk/list/circumstances)</td>
   </tr>
   <tr>
-    <td>Brownfield land</td>
+    <td>[Brownfield land](http://schemas.opendata.esd.org.uk/Brownfield)</td>
     <td>CSV</td>
     <td>planning authority</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
-    <td>Election results</td>
+    <td>[Election results](http://schemas.opendata.esd.org.uk/ElectionResults)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>service</td>
-    <td>Service types list</td>
+    <td>[Service types list](http://id.esd.org.uk/list/englishAndWelshServices)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>elected body</td>
-    <td>Ordnance Survey administrative geography and civil voting area</td>
+    <td>[Ordnance Survey administrative geography and civil voting area](http://data.ordnancesurvey.co.uk/ontology/admingeo/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>electoral area</td>
-    <td>ONS geographies and natural neighbourhoods for pre-operational areas</td>
+    <td>[ONS geographies](http://statistics.data.gov.uk/) and [Natural Neighbourhoods](http://neighbourhoods.esd.org.uk/#?tab=Introduction) for pre-operational areas</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>political party</td>
-    <td>Electoral Commission</td>
+    <td>[Electoral Commission](http://search.electoralcommission.org.uk/English/Registrations/)</td>
   </tr>
   <tr>
-    <td>Expenditure</td>
+    <td>[Expenditure](http://schemas.opendata.esd.org.uk/Spend)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>service category</td>
-    <td>CIPFA SerCOP objective category</td>
+    <td>[CIPFA SerCOP objective category](http://opendatacommunities.org/def/concept/finance/sercop/objective/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>beneficiary</td>
-    <td>Companies House</td>
+    <td>[Companies House](https://beta.companieshouse.gov.uk/)</td>
   </tr>
   <tr>
-    <td>Contracts</td>
+    <td>[Contracts](http://validator.opendata.esd.org.uk/contracts)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>service category</td>
-    <td>CIPFA SerCOP objective category</td>
+    <td>[CIPFA SerCOP objective category](http://opendatacommunities.org/def/concept/finance/sercop/objective/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>location served</td>
-    <td>ONS geographies and natural neighbourhoods for pre-operational areas</td>
+    <td>[ONS geographies](http://statistics.data.gov.uk/) and [Natural Neighbourhoods](http://neighbourhoods.esd.org.uk/#?tab=Introduction) for pre-operational areas</td>
   </tr>
   <tr>
-    <td>Counter fraud activities</td>
+    <td>[Counter fraud activities](http://schemas.opendata.esd.org.uk/fraud)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
-    <td>Land and building</td>
+    <td>[Land and building](http://schemas.opendata.esd.org.uk/LandAssets)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>services offered from the asset</td>
-    <td>Function types list</td>
+    <td>[Function types list](http://id.esd.org.uk/list/functions)</td>
   </tr>
   <tr>
-    <td>Organisation structure</td>
+    <td>[Organisation structure](http://schemas.opendata.esd.org.uk/organisationstructure)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
-    <td>Pay multiples </td>
+    <td>[Pay multiples](http://schemas.opendata.esd.org.uk/PayMultiples)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
-    <td>Planning applications</td>
+    <td>[Planning applications](http://schemas.opendata.esd.org.uk/PlanningApplications)</td>
     <td>CSV</td>
     <td>publisher</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>service</td>
-    <td>Service types list</td>
+    <td>[Service types list](http://id.esd.org.uk/list/services)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>classification</td>
-    <td>DCLG Planning Development Category</td>
+    <td>[DCLG Planning Development Category](http://opendatacommunities.org/def/concept-scheme/planning/application/6000)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>geographical area</td>
-    <td>ONS geographies and natural neighbourhoods for pre-operational areas</td>
+    <td>[ONS geographies](http://statistics.data.gov.uk/) and [Natural Neighbourhoods](http://neighbourhoods.esd.org.uk/#?tab=Introduction) for pre-operational areas</td>
   </tr>
   <tr>
-    <td>Premises licences</td>
+    <td>[Premises licences](http://schemas.opendata.esd.org.uk/PremisesLicences)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>service</td>
-    <td>Service types list</td>
+    <td>[Service types list](http://id.esd.org.uk/list/services)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>entertainment type</td>
-    <td>Entertainment types list</td>
+    <td>[Entertainment types list](http://id.esd.org.uk/list/entertainments)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>status</td>
-    <td>Premises licence statuses list</td>
+    <td>[Premises licence statuses list](http://id.esd.org.uk/list/premisesLicenceStatuses)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>applicant type</td>
-    <td>Premises licence applicants list</td>
+    <td>[Premises licence applicants list](http://id.esd.org.uk/list/premisesLicenceStatuses)</td>
   </tr>
   <tr>
-    <td>Public toilets</td>
+    <td>[Public toilets](http://schemas.opendata.esd.org.uk/PublicToilets)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>service</td>
-    <td>Service types list</td>
+    <td>[Service types list](http://id.esd.org.uk/list/services)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>geographical area</td>
-    <td>ONS geographies and natural neighbourhoods for pre-operational areas</td>
+    <td>[ONS geographies](http://statistics.data.gov.uk/) and [Natural Neighbourhoods](http://neighbourhoods.esd.org.uk/#?tab=Introduction) for pre-operational areas</td>
   </tr>
   <tr>
-    <td>Senior employees</td>
+    <td>[Senior employees](http://schemas.opendata.esd.org.uk/SeniorEmployees)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>responsibilities</td>
-    <td>Function types list or Service types list</td>
+    <td>[Function types list](http://id.esd.org.uk/list/functions) or [Service types list](http://id.esd.org.uk/list/services)</td>
   </tr>
   <tr>
-    <td>Service directory</td>
+    <td>[Service directory](http://schemas.opendata.esd.org.uk/ServiceDirectory)</td>
     <td>CSV</td>
     <td>service type</td>
-    <td>Service types list</td>
+    <td>[Service types list](http://id.esd.org.uk/list/services)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>provider type</td>
-    <td>Organisation types list</td>
+    <td>[Organisation types list](http://id.esd.org.uk/list/organisationTypes)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>provider</td>
-    <td>Open data communities and Companies House </td>
+    <td>[Open Data Communities](http://opendatacommunities.org/) and [Companies House](https://beta.companieshouse.gov.uk/) </td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>publisher</td>
-    <td>Open data communities and Companies House </td>
+    <td>[Open Data Communities](http://opendatacommunities.org/) and [Companies House](https://beta.companieshouse.gov.uk/) </td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>commissioner</td>
-    <td>Open data communities and Companies House</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/) and [Companies House](https://beta.companieshouse.gov.uk/)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>audience</td>
-    <td>Circumstance type list</td>
+    <td>[Circumstance type list](http://id.esd.org.uk/list/circumstances)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>function type</td>
-    <td>Function types list</td>
+    <td>[Function types list](http://id.esd.org.uk/list/functions)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>eligibility</td>
-    <td>Circumstance type list</td>
+    <td>[Circumstance type list](http://id.esd.org.uk/list/circumstances)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>coverage type</td>
-    <td>ONS geographies and natural neighbourhoods</td>
+    <td>[ONS geographies](http://statistics.data.gov.uk/) and [Natural Neighbourhoods](http://neighbourhoods.esd.org.uk/#?tab=Introduction)</td>
   </tr>
   <tr>
     <td></td>
     <td></td>
     <td>coverage</td>
-    <td>ONS geographies and natural neighbourhoods</td>
+    <td>[ONS geographies](http://statistics.data.gov.uk/) and [Natural Neighbourhoods](http://neighbourhoods.esd.org.uk/#?tab=Introduction)</td>
   </tr>
   <tr>
-    <td>Senior salary count</td>
+    <td>[Senior salary count](http://schemas.opendata.esd.org.uk/SeniorSalaryCount)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
   <tr>
-    <td>Trade union facility time</td>
+    <td>[Trade union facility time](http://schemas.opendata.esd.org.uk/TradeUnionFacilityTime)</td>
     <td>CSV</td>
     <td>organisation</td>
-    <td>Open data communities</td>
+    <td>[Open Data Communities](http://opendatacommunities.org/)</td>
   </tr>
 </table>
 
