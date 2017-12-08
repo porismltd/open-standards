@@ -78,8 +78,13 @@ aside.sidebar h1 {
 
 .markdown-section:last-child > footer {
     background-color: #333333;
-    height: 10rem;
+    height: 7rem;
     overflow: hidden;
+
+    position: relative;
+    bottom: -11rem;
+    left: -1.5rem;
+    width: calc(100% + 1.5rem);
 }
 
 div.tip p:last-child,

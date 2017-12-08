@@ -96,18 +96,18 @@ body > header form img {
 main {
     min-height: calc(100% - 6rem);
 
-    margin-bottom: -10rem; 
+    margin-bottom: -7rem; 
 }
 
 main:after {
-    height: 10rem;
+    height: 7rem;
     content: "";
     display: block;
 }
 
 body > footer {
     background-color: #333333;
-    height: 10rem;
+    height: 7rem;
     overflow: hidden;
 }
 
@@ -185,37 +185,73 @@ ol.logos {
     justify-content: flex-start;
     align-content:  flex-start;   
     
-    padding-top: 1.2rem; 
+    padding-top: 1rem; 
 }
-
-
 
 ol.logos li {
     padding-right: 2rem;
     padding-bottom: 1rem;
 
-    color: white;
-    font-size: 1.6rem;
+    color: #ccc;
+    font-size: 1.4rem;
+    line-height: normal;
+
+    overflow: hidden;
 }
 
 ol.logos li img {
-    max-height: 3rem;
+    max-height: 2rem;
 }
 
+ol.logos li.nonlogo,
+ol.logos li.porism {
+    display: none;
+}
 
-@media screen and (min-width: 520px) {
+@media screen and (min-width: 340px) {
+    ol.logos li.porism {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 700px) {
     ol.logos {
+        padding-top: 2.3rem;
         flex-wrap: nowrap;
-        padding-top: 3rem; 
+        justify-content: flex-end;
+        align-content:  flex-end;   
     }
 
-    ol.logos li {
-        padding-right: 4rem;
+    ol.logos li {        
         padding-bottom: 0;
     }
     
+    ol.logos li:first-child {        
+        flex: auto;
+    }
+    
     ol.logos li img {
-        max-height: 4rem;
+        max-height: 2.4rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    ol.logos {
+        padding-top: 2rem;
+    }
+    
+    ol.logos li img {
+        max-height: 3rem;
+    }
+}
+
+@media screen and (min-width: 930px) {
+    ol.logos li {
+        line-height: 3rem;
+    }
+
+    ol.logos li.nonlogo {
+        display: inherit;
     }
 }
 
