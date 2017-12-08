@@ -26,12 +26,26 @@ Vue.component('button-counter', {
             this.$emit('increment')
         }
     },
-})
+});
 
 
 Vue.component('format-sample', {
     props: ['tab'],
     template: document.getElementById('template-format-samples') || '',
+    data: function () {
+        return { selected: this.tab }
+    },
+    methods: {
+        select: function (item) {
+            this.selected = item;
+        }
+    }
+});
+
+
+Vue.component('incentive-scheme', {
+    props: ['tab'],
+    template: document.getElementById('template-incentive-scheme') || '',
     data: function () {
         return { selected: this.tab }
     },

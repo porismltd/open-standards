@@ -1,11 +1,25 @@
 .incentive-scheme {
-    margin: 1rem;
+    margin: 0;
     border: solid 1px #CBCBCB;
     border-radius: 1rem;
     padding: 1rem;
 
     display: flex;
     flex-direction: row;
+
+    overflow: hidden;
+    max-height: 86rem;
+}
+
+.incentive-scheme h3 {    
+    font-size: 1.6rem;
+}
+
+.incentive-scheme,
+.incentive-scheme p,
+.incentive-scheme dl{
+    font-size: 1.4rem;
+    word-spacing: normal;
 }
 
 .incentive-scheme > section.process {
@@ -23,6 +37,8 @@
 .incentive-scheme h2 {
     border-bottom: solid 1px #ddd;
     margin-bottom: 1rem;
+    margin-top: 0;
+    line-height: normal;
 }
 
 .incentive-scheme dl > div {
@@ -46,6 +62,7 @@
     background-color: #80B416;
     font-weight: normal;
     padding: 1.6rem;
+    margin: 0;
 }
 
 .incentive-scheme .accordion > section:first-child h3 {
@@ -56,8 +73,21 @@
     cursor: pointer;
 }
 
+.incentive-scheme .accordion dt {
+    min-width: 18rem;
+}
+
+.incentive-scheme .accordion dd {
+    word-break: break-all;
+}
+
+.incentive-scheme .accordion a {
+    font-weight: normal;
+    text-decoration: underline;
+}
+
 .incentive-scheme .accordion > section > div {
-    overflow: hidden;
+    overflow-y: hidden;
     height: 0;
     transition: height 0.5s linear;
 }

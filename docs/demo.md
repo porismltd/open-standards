@@ -3,6 +3,9 @@
 
 <button-counter></button-counter>
 
+
+<incentive-scheme tab="application"></incentive-scheme>
+
 <format-sample tab="xml"></format-sample>
 
 <ul>

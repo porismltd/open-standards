@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/css/doc.layout.css">
   <link rel="stylesheet" href="/css/search.css">
   <link rel="stylesheet" href="/css/samples.css">
+  <link rel="stylesheet" href="/css/incentiveScheme.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88876718-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,6 +21,205 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-88876718-2');
+  </script>
+
+  <script id="template-incentive-scheme" type="template/html">
+    <section id="incentiveScheme" class="incentive-scheme">
+      <section class="process">
+        <h2>Planning applications</h2>
+        <section class="accordion">
+          <section v-bind:class="{ selected: selected === 'application' }">
+            <h3 v-on:click="select('application')">1. Application (compete)</h3>
+            <div>
+              <dl>
+                <div>
+                  <dt>Application number:</dt>
+                  <dd>54</dd>
+                </div>
+                <div>
+                  <dt>Application date:</dt>
+                  <dd>10/07/2014</dd>
+                </div>
+                <div>
+                  <dt>Local authority:</dt>
+                  <dd>Leeds City Council</dd>
+                </div>
+                <div>
+                  <dt>Theme:</dt>
+                  <dd>Planning applications</dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+          <section v-bind:class="{ selected: selected === 'acceptance' }">
+            <h3 v-on:click="select('acceptance')">2. Acceptance (compete)</h3>
+            <div>
+              <p>
+                Accepted on 10/07/2014
+              </p>
+            </div>
+          </section>
+          <section v-bind:class="{ selected: selected === 'submission' }">
+            <h3 v-on:click="select('submission')">3. Submission (compete)</h3>
+            <div>
+              <dl>
+                <div>
+                  <dt>Last LA update:</dt>
+                  <dd>22/10/2014</dd>
+                </div>
+                <div>
+                  <dt>Dataset URL:</dt>
+                  <dd>
+                    <a href="http://www.leedsdatamill.org/storage/f/2014-10-22T12%3A33%3A36.223Z/planning.csv" target="_blank">http://www.leedsdatamill.org/storage/f/2014-10-22T12%3A33%3A36.223Z/planning.csv</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt>Schema:</dt>
+                  <dd>
+                    <a href="http://schemas.opendata.esd.org.uk/PlanningApplications" target="_blank">Planning applications CSV schema</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt>Guidance:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>ODI certificate:</dt>
+                  <dd>
+                    <a href="https://certificates.theodi.org/datasets/2757/certificates/15171" target="_blank">https://certificates.theodi.org/datasets/2757/certificates/15171</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt>Inventory link:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>data.gov.uk link:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Local codes used?:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Publishing frequency:</dt>
+                  <dd>Annually</dd>
+                </div>
+                <div>
+                  <dt>Annual number of FOI requests:</dt>
+                  <dd></dd>
+                </div>
+                <div>
+                  <dt>Submission complete:</dt>
+                  <dd></dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+          <section v-bind:class="{ selected: selected === 'technical-review' }">
+            <h3 v-on:click="select('technical-review')">4. Technical review (compete)</h3>
+            <div>
+              <dl>
+                <div>
+                  <dt>Last tech update:</dt>
+                  <dd>22/10/2014</dd>
+                </div>
+                <div>
+                  <dt>Status:</dt>
+                  <dd>Accepted</dd>
+                </div>
+              </dl>
+              <p>
+                Accepted on 22/10/2014
+              </p>
+            </div>
+          </section>
+          <section v-bind:class="{ selected: selected === 'admin-review' }">
+            <h3 v-on:click="select('admin-review')">5. Admin review (compete)</h3>
+            <div>
+              <p>
+                Accepted on 22/10/2014
+              </p>
+              <dl>
+                <div>
+                  <dt>Status:</dt>
+                  <dd>Accepted</dd>
+                </div>
+                <div>
+                  <dt>Last admin update:</dt>
+                  <dd>23/10/2014</dd>
+                </div>
+                <div>
+                  <dt>Payment amount:</dt>
+                  <dd>£2000</dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+        </section>
+      </section>
+      <section class="notes">
+        <dl class="details">
+          <div>
+            <dt>Local authority:</dt>
+            <dd>Leeds City Council</dd>
+          </div>
+          <div>
+            <dt>Updated:</dt>
+            <dd>23/10/2014</dd>
+          </div>
+          <div>
+            <dt>Application is</dt>
+            <dd>closed</dd>
+          </div>
+        </dl>
+        <section class="applicat-notes">
+          <h3>Applicant notes</h3>
+          <p>
+            <span class="date">22/10/2014</span> Eastings &amp; Northings and UPRN information has been left off as it is unclear what we are
+            allowed to publish and do not want to contravene OS licencing guidelines. This data is available once clarification
+            is obtained.
+          </p>
+          <p>
+            <span class="date">21/10/2014</span> Eastings and Northings and UPRN have been removed from this dataset as it is still unclear
+            as to the position of Ordnance Survey. This data can be easily added once clarification is received.
+          </p>
+          <p>
+            <span class="date">16/10/2014</span> Information which is deemed to be derived from Ordnance Survey (e.g. Eastings and Northings
+            and UPRN) has been left off this dataset as it is still unclear what the process should be in publishing this
+            data. Leeds is looking to make all its data open by an OGL and therefore until it is clear that this data can
+            be used for commercial purposes we have unfortunately had to withhold it.
+          </p>
+        </section>
+        <section class="admin-notes">
+          <h3>Applicant notes</h3>
+          <p>
+            <span class="date">23/10/2014</span> Authorisation given to issue a BACS payment for the incentive grant as all obligations promised
+            by the council have been met.
+          </p>
+          <p>
+            <span class="date">22/10/2014</span> Written to confirm data set is complete and acceptable. Reminded need of two versions of data
+            needed - one with and one without georeferences. Forewarned that grant will be paid in a single payment once
+            all themes as promised by the authority have been completed.
+          </p>
+        </section>
+        <section class="technical-review-notes">
+          <h3>Tech review notes</h3>
+          <p>
+            <span class="date">22/10/2014</span> Not passed technical review. Notes sent via email.
+          </p>
+          <p>
+            <span class="date">20/10/2014</span> Not passed technical review. Notes sent via email.
+          </p>
+          <p>
+            <span class="date">16/10/2014</span> Not passed technical review. Notes sent via email.
+          </p>
+          <p>
+            <span class="date">10/10/2014</span> Not passed technical review. Notes sent via email.
+          </p>
+        </section>
+      </section>
+    </section>
   </script>
 
 
