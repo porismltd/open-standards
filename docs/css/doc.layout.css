@@ -220,6 +220,10 @@ div.warn p:last-child {
     }
 }
 
+ol.logos li.nonlogo {
+    display: none;
+}
+
 @media screen and (min-height: 440px) {
     
     .markdown-section:last-child {
@@ -240,5 +244,9 @@ div.warn p:last-child {
     
     .sidebar-toggle {
         bottom: 10rem;
+    }
+
+    ol.logos li.nonlogo {
+        display: inherit;
     }
 }
