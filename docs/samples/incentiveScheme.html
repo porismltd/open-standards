@@ -9,8 +9,6 @@
     <meta name="author" content="Me">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin" />
-    <link rel="stylesheet" href="css/core.css?v=1.0">
-    <link rel="stylesheet" href="css/index.css?v=1.0">
 
     <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -22,10 +20,15 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 
-    <link rel="stylesheet" href="../css/core.css">
-    <link rel="stylesheet" href="../css/incentiveScheme.css">
+    <link rel="stylesheet" href="/css/core.css">
+    <link rel="stylesheet" href="/css/incentiveScheme.css">
 
     <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-size: 15px;
         }
@@ -35,11 +38,11 @@
 <body>
 
     <section id="incentiveScheme" class="incentive-scheme">
-        <section>
+        <section class="process">
             <h2>Planning applications</h2>
             <section class="accordion">
-                <section class="application">
-                    <h3>1. Application (compete)</h3>
+                <section v-bind:class="{ selected: selected === 'application' }">
+                    <h3 v-on:click="select('application')">1. Application (compete)</h3>
                     <div>
                         <dl>
                             <div>
@@ -61,16 +64,16 @@
                         </dl>
                     </div>
                 </section>
-                <section class="acceptance">
-                    <h3>2. Acceptance (compete)</h3>
+                <section v-bind:class="{ selected: selected === 'acceptance' }">
+                    <h3 v-on:click="select('acceptance')">2. Acceptance (compete)</h3>
                     <div>
                         <p>
                             Accepted on 10/07/2014
                         </p>
                     </div>
                 </section>
-                <section class="submission">
-                    <h3>3. Submission (compete)</h3>
+                <section v-bind:class="{ selected: selected === 'submission' }">
+                    <h3 v-on:click="select('submission')">3. Submission (compete)</h3>
                     <div>
                         <dl>
                             <div>
@@ -126,8 +129,8 @@
                         </dl>
                     </div>
                 </section>
-                <section class="technical-review">
-                    <h3>4. Technical review (compete)</h3>
+                <section v-bind:class="{ selected: selected === 'technical-review' }">
+                    <h3 v-on:click="select('technical-review')">4. Technical review (compete)</h3>
                     <div>
                         <dl>
                             <div>
@@ -144,8 +147,8 @@
                         </p>
                     </div>
                 </section>
-                <section class="admin-review">
-                    <h3>5. Admin review (compete)</h3>
+                <section v-bind:class="{ selected: selected === 'admin-review' }">
+                    <h3 v-on:click="select('admin-review')">5. Admin review (compete)</h3>
                     <div>
                         <p>
                             Accepted on 22/10/2014
@@ -190,6 +193,16 @@
                     we are allowed to publish and do not want to contravene OS licencing guidelines. This data is available
                     once clarification is obtained.
                 </p>
+                <p>
+                    <span class="date">21/10/2014</span> Eastings and Northings and UPRN have been removed from this dataset as it is still
+                    unclear as to the position of Ordnance Survey. This data can be easily added once clarification is received.
+                </p>
+                <p>
+                    <span class="date">16/10/2014</span> Information which is deemed to be derived from Ordnance Survey (e.g. Eastings and Northings
+                    and UPRN) has been left off this dataset as it is still unclear what the process should be in publishing
+                    this data. Leeds is looking to make all its data open by an OGL and therefore until it is clear that
+                    this data can be used for commercial purposes we have unfortunately had to withhold it.
+                </p>
             </section>
             <section class="admin-notes">
                 <h3>Applicant notes</h3>
@@ -197,18 +210,39 @@
                     <span class="date">23/10/2014</span> Authorisation given to issue a BACS payment for the incentive grant as all obligations
                     promised by the council have been met.
                 </p>
+                <p>
+                    <span class="date">22/10/2014</span> Written to confirm data set is complete and acceptable. Reminded need of two versions
+                    of data needed - one with and one without georeferences. Forewarned that grant will be paid in a single
+                    payment once all themes as promised by the authority have been completed.
+                </p>
             </section>
             <section class="technical-review-notes">
                 <h3>Tech review notes</h3>
                 <p>
                     <span class="date">22/10/2014</span> Not passed technical review. Notes sent via email.
                 </p>
+                <p>
+                    <span class="date">20/10/2014</span> Not passed technical review. Notes sent via email.
+                </p>
+                <p>
+                    <span class="date">16/10/2014</span> Not passed technical review. Notes sent via email.
+                </p>
+                <p>
+                    <span class="date">10/10/2014</span> Not passed technical review. Notes sent via email.
+                </p>
             </section>
         </section>
+
+
     </section>
+
 
     <script>
         hljs.initHighlightingOnLoad();
+
+        Vue.directive('tab-identifier', function (el, binding) {
+            console.log(binding.value)
+        })
 
         new Vue({
             el: '#incentiveScheme',

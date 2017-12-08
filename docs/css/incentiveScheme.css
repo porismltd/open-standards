@@ -3,6 +3,17 @@
     border: solid 1px #CBCBCB;
     border-radius: 1rem;
     padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.incentive-scheme > section.process {
+    width: 60%;
+}
+
+.incentive-scheme > section.notes {
+    width: 40%;
 }
 
 .incentive-scheme dl {
@@ -35,33 +46,67 @@
     background-color: #80B416;
     font-weight: normal;
     padding: 1.6rem;
-    border-top: solid 1px #666;
 }
 
 .incentive-scheme .accordion > section:first-child h3 {
     border-top: none;
 }
 
-.incentive-scheme .accordion > section:first-child h3:hover {
+.incentive-scheme .accordion h3:hover {
     cursor: pointer;
 }
 
 .incentive-scheme .accordion > section > div {
-    border-top: solid 1px #666;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.5s linear;
+}
+
+.incentive-scheme .accordion > section:not(:last-child) > div {
+    border-bottom: solid 1px #666;
+}
+
+.incentive-scheme .accordion > section.selected > div {
+    height: auto;
+}
+
+.incentive-scheme .accordion dl,
+.incentive-scheme .accordion p {
+    margin: 1rem;
+}
+
+.incentive-scheme .accordion div:not(:last-child) dt,
+.incentive-scheme .accordion div:not(:last-child) dd {
+    padding-bottom: 1rem;
+}
+
+.incentive-scheme > section.notes {
     padding: 1rem;
+    padding-left: 2rem;
 }
 
-.incentive-scheme .accordion dt,
-.incentive-scheme .accordion dd,
-.incentive-scheme .accordion > section > div > p:not(:last-child) {
-    padding-bottom: 2rem;
+.incentive-scheme > section.notes .details {
+    padding: 1rem;
+    background-color: #F0F0F0;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
 }
 
-.incentive-scheme .accordion > section > div > p:not(:first-child) {
-    padding-top: 2rem;
+.incentive-scheme > section.notes .details dd {
+    font-weight: bold;
 }
 
-.incentive-scheme .accordion dl > div:last-child dt,
-.incentive-scheme .accordion dl > div:last-child dd {
-    padding-bottom: 0;
+.incentive-scheme > section.notes h3 {
+    font-weight: normal;
+    border-bottom: dotted 1px #c0c0c0;
+    margin-bottom: 1rem;
+}
+
+.incentive-scheme > section.notes > section {
+    margin-bottom: 4rem;
+}
+
+.incentive-scheme > section.notes p span.date {
+    display: inline-block;
+    padding-right: 2rem;
 }
