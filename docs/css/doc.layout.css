@@ -55,14 +55,35 @@ img.half-right {
     clear: both;
 }
 
+.markdown-section h1 {
+    font-size: 4rem;
+}
+
+.markdown-section h2 {
+    font-size: 3.26rem;
+}
+
+
 .markdown-section h1 a,
 .markdown-section h2 a,
 .markdown-section h3 a,
 .markdown-section h4 a,
 .markdown-section h5 a,
 .markdown-section h6 a {
-    padding-top: 7rem;
+    padding-top: 5rem;
 }
+
+.markdown-section h1 + h2,
+.markdown-section h2 + h3 {
+    margin-top: 0rem;
+}
+
+.markdown-section h1 + h2 a,
+.markdown-section h2 + h3 a {
+    padding-top: 2rem;
+}
+
+
 
 .markdown-section h1 a {
     margin-top: -1rem;
