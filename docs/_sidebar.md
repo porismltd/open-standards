@@ -3,3 +3,4 @@
 - [Techniques](techniques.md)
 - [Tools](tools.md)
 - [Appendices](appendices.md)
+- [Contact us](contactus.md)
