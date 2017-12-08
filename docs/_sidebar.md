@@ -3,4 +3,3 @@
 - [Techniques](techniques.md)
 - [Tools](tools.md)
 - [Appendices](appendices.md)
-- [Acknowledgements](acknowledgements.md)
