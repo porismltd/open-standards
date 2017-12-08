@@ -1,0 +1,67 @@
+.incentive-scheme {
+    margin: 1rem;
+    border: solid 1px #CBCBCB;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.incentive-scheme dl {
+    display: table;
+}
+
+.incentive-scheme h2 {
+    border-bottom: solid 1px #ddd;
+    margin-bottom: 1rem;
+}
+
+.incentive-scheme dl > div {
+    display: table-row;
+}
+
+.incentive-scheme dt,
+.incentive-scheme dd {
+    display: table-cell;
+}
+
+.incentive-scheme dt {
+    padding-right: 2rem;
+}
+
+.incentive-scheme .accordion {
+    border: solid 1px #666;
+}
+
+.incentive-scheme .accordion h3 {
+    background-color: #80B416;
+    font-weight: normal;
+    padding: 1.6rem;
+    border-top: solid 1px #666;
+}
+
+.incentive-scheme .accordion > section:first-child h3 {
+    border-top: none;
+}
+
+.incentive-scheme .accordion > section:first-child h3:hover {
+    cursor: pointer;
+}
+
+.incentive-scheme .accordion > section > div {
+    border-top: solid 1px #666;
+    padding: 1rem;
+}
+
+.incentive-scheme .accordion dt,
+.incentive-scheme .accordion dd,
+.incentive-scheme .accordion > section > div > p:not(:last-child) {
+    padding-bottom: 2rem;
+}
+
+.incentive-scheme .accordion > section > div > p:not(:first-child) {
+    padding-top: 2rem;
+}
+
+.incentive-scheme .accordion dl > div:last-child dt,
+.incentive-scheme .accordion dl > div:last-child dd {
+    padding-bottom: 0;
+}
