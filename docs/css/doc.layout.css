@@ -63,6 +63,14 @@ img.half-right {
     font-size: 3.26rem;
 }
 
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4,
+.markdown-section h5,
+.markdown-section h6 {
+    margin-top: 9rem;
+}
+
 
 .markdown-section h1 a,
 .markdown-section h2 a,
@@ -70,24 +78,23 @@ img.half-right {
 .markdown-section h4 a,
 .markdown-section h5 a,
 .markdown-section h6 a {
-    padding-top: 5rem;
+    padding-top: 1rem;
 }
 
 .markdown-section h1 + h2,
 .markdown-section h2 + h3 {
-    margin-top: 0rem;
+    margin-top: 2rem;
 }
 
+/*
 .markdown-section h1 + h2 a,
 .markdown-section h2 + h3 a {
     padding-top: 2rem;
 }
 
-
-
 .markdown-section h1 a {
     margin-top: -1rem;
-}
+}*/
 
 aside.sidebar h1 {
     display: none;
