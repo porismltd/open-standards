@@ -3326,12 +3326,10 @@ function scrollActiveSidebar (router) {
 }
 
 function scrollIntoView (path, id) {
-  if (!id) { return }
-
-  var section = find('#' + id);
+  var section = !id ? find('.markdown-section') : find('#' + id);
   section && scrollTo(section);
 
-  var li = nav[getNavKey(path, id)];
+  var li = !id ? nav['#' + path] : nav[getNavKey(path, id)];
   var sidebar = getNode('.sidebar');
   var active = find(sidebar, 'li.active');
   active && active.classList.remove('active');
