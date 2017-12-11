@@ -128,36 +128,14 @@ In addition to the above centrally managed schemas, tools identify many locally 
 
 ### Registers (including URI sets of physical things)
 
-<table>
-  <tr>
-    <td><strong>Maintained by</strong></td>
-    <td><strong>Name</strong></td>
-  </tr>
-  <tr>
-    <td>Companies House</td>
-    <td>[Companies House](https://beta.companieshouse.gov.uk/)</td>
-  </tr>
-  <tr>
-    <td>DCLG</td>
-    <td>[English local authorities](http://opendatacommunities.org/def/local-government/LocalAuthority)</td>
-  </tr>
-  <tr>
-    <td>GDS</td>
-    <td>[Register of English Local Authorities](https://local-authority-eng.register.gov.uk/)</td>
-  </tr>
-  <tr>
-    <td>GDS</td>
-    <td>[ONS geographies](http://statistics.data.gov.uk/)</td>
-  </tr>
-  <tr>
-    <td>LGA</td>
-    <td>[Natural Neighbourhoods](http://neighbourhoods.esd.org.uk/)</td>
-  </tr>
-  <tr>
-    <td>Ordnance Survey</td>
-    <td>[Ordnance Survey administrative geography and civil voting area](http://data.ordnancesurvey.co.uk/ontology/admingeo/)</td>
-  </tr>
-</table>
+| Maintained by | Name |
+|---------------|------|
+| Companies House | [Companies House](https://beta.companieshouse.gov.uk/) |
+| DCLG | [English local authorities](http://opendatacommunities.org/def/local-government/LocalAuthority) |
+| GDS | [Register of English Local Authorities](https://local-authority-eng.register.gov.uk/) |
+| GDS | [ONS geographies](http://statistics.data.gov.uk/) |
+| LGA | [Natural Neighbourhoods](http://neighbourhoods.esd.org.uk/) |
+| Ordnance Survey | [Ordnance Survey administrative geography and civil voting area](http://data.ordnancesurvey.co.uk/ontology/admingeo/) |
 
 ## Schemas referencing specific URI sets
 
