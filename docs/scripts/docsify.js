@@ -69,7 +69,7 @@ var config = merge(
     subMaxLevel: 0,
     loadSidebar: null,
     loadNavbar: null,
-    headerSize: 0,
+    headerOffset: 0,
     homepage: 'README.md',
     coverpage: '',
     basePath: '',
@@ -3231,7 +3231,7 @@ function scrollTo (el) {
   enableScrollEvent = false;
   scroller = new Tweezer({
     start: window.pageYOffset,
-    end: el.getBoundingClientRect().top + window.pageYOffset - config.headerSize,
+    end: el.getBoundingClientRect().top + window.pageYOffset - config.headerOffset,
     duration: 500
   })
     .on('tick', function (v) { return window.scrollTo(0, v); })
