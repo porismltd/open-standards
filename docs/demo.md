@@ -1,5 +1,16 @@
+# this work?
 
-# Vue demo
+1. item one
+2. item two
+⋅⋅1. item one point one
+⋅⋅2. item one point two goldenhandofgod
+3. item 3
+⋅⋅* item 3 sub item
+⋅⋅* item 3 sub item
+9. item 4 (it doesn't matter what the number is)
+
+
+## Vue demo
 
 <button-counter></button-counter>
 
@@ -12,7 +23,7 @@
   <li v-for="i in 10">{{ i }}</li>
 </ul>
 
-# h1 header
+## h1 header
 
 content content content content from home
 
