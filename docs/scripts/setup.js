@@ -53,16 +53,18 @@ Vue.component('incentive-scheme', {
         var accordionDivs = (this.$el.querySelectorAll('.accordion > section > div'));
         var originalHeight;
 
-        var cssDeclarations = [];
+        var cssDeclarations = [], el;
 
-        accordionDivs.forEach(function (el, index) {
+        for (var index = 0; index < accordionDivs.length; index++) {
+            el = accordionDivs[index];
+
             originalHeight = el.style.height;
             el.style.height = 'auto';
 
             cssDeclarations.push('.incentive-scheme .accordion > section:nth-child(' + (index + 1) + ').selected > div { height: ' + el.offsetHeight + 'px; }');
 
             el.style.height = originalHeight;
-        });
+        }
 
         var node = document.createElement('style');
         node.innerHTML = cssDeclarations.join('\n');
