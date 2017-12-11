@@ -91,7 +91,7 @@
 .incentive-scheme .accordion > section > div {
     overflow-y: hidden;
     height: 0;
-    transition: height 0.5s linear;
+    transition: height 0.3s ease-in-out;
 }
 
 .incentive-scheme .accordion > section:not(:last-child) > div {
@@ -101,6 +101,28 @@
 .incentive-scheme .accordion > section.selected > div {
     height: auto;
 }
+
+/*
+.incentive-scheme .accordion > section:first-child.selected > div {
+    height: 14.7rem;
+}
+
+.incentive-scheme .accordion > section:nth-child(2).selected > div {
+    height: 4.5rem;
+}
+
+.incentive-scheme .accordion > section:nth-child(3).selected > div {
+    height: 50.5rem;
+}
+
+.incentive-scheme .accordion > section:nth-child(4).selected > div {
+    height: 11.3rem;
+}
+
+.incentive-scheme .accordion > section:nth-child(5).selected > div {
+    height: 14.6rem;
+}*/
+
 
 .incentive-scheme .accordion dl,
 .incentive-scheme .accordion p {
@@ -132,6 +154,7 @@
     font-weight: normal;
     border-bottom: dotted 1px #c0c0c0;
     margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 .incentive-scheme > section.notes > section {
