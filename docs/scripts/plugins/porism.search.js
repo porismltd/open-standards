@@ -17,12 +17,6 @@
     return String(string).replace(/[&<>"'\/]/g, function (s) { return entityMap[s]; })
   }
 
-  function stripHtml(html) {
-    console.log(html);
-
-    return escapeHtml(html);
-  }
-
   function getAllPaths(router) {
     var paths = [];
 
@@ -92,8 +86,6 @@
     if (keywords.length !== 1) {
       keywords = [].concat(query, keywords);
     }
-
-    console.log(data);
 
     var loop = function (i) {
       var post = data[i];

@@ -1,7 +1,0 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600");
-
-html, body {
-    margin: 0;
-    font-size: 10px;
-    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-}

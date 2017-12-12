@@ -1,1 +1,0 @@
-this is a hack, to put beta in the url, and not have to bother with a new s3 location or url
