@@ -1,5 +1,9 @@
 # this work?
 
+| heading 1 | heading 2 |
+|-----------|-----------|
+| colinginger | greenupper |
+
 1. item one
 2. item two
 ⋅⋅1. item one point one
@@ -8,6 +12,15 @@
 ⋅⋅* item 3 sub item
 ⋅⋅* item 3 sub item
 9. item 4 (it doesn't matter what the number is)
+
+
+greenupper
+
+<table>
+    <tr>
+        <td>mouseindigowestern greenupper</td>
+    </tr>
+</table>
 
 
 ## Vue demo
@@ -48,7 +61,6 @@ content content content content from home
 9. item 4 (it doesn't matter what the number is)
 
 <div class="warn">
-
     ![image](/images/concept-model.png "image")
 
     | left aligned | centred | right aligned |
