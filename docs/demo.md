@@ -1,44 +1,7 @@
-# this work?
 
-| heading 1 | heading 2 |
-|-----------|-----------|
-| colinginger | greenupper |
+# h1 header
 
-1. item one
-2. item two
-⋅⋅1. item one point one
-⋅⋅2. item one point two goldenhandofgod
-3. item 3
-⋅⋅* item 3 sub item
-⋅⋅* item 3 sub item
-9. item 4 (it doesn't matter what the number is)
-
-
-greenupper
-
-<table>
-    <tr>
-        <td>mouseindigowestern greenupper</td>
-    </tr>
-</table>
-
-
-## Vue demo
-
-<button-counter></button-counter>
-
-
-<incentive-scheme tab="application"></incentive-scheme>
-
-<format-sample tab="xml"></format-sample>
-
-<ul>
-  <li v-for="i in 10">{{ i }}</li>
-</ul>
-
-## h1 header
-
-content content content content from home
+content content content content 
 
 <div class="warn">
 1. item one
@@ -61,6 +24,7 @@ content content content content from home
 9. item 4 (it doesn't matter what the number is)
 
 <div class="warn">
+
     ![image](/images/concept-model.png "image")
 
     | left aligned | centred | right aligned |
