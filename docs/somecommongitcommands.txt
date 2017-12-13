@@ -10,4 +10,4 @@ git commit -m "singlefile" docs\demo.md
 git checkout 1585ea202ef31834c623bf5b50692b2a3d1e12c7 docs\demo.md
 
 
-git commit -m "singlefile" docs\demo.md
+git commit -m "search tables" docs\scripts\plugins\porism.search.js

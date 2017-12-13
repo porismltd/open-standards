@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 320">
     <style>
         /* <![CDATA[ */
         * {
@@ -76,9 +76,9 @@
             <line x1="175" y1="25" x2="320" y2="125" />
 
             <use x="100" y="0" href="#election" />
-            <use x="0" y="100" href="#electionDate" />
-            <use x="100" y="180" href="#ballotsRejectedUnmarked" />
-            <use x="240" y="100" href="#electorialAreaLabel" />
+            <use x="0" y="90" href="#electionDate" />
+            <use x="100" y="162" href="#ballotsRejectedUnmarked" />
+            <use x="240" y="90" href="#electorialAreaLabel" />
         </g>
         
         <g id="candidateGroup">
@@ -86,21 +86,21 @@
             <line x1="175" y1="125" x2="250" y2="25" />
 
             <use x="100" y="100" href="#candidate" />
-            <use x="0" y="0" href="#candidateSurname" />
-            <use x="200" y="0" href="#votesWon" />
+            <use x="0" y="6" href="#candidateSurname" />
+            <use x="200" y="6" href="#votesWon" />
         </g>
 
         <g id="connector">
-            <line x1="0" y1="0" x2="150" y2="0" />
+            <line x1="0" y1="0" x2="227" y2="0" />
             <line x1="0" y1="-10" x2="20" y2="0" />
             <line x1="0" y1="10" x2="20" y2="0" />
             
-            <line x1="130" y1="0" x2="150" y2="-10" />
-            <line x1="130" y1="0" x2="150" y2="10" />
+            <line x1="207" y1="0" x2="227" y2="-10" />
+            <line x1="207" y1="0" x2="227" y2="10" />
         </g>
     </defs>
 
     <use x="1" y="101" href="#electionGroup" />
-    <use x="300" y="1" href="#candidateGroup" />
+    <use x="378" y="1" href="#candidateGroup" />
     <use x="251" y="126" href="#connector" />
 </svg>
