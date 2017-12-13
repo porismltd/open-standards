@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 202">
+    <style>
+        /* <![CDATA[ */
+        * {
+            font-size: 10px;
+        }
+        rect, line {
+            stroke: #D4D4D4;
+            stroke-width: 2;
+            fill: transparent;
+        }
+        text {
+            fill: #9CDCFE;
+            stroke: transparent;
+            font-family: Roboto Mono,Monaco,courier,monospace;
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+        text.value {
+            fill: #D4D4D4;
+        }
+        /* ]]> */
+    </style>
+    <defs>
+        <g id="election">
+            <rect x="0" y="0" width="250" height="50" />
+            <text x="125" y="25" text-anchor="middle" alignment-baseline="middle">
+                Election
+            </text>
+        </g>
+        <g id="candidate">
+            <g>
+                <rect x="0" y="0" width="250" height="50" />
+                <rect x="0" y="50" width="250" height="100"/>
+            </g>
+            <g>
+                <text x="125" y="25" text-anchor="middle" alignment-baseline="middle">
+                    Candidate
+                </text>
+                <text x="10" y="75" text-anchor="start" alignment-baseline="middle">
+                    CandidateSurname
+                </text>
+                <text x="10" y="125" text-anchor="start" alignment-baseline="middle">
+                    VotesWon
+                </text>
+            </g>
+        </g>
+        <g id="connector">
+            <line x1="0" y1="0" x2="230" y2="0" />
+            <text x="10" y="-10" text-anchor="start" alignment-baseline="baseline">
+                1..*
+            </text>
+            <text x="220" y="-10" text-anchor="end" alignment-baseline="baseline">
+                0..*
+            </text>
+        </g>
+    </defs>
+    <use x="1" y="1" href="#election" />
+    <use x="250" y="75" href="#connector" />
+    <use x="479" y="1" href="#candidate" />
+</svg>

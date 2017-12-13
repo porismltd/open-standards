@@ -1,6 +1,8 @@
 
 # h1 header
 
+<format-sample tab="uml"></format-sample>
+
 content content content content 
 
 <div class="warn">
