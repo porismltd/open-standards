@@ -62,7 +62,10 @@
         <g id="connector">
             <line x1="0" y1="0" x2="230" y2="0" />
             <text x="10" y="-10" text-anchor="start" alignment-baseline="baseline">
-                1..*
+                1
+            </text>
+            <text x="115" y="-10" text-anchor="middle" alignment-baseline="baseline">
+                Has
             </text>
             <text x="220" y="-10" text-anchor="end" alignment-baseline="baseline">
                 0..*
