@@ -42,10 +42,10 @@
                 ElectionDate
             </text>
         </g>
-        <g id="electorialAreaLabel">
+        <g id="electoralAreaLabel">
             <ellipse cx="75" cy="25" rx="100" ry="30"/>
             <text x="75" y="25" text-anchor="middle" alignment-baseline="middle">
-                ElectorialAreaLabel
+                ElectoralAreaLabel
             </text>
         </g>
         <g id="ballotsRejectedUnmarked">
@@ -78,7 +78,7 @@
             <use x="100" y="0" href="#election" />
             <use x="0" y="90" href="#electionDate" />
             <use x="100" y="162" href="#ballotsRejectedUnmarked" />
-            <use x="240" y="90" href="#electorialAreaLabel" />
+            <use x="240" y="90" href="#electoralAreaLabel" />
         </g>
         
         <g id="candidateGroup">

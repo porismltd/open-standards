@@ -35,7 +35,7 @@
                     ElectionDate
                 </text>
                 <text x="10" y="125" text-anchor="start" alignment-baseline="middle">
-                    ElectorialAreaLabel
+                    ElectoralAreaLabel
                 </text>
                 <text x="10" y="175" text-anchor="start" alignment-baseline="middle">
                     BallotsRejectedUnmarked
