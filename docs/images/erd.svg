@@ -1,13 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 202">
+<svg xmlns="http://www.w3.org/2000/svg">
     <style>
         /* <![CDATA[ */
         * {
             font-size: 10px;
         }
-        rect, line {
+        rect, line, ellipse {
             stroke: #D4D4D4;
             stroke-width: 2;
-            fill: transparent;
+        }
+        rect, ellipse {
+            fill: #1E1E1E;
         }
         text {
             fill: #9CDCFE;
@@ -23,39 +25,82 @@
     </style>
     <defs>
         <g id="election">
-            <rect x="0" y="0" width="250" height="50" />
-            <text x="125" y="25" text-anchor="middle" alignment-baseline="middle">
+            <rect x="0" y="0" width="150" height="50" />
+            <text x="75" y="25" text-anchor="middle" alignment-baseline="middle">
                 Election
             </text>
         </g>
         <g id="candidate">
-            <g>
-                <rect x="0" y="0" width="250" height="50" />
-                <rect x="0" y="50" width="250" height="100"/>
-            </g>
-            <g>
-                <text x="125" y="25" text-anchor="middle" alignment-baseline="middle">
-                    Candidate
-                </text>
-                <text x="10" y="75" text-anchor="start" alignment-baseline="middle">
-                    CandidateSurname
-                </text>
-                <text x="10" y="125" text-anchor="start" alignment-baseline="middle">
-                    VotesWon
-                </text>
-            </g>
+            <rect x="0" y="0" width="150" height="50" />
+            <text x="75" y="25" text-anchor="middle" alignment-baseline="middle">
+                Candidate
+            </text>
         </g>
+        <g id="electionDate">
+            <ellipse cx="75" cy="25" rx="75" ry="30"/>
+            <text x="75" y="25" text-anchor="middle" alignment-baseline="middle">
+                ElectionDate
+            </text>
+        </g>
+        <g id="electorialAreaLabel">
+            <ellipse cx="75" cy="25" rx="100" ry="30"/>
+            <text x="75" y="25" text-anchor="middle" alignment-baseline="middle">
+                ElectorialAreaLabel
+            </text>
+        </g>
+        <g id="ballotsRejectedUnmarked">
+            <ellipse cx="75" cy="25" rx="120" ry="30"/>
+            <text x="75" y="25" text-anchor="middle" alignment-baseline="middle">
+                BallotsRejectedUnmarked
+            </text>
+        </g>
+
+        
+        <g id="candidateSurname">
+            <ellipse cx="75" cy="25" rx="100" ry="30"/>
+            <text x="75" y="25" text-anchor="middle" alignment-baseline="middle">
+                CandidateSurname
+            </text>
+        </g>
+
+        <g id="votesWon">
+            <ellipse cx="75" cy="25" rx="75" ry="30"/>
+            <text x="75" y="25" text-anchor="middle" alignment-baseline="middle">
+                VotesWon
+            </text>
+        </g>
+        
+        <g id="electionGroup">
+            <line x1="175" y1="25" x2="75" y2="125" />
+            <line x1="175" y1="25" x2="175" y2="200" />
+            <line x1="175" y1="25" x2="320" y2="125" />
+
+            <use x="100" y="0" href="#election" />
+            <use x="0" y="100" href="#electionDate" />
+            <use x="100" y="180" href="#ballotsRejectedUnmarked" />
+            <use x="240" y="100" href="#electorialAreaLabel" />
+        </g>
+        
+        <g id="candidateGroup">
+            <line x1="175" y1="125" x2="75" y2="25" />
+            <line x1="175" y1="125" x2="250" y2="25" />
+
+            <use x="100" y="100" href="#candidate" />
+            <use x="0" y="0" href="#candidateSurname" />
+            <use x="200" y="0" href="#votesWon" />
+        </g>
+
         <g id="connector">
-            <line x1="0" y1="0" x2="230" y2="0" />
-            <text x="10" y="-10" text-anchor="start" alignment-baseline="baseline">
-                1..*
-            </text>
-            <text x="220" y="-10" text-anchor="end" alignment-baseline="baseline">
-                0..*
-            </text>
+            <line x1="0" y1="0" x2="150" y2="0" />
+            <line x1="0" y1="-10" x2="20" y2="0" />
+            <line x1="0" y1="10" x2="20" y2="0" />
+            
+            <line x1="130" y1="0" x2="150" y2="-10" />
+            <line x1="130" y1="0" x2="150" y2="10" />
         </g>
     </defs>
-    <use x="1" y="1" href="#election" />
-    <use x="250" y="75" href="#connector" />
-    <use x="479" y="1" href="#candidate" />
+
+    <use x="1" y="101" href="#electionGroup" />
+    <use x="300" y="1" href="#candidateGroup" />
+    <use x="251" y="126" href="#connector" />
 </svg>

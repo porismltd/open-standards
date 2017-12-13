@@ -1,7 +1,7 @@
 
 # h1 header
 
-<format-sample tab="uml"></format-sample>
+<format-sample tab="erd"></format-sample>
 
 content content content content 
 

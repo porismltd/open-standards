@@ -225,9 +225,14 @@
 
   <script id="template-format-samples" type="text/x-template">
     <section class="format-samples">
-      <section class="sample csv" v-bind:class="{ selected: selected === 'uml' }">
+      <section class="sample uml" v-bind:class="{ selected: selected === 'uml' }">
         <object data="/images/uml.svg" type="image/svg+xml" width="100%" height="100%">
           <img src="uml.png" />
+        </object>
+      </section>
+      <section class="sample erd" v-bind:class="{ selected: selected === 'erd' }">
+        <object data="/images/erd.svg" type="image/svg+xml" width="100%" height="100%">
+          <img src="erd.png" />
         </object>
       </section>
       <section class="sample csv" v-bind:class="{ selected: selected === 'csv' }">
@@ -286,6 +291,7 @@
       </section>
       <ol class="tabs">
         <li v-on:click="select('uml')" v-bind:class="{ selected: selected === 'uml' }">uml</li>
+        <li v-on:click="select('erd')" v-bind:class="{ selected: selected === 'erd' }">erd</li>
         <li v-on:click="select('csv')" v-bind:class="{ selected: selected === 'csv' }">csv</li>
         <li v-on:click="select('xml')" v-bind:class="{ selected: selected === 'xml' }">xml</li>
         <li v-on:click="select('json')" v-bind:class="{ selected: selected === 'json' }">json</li>
