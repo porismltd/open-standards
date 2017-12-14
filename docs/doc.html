@@ -290,11 +290,11 @@
               </pre>
       </section>
       <ol class="tabs">
-        <li v-on:click="select('uml')" v-bind:class="{ selected: selected === 'uml' }">UML</li>
-        <li v-on:click="select('erd')" v-bind:class="{ selected: selected === 'erd' }">ERD</li>
-        <li v-on:click="select('csv')" v-bind:class="{ selected: selected === 'csv' }">CSV</li>
-        <li v-on:click="select('xml')" v-bind:class="{ selected: selected === 'xml' }">XML</li>
-        <li v-on:click="select('json')" v-bind:class="{ selected: selected === 'json' }">JSON</li>
+        <li v-on:click="select('uml')" v-bind:class="{ selected: selected === 'uml' }" v-if="isVisible('uml')">UML</li>
+        <li v-on:click="select('erd')" v-bind:class="{ selected: selected === 'erd' }" v-if="isVisible('erd')">ERD</li>
+        <li v-on:click="select('csv')" v-bind:class="{ selected: selected === 'csv' }" v-if="isVisible('csv')">CSV</li>
+        <li v-on:click="select('xml')" v-bind:class="{ selected: selected === 'xml' }" v-if="isVisible('xml')">XML</li>
+        <li v-on:click="select('json')" v-bind:class="{ selected: selected === 'json' }" v-if="isVisible('json')">JSON</li>
       </ol>
     </section>
   </script>

@@ -1,7 +1,7 @@
 
 # h1 header
 
-<format-sample tab="erd"></format-sample>
+<format-sample tab="erd" :hidden-tabs="['uml','csv']"></format-sample>
 
 content content content content 
 

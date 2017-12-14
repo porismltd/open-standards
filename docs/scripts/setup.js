@@ -13,24 +13,8 @@ var header = new Vue({
 });
 
 
-Vue.component('button-counter', {
-    template: '<button v-on:click="incrementCounter">{{ counter }}</button>',
-    data: function () {
-        return {
-            counter: 0
-        }
-    },
-    methods: {
-        incrementCounter: function () {
-            this.counter += 1
-            this.$emit('increment')
-        }
-    },
-});
-
-
 Vue.component('format-sample', {
-    props: ['tab'],
+    props: ['tab', 'hiddenTabs'],
     template: document.getElementById('template-format-samples') ? document.getElementById('template-format-samples').innerHTML : '',
     data: function () {
         return { selected: this.tab }
@@ -38,6 +22,10 @@ Vue.component('format-sample', {
     methods: {
         select: function (item) {
             this.selected = item;
+        },
+        isVisible: function (item) {
+            var hiddenTabs = this.hiddenTabs;
+            return !(hiddenTabs && hiddenTabs.indexOf && hiddenTabs.indexOf(item) > -1);
         }
     }
 });

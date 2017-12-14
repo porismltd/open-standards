@@ -730,7 +730,7 @@ XML is a meta language, used for defining other languages such as xHTML and KML 
 
 Data represented in XML format can be much richer than spreadsheet data, it can closely match the data structure and so it's more easily self-documenting, rather than relying on reference to a separate description of the structure; it can include metadata. It can include encoding schemas of valid terms and reference external vocabularies via namespaces that point to their full online definitions.
 
-<format-sample tab="xml"></format-sample>
+<format-sample tab="xml" :hidden-tabs="['json']"></format-sample>
 
 *Example of simplified XML data for election for candidates and spoilt ballots. Click the CSV tab to see the difference between CSV and XML formats*
 
