@@ -227,12 +227,12 @@
     <section class="format-samples">
       <section class="sample uml" v-bind:class="{ selected: selected === 'uml' }">
         <object data="/images/uml.svg" type="image/svg+xml" width="100%" height="100%">
-          <img src="uml.png" />
+          <img src="/images/uml.png" />
         </object>
       </section>
       <section class="sample erd" v-bind:class="{ selected: selected === 'erd' }">
         <object data="/images/erd.svg" type="image/svg+xml" width="100%" height="100%">
-          <img src="erd.png" />
+          <img src="/images/erd.png" />
         </object>
       </section>
       <section class="sample csv" v-bind:class="{ selected: selected === 'csv' }">
@@ -318,7 +318,7 @@
       </form>
     </div>
   </header>
-  
+
   <footer>
     <div class="center">
       <ol class="logos">
@@ -372,7 +372,6 @@
       }
     };
 
-
     window.$docsify = {
       basePath: '/',
       themeColor: '#34495e',
@@ -398,6 +397,32 @@
       },
       formatUpdated: '{DD}/{MM}/{YY} {HH}:{mm}',
 
+      markdown: function (marked, renderer) {
+        var baseHtml = renderer.html;
+        var tagsRegex = /^(\s*\<div [^\>]*markdown="1"[^\>]*\>)([\s|\S]*)(\<\/div\>\s*)$/;
+
+        renderer.html = function (html) {
+          var match = html.match(tagsRegex);
+          if (!match)
+            return baseHtml.apply(this, arguments);
+
+          console.log('XXXXX');
+          console.log(match[2]);
+          console.log('-----');
+          console.log(marked(match[2]));
+          console.log('XXXXX');
+          console.log('XXXXX');
+
+          return match[1] + marked(match[2]) + match[3];
+        };
+
+        marked.setOptions({
+          renderer: renderer
+        });
+
+        return marked;
+      },
+
       plugins: [
         // footer plugin (for when footer is needed)
         function (hook) {
@@ -406,16 +431,6 @@
             return html + footer
           })
         }
-
-        // // wrap content plugin
-        // function (hook) {
-        //   hook.doneEach(function () {
-        //     var starts = document.querySelectorAll('porism[type="start"]');
-        //     for (var i = 0; i < starts.length; i++) {
-        //       wrapContent(starts[i]);
-        //     }
-        //   })
-        // }
       ]
     }
   </script>
