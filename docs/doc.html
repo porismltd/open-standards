@@ -406,13 +406,6 @@
           if (!match)
             return baseHtml.apply(this, arguments);
 
-          console.log('XXXXX');
-          console.log(match[2]);
-          console.log('-----');
-          console.log(marked(match[2]));
-          console.log('XXXXX');
-          console.log('XXXXX');
-
           return match[1] + marked(match[2]) + match[3];
         };
 
