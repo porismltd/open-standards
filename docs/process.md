@@ -144,7 +144,7 @@ At this stage it is worth communicating with suppliers of systems that store the
 
 Irrespective as to whether a standard exists, you should examine real-life examples of relevant data to see how much standardisation is included and what the scope of a standard should be. That scope might involve adoption or creation of new taxonomies or data classes, the beginnings of building an ecosystem of reusable standard elements. Consider how valuable new assets might be beyond the immediate need identified in the first stage.
 
-## Do
+## Develop
 
 ### Specifying an approach
 
