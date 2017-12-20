@@ -242,6 +242,10 @@ div.warn p:last-child {
     font-size: 1.2rem;
 }
 
+.app-sub-sidebar li.children-container:before {
+    content: '';
+}
+
 @media screen and (max-width: 768px) {
     .content {
         padding-top: 60px;

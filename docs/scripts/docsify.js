@@ -369,7 +369,7 @@ function tree (toc, tpl) {
   toc.forEach(function (node) {
     tpl += "<li><a class=\"section-link\" href=\"" + (node.slug) + "\">" + (node.title) + "</a></li>";
     if (node.children) {
-      tpl += "<li><ul class=\"children\">" + (tree(node.children)) + "</li></ul>";
+      tpl += "<li class=\"children-container\"><ul class=\"children\">" + (tree(node.children)) + "</li></ul>";
     }
   });
 

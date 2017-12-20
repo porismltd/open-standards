@@ -24,6 +24,9 @@ ddd
 
 content content content content 
 
+
+<format-sample tab="csv" :hidden-tabs="['uml']"></format-sample>
+
 <div class="warn">
 1. item one
 2. item two
