@@ -3846,8 +3846,20 @@ function initRouter (vm) {
 }
 
 function eventMixin (proto) {
-  proto.$resetEvents = function () {
-    scrollIntoView(this.route.path, this.route.query.id);
+  proto.$resetEvents = function (delay) {
+    var self = this;
+
+    if (!delay) {
+      scrollIntoView(self.route.path, self.route.query.id);
+    }
+    else {
+      // we want a little delay when the thing first loads, because i believe it doesn't have the real height yet
+      // i susspect that is all tied to network requests, but i don't know how to wait for all those
+      setTimeout(function () {
+        scrollIntoView(self.route.path, self.route.query.id);
+      }, delay);
+    }
+    
     getAndActive(this.router, 'nav');
   };
 }
@@ -3956,7 +3968,7 @@ function fetchMixin (proto) {
 
     this._fetchCover();
     this._fetch(function (result) {
-      this$1.$resetEvents();
+      this$1.$resetEvents(10);
       callHook(this$1, 'doneEach');
       cb();
     });
