@@ -3287,7 +3287,16 @@ function highlight (path) {
 }
 
 function getNavKey (path, id) {
-  return (path + "?id=" + id)
+
+  if (path.indexOf('?') < 0)
+    return (path + "?id=" + id);
+
+  var index = path.indexOf('?');
+  var qs = parseQuery(path.substring(index));
+  path = path.substring(0, index);
+  qs.id = id;
+
+  return (path + stringifyQuery(qs)); 
 }
 
 function scrollActiveSidebar (router) {
