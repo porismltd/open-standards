@@ -282,3 +282,8 @@ ol.logos li.nonlogo {
         display: inherit;
     }
 }
+
+
+.glossary .item {
+    margin-bottom: 3rem;
+}
