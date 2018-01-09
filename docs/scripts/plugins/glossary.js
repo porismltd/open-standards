@@ -2,9 +2,8 @@
     'use strict';
 
     var parseHtml = function (html) {
-        var t = document.createElement('template');
-        t.innerHTML = html;
-        return t.content.cloneNode(true);
+        var parser = new DOMParser();
+        return parser.parseFromString(html, 'text/html');
     };
 
     var createId = function (item) {
@@ -29,20 +28,66 @@
         });
     };
 
-    var highlight = function (html, items) {
-        return html; ///// SAFETY
+    var highlightNodes = function (el, items) {
+        //return;
 
-        var regex;
-        var realHtml = parseHtml(html);
+        var walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+        var node, replacements = [];
+        var textNodes = [];
 
-        for (var i = 0; i < items.length; i++) {
-            regex = createRegEx(items[i]);
-            html = html.replace(regex, '$1');
+        while (node = walk.nextNode()) {
+            if (node.nodeType !== Node.TEXT_NODE)
+                continue;
+            textNodes.push(node);
         }
 
-        console.log(html);
+        var noChange = true, i, j, item, regex, html;
 
-        return html;
+        for (i = 0; i < textNodes.length; i++) {
+            node = textNodes[i];
+            html = node.textContent;
+
+            for (j = 0; j < items.length; j++) {
+                item = items[j];
+                regex = item.regex;
+                if (!html.match(regex)) {
+                    continue;
+                }
+                noChange = false;
+                html = html.replace(regex, '<span style="background-color: red">$1</span>');
+            }
+
+            if (noChange)
+                return;
+
+            var parentNode = node.parentElement;
+
+            var fakeParentNode = document.createElement('span');
+            fakeParentNode.innerHTML = html;
+            var currentNode;
+
+            while (currentNode = fakeParentNode.firstChild) {
+                parentNode.insertBefore(currentNode, node);
+            }
+            
+            parentNode.removeChild(node);
+        }
+    };
+
+    var highlight = function (html, items) {
+        //return html; ///// SAFETY
+
+        var regex;
+        var domHtml = parseHtml(html);
+
+        for (var i = 0; i < items.length; i++) {
+            items[i].regex = createRegEx(items[i]);
+        }
+
+        highlightNodes(domHtml, items);     
+
+        var body = domHtml.getElementsByTagName('body')[0];
+        return body.innerHTML;
     };
 
     var install = function (hook, vm) {
