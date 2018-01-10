@@ -158,9 +158,7 @@
         template: '<span class="glossary-item">{{text}}<sup v-on:click.stop.prevent="click"><span><span class="heading">{{term}}</span>{{definition}}</span></sup></span>',
         props: ['text', 'term', 'definition', 'url'],
         methods: {
-            click: function (e) {
-                console.log('glossary-term.click');
-                console.log(this.url);
+            click: function () {
                 window.location.hash = this.url;
                 return false; 
             }
