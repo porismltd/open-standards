@@ -1,6 +1,6 @@
 # heading Cardinality
 
-SOME TEXT Cardinality Concept Data item
+SOME TEXT Cardinality Concept Data item CLASS class
 
 # test Cardinality
 

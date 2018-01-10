@@ -17,7 +17,7 @@
     var createRegEx = function (item) {
         var term = item.term;
 
-        return new RegExp('\\b(' + term + ')\\b', 'gi')
+        return new RegExp('\\b(' + term + ')\\b', 'i')
     };
 
     var loadGlossary = function (success) {
@@ -28,7 +28,60 @@
         });
     };
 
-    var highlightNodes = function (el, items) {
+    var escapeRegExp = function(string){
+        return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    };
+
+    var firstIndexOf = function (text, items) {
+        var first = null, match;
+
+        _.forEach(items, function (item) {
+            match = item.regex.exec(text);
+            if (!match)
+                return;
+            if (first && first.index < match.index)
+                return;            
+            match.item = item;
+            first = match;
+        });
+
+        return first;
+    };
+
+    var replaceTerms = function (html, items) {
+        
+        var result = [];
+        var match;
+
+        while (match = firstIndexOf(html, items)) {
+            result.push(html.substring(0, match.index));
+            result.push('<span class="glossary-item">' + match[1] + '<sup><span><span class="heading">' + match.item.term + '</span>' + match.item.definition + '</span></sup></span>');
+            html = html.substring(match.index + match[1].length);
+        }
+
+        return result.join('') + html;
+    };
+
+    var findAndReplaceAllTerms = function (node, items) {
+        var html = replaceTerms(node.textContent, items);
+
+        if (node.textContent === html)
+            return;
+
+        var parentNode = node.parentElement;
+
+        var fakeParentNode = document.createElement('span');
+        fakeParentNode.innerHTML = html;
+        var currentNode;
+
+        while (currentNode = fakeParentNode.firstChild) {
+            parentNode.insertBefore(currentNode, node);
+        }
+        
+        parentNode.removeChild(node);
+    };
+
+    var highlightTerms = function (el, items) {
         //return;
 
         var walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
@@ -41,36 +94,10 @@
             textNodes.push(node);
         }
 
-        var noChange = true, i, j, item, regex, html;
+        var html;
 
-        for (i = 0; i < textNodes.length; i++) {
-            node = textNodes[i];
-            html = node.textContent;
-
-            for (j = 0; j < items.length; j++) {
-                item = items[j];
-                regex = item.regex;
-                if (!html.match(regex)) {
-                    continue;
-                }
-                noChange = false;
-                html = html.replace(regex, '<span style="background-color: red">$1</span>');
-            }
-
-            if (noChange)
-                return;
-
-            var parentNode = node.parentElement;
-
-            var fakeParentNode = document.createElement('span');
-            fakeParentNode.innerHTML = html;
-            var currentNode;
-
-            while (currentNode = fakeParentNode.firstChild) {
-                parentNode.insertBefore(currentNode, node);
-            }
-            
-            parentNode.removeChild(node);
+        for (var i = 0; i < textNodes.length; i++) {
+            findAndReplaceAllTerms(textNodes[i], items);
         }
     };
 
@@ -84,7 +111,7 @@
             items[i].regex = createRegEx(items[i]);
         }
 
-        highlightNodes(domHtml, items);     
+        highlightTerms(domHtml, items);     
 
         var body = domHtml.getElementsByTagName('body')[0];
         return body.innerHTML;
