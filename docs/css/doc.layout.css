@@ -288,16 +288,45 @@ ol.logos li.nonlogo {
     margin-bottom: 3rem;
 }
 
-.glossary-item::after {
-    content: '\a0';
-    letter-spacing: 0.5rem;
+.glossary-item {
+    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: #dfdfff;
+    
+}
+
+a:hover .glossary-item, .glossary-item:hover {
+    text-decoration: none;
 }
 
 .glossary-item:hover {
     background-color: #f0f7ff;
 }
 
-.glossary-item sup {
+#glossary-term-hover {
+    position: fixed;
+    z-index: 10000;    
+    top: 0;
+    left: 0;
+
+    padding: 1rem;
+    min-width: 20rem;
+    max-width: 30rem;
+
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-style: italic;
+
+    background-color: #333;
+    color: white;
+}
+
+#glossary-term-hover dt {
+    font-weight: bold;
+}
+
+/* .glossary-item sup {
 
     cursor: pointer;
     position: absolute;
@@ -336,4 +365,4 @@ ol.logos li.nonlogo {
 
 .glossary-item sup:hover > span {
     display: block;
-}
+} */

@@ -155,9 +155,32 @@
     });
 
     Vue.component('glossary-term', {
-        template: '<span class="glossary-item">{{text}}<sup v-on:click.stop.prevent="click"><span><span class="heading">{{term}}</span>{{definition}}</span></sup></span>',
+        template: '<span class="glossary-item" v-on:mouseover="show" v-on:mouseout="hide">{{text}}</span>',
         props: ['text', 'term', 'definition', 'url'],
         methods: {
+            show: function (e) {
+                var div = document.getElementById('glossary-term-hover');
+
+                if (!div) {
+                    div = document.createElement('DIV');
+                    div.setAttribute('id', 'glossary-term-hover');
+                    div.innerHTML = '<dl><dt></dt><dd></dd></dl>';
+                    document.getElementsByTagName('body')[0].appendChild(div);
+                }
+
+                div.querySelector('dt').innerText = this.term;
+                div.querySelector('dd').innerText = this.definition;
+                div.style.display = 'block';
+                console.log(e);
+                div.style.top = (10 + e.clientY) + 'px';
+                div.style.left = (10 + e.clientX) + 'px';
+            },
+            hide: function () {
+                var div = document.getElementById('glossary-term-hover');
+                if (!div)
+                    return;
+                div.style.display = 'none';
+            },
             click: function () {
                 window.location.hash = this.url;
                 return false; 
