@@ -290,13 +290,12 @@ ol.logos li.nonlogo {
 
 
 .glossary-item:hover {
-    background-color: #def;
+    background-color: #f0f7ff;
 }
 
 .glossary-item sup {
     cursor: pointer;
     position: relative;
-    font-style: italic;
 
     display: inline-block;
     width: 1rem;
@@ -307,6 +306,7 @@ ol.logos li.nonlogo {
 }
 
 .glossary-item sup > span {
+    font-style: italic;
     display: none;
     position: absolute;
     background-color: #34495e;
