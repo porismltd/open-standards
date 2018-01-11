@@ -289,19 +289,20 @@ ol.logos li.nonlogo {
 }
 
 .glossary-item {
-    text-decoration: underline;
+    border-bottom: dotted 1px #66ddff;
+    /* text-decoration: underline;
     text-decoration-line: underline;
-    text-decoration-style: dashed;
-    text-decoration-color: #dfdfff;
-    
+    text-decoration-style: dotted;
+    text-decoration-color: #00BFFF; */
+    cursor: help;    
 }
 
 a:hover .glossary-item, .glossary-item:hover {
-    text-decoration: none;
+    border-bottom: inherit;
 }
 
 .glossary-item:hover {
-    background-color: #f0f7ff;
+    background-color: #ddeeff;
 }
 
 #glossary-term-hover {
@@ -325,44 +326,3 @@ a:hover .glossary-item, .glossary-item:hover {
 #glossary-term-hover dt {
     font-weight: bold;
 }
-
-/* .glossary-item sup {
-
-    cursor: pointer;
-    position: absolute;
-
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    
-    background-image: url('/images/info.svg');
-    background-repeat: no-repeat;
-    opacity: 0.9;
-}
-
-.glossary-item sup > span {
-    font-style: italic;
-    display: none;
-    position: absolute;
-    background-color: #34495e;
-    color: white;
-    padding: 1rem;
-    font-size: 1.2rem;
-    min-width: 20rem;
-    top: 0;
-    left: 2em;
-    cursor: none;
-    line-height: 1.8;
-    z-index: 1;
-}
-
-.glossary-item sup > span .heading {
-    display: block;
-    font-weight: bold;
-    padding-bottom: 0.5rem;
-    color: white;
-}
-
-.glossary-item sup:hover > span {
-    display: block;
-} */

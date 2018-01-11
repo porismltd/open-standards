@@ -171,9 +171,22 @@
                 div.querySelector('dt').innerText = this.term;
                 div.querySelector('dd').innerText = this.definition;
                 div.style.display = 'block';
-                console.log(e);
-                div.style.top = (10 + e.clientY) + 'px';
-                div.style.left = (10 + e.clientX) + 'px';
+
+                var rect = e.target.getBoundingClientRect();
+
+                var left = rect.width + rect.left;
+                var top = rect.height + rect.top;
+
+                if ((left + div.offsetWidth) > window.innerWidth) {
+                    left = rect.left - div.offsetWidth;
+                }
+
+                if ((top + div.offsetHeight) > window.innerHeight) {
+                    top = rect.top - div.offsetHeight;
+                }
+                
+                div.style.left = Math.round(left) + 'px';
+                div.style.top = Math.round(top) + 'px';
             },
             hide: function () {
                 var div = document.getElementById('glossary-term-hover');
