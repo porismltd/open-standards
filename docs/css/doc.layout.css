@@ -290,10 +290,6 @@ ol.logos li.nonlogo {
 
 .glossary-item {
     border-bottom: dotted 1px #66ddff;
-    /* text-decoration: underline;
-    text-decoration-line: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: #00BFFF; */
     cursor: help;    
 }
 
@@ -321,6 +317,13 @@ a:hover .glossary-item, .glossary-item:hover {
 
     background-color: #333;
     color: white;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+#glossary-term-hover.visible {
+    opacity: 1;
 }
 
 #glossary-term-hover dt {

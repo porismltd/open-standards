@@ -28,6 +28,8 @@
             
             items = JSON.parse(items);
 
+            items = _.orderBy(items, ['term'], ['asc']);
+
             _.forEach(items, function (item) {
                 item.id = createId(item);
                 item.url = createUrl(item);
@@ -154,49 +156,91 @@
         }
     });
 
+    var glossaryPopup = new (function () {        
+        var _fadeTimeoutId = false;      
+        var _hideTimeoutId = false;
+        var _hoverDiv = document.getElementById('glossary-term-hover');
+        
+        _hoverDiv = document.createElement('DIV');
+        _hoverDiv.setAttribute('id', 'glossary-term-hover');
+        _hoverDiv.innerHTML = '<dl><dt><a></a></dt><dd></dd></dl>';
+        document.body.appendChild(_hoverDiv);
+
+        var showNow = function () {
+            clearTimeout(_fadeTimeoutId);
+            clearTimeout(_hideTimeoutId);
+
+            _hoverDiv.style.zIndex = 1;
+            _hoverDiv.className = 'visible';
+        };
+
+        var hideNow = function () {
+            clearTimeout(_fadeTimeoutId);
+            clearTimeout(_hideTimeoutId);
+
+            _hoverDiv.style.zIndex = -1000;
+            _hoverDiv.className = 'hidden';
+        };
+
+        this.show = function (target, item) {
+            _hoverDiv.querySelector('a').setAttribute('href', item.url);
+            _hoverDiv.querySelector('dd').innerText = item.definition;
+            _hoverDiv.querySelector('a').innerText = item.term;
+
+            var rect = target.getBoundingClientRect();
+
+            var left = rect.width + rect.left;
+            if ((left + _hoverDiv.offsetWidth) > window.innerWidth) {
+                left = rect.left - _hoverDiv.offsetWidth;
+            }
+
+            var top = rect.height + rect.top;
+            if ((top + _hoverDiv.offsetHeight) > window.innerHeight) {
+                top = rect.top - _hoverDiv.offsetHeight;
+            }
+            
+            _hoverDiv.style.left = Math.round(left) + 'px';
+            _hoverDiv.style.top = Math.round(top) + 'px';
+
+            showNow();
+        };
+
+        var hide = function () {
+            _fadeTimeoutId = setTimeout(function () {
+                _hoverDiv.className = 'hidden';
+            }, 500);
+
+            _hideTimeoutId = setTimeout(function () {
+                hideNow();
+            }, 1000);
+        };
+
+        this.hide = function () {
+            hide();
+        };
+
+        _hoverDiv.querySelector('a').addEventListener('click', function () {
+            hideNow();
+        });
+
+        _hoverDiv.addEventListener('mouseenter', function () {
+            showNow();
+        });
+
+        _hoverDiv.addEventListener('mouseleave', function () {
+            hide();
+        });
+    })();
+
     Vue.component('glossary-term', {
-        template: '<span class="glossary-item" v-on:mouseover="show" v-on:mouseout="hide">{{text}}</span>',
+        template: '<span class="glossary-item" v-on:mouseenter="show" v-on:mouseleave="hide">{{text}}</span>',
         props: ['text', 'term', 'definition', 'url'],
         methods: {
             show: function (e) {
-                var div = document.getElementById('glossary-term-hover');
-
-                if (!div) {
-                    div = document.createElement('DIV');
-                    div.setAttribute('id', 'glossary-term-hover');
-                    div.innerHTML = '<dl><dt></dt><dd></dd></dl>';
-                    document.getElementsByTagName('body')[0].appendChild(div);
-                }
-
-                div.querySelector('dt').innerText = this.term;
-                div.querySelector('dd').innerText = this.definition;
-                div.style.display = 'block';
-
-                var rect = e.target.getBoundingClientRect();
-
-                var left = rect.width + rect.left;
-                var top = rect.height + rect.top;
-
-                if ((left + div.offsetWidth) > window.innerWidth) {
-                    left = rect.left - div.offsetWidth;
-                }
-
-                if ((top + div.offsetHeight) > window.innerHeight) {
-                    top = rect.top - div.offsetHeight;
-                }
-                
-                div.style.left = Math.round(left) + 'px';
-                div.style.top = Math.round(top) + 'px';
+                glossaryPopup.show(e.target, this);
             },
-            hide: function () {
-                var div = document.getElementById('glossary-term-hover');
-                if (!div)
-                    return;
-                div.style.display = 'none';
-            },
-            click: function () {
-                window.location.hash = this.url;
-                return false; 
+            hide: function (e) {
+                glossaryPopup.hide();
             }
         }
     });
