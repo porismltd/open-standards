@@ -192,11 +192,15 @@
             var left = rect.width + rect.left;
             if ((left + _hoverDiv.offsetWidth) > window.innerWidth) {
                 left = rect.left - _hoverDiv.offsetWidth;
+                if (left < 0)
+                    left = 0;
             }
 
             var top = rect.height + rect.top;
             if ((top + _hoverDiv.offsetHeight) > window.innerHeight) {
                 top = rect.top - _hoverDiv.offsetHeight;
+                if (top < 0)
+                    top = 0;
             }
             
             _hoverDiv.style.left = Math.round(left) + 'px';
