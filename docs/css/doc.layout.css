@@ -288,8 +288,12 @@ ol.logos li.nonlogo {
     margin-bottom: 3rem;
 }
 
+.glossary dd {
+    padding-left: 2rem;
+}
+
 .glossary-item {
-    border-bottom: dotted 1px #66ddff;
+    border-bottom: dotted 1px #66aaff;
     cursor: help;    
 }
 
@@ -313,7 +317,6 @@ a:hover .glossary-item, .glossary-item:hover {
 
     font-size: 1.2rem;
     line-height: 1.8;
-    font-style: italic;
 
     background-color: #333;
     color: white;
@@ -328,4 +331,8 @@ a:hover .glossary-item, .glossary-item:hover {
 
 #glossary-term-hover dt {
     font-weight: bold;
+}
+
+#glossary-term-hover dd {    
+    font-style: italic;
 }

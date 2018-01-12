@@ -145,7 +145,7 @@
     $docsify.plugins = [].concat(install, $docsify.plugins);
 
     Vue.component('glossary-display', {
-        template: '<div class="glossary"><dl class="item" v-for="item in items"><dt v-bind:id="item.id"><a v-bind:href="item.url" v-bind:data-id="item.id" class="anchor"><span>{{item.term}}</span></a></dt><dd>{{item.definition}}</dd></dl></div>',
+        template: '<section class="glossary"><dl class="item" v-for="item in items"><dt v-bind:id="item.id"><a v-bind:href="item.url" v-bind:data-id="item.id" class="anchor"><span>{{item.term}}</span></a></dt><dd>{{item.definition}}</dd></dl></section>',
         data: function () {
             
             var items = !!Docsify.glossary && !!Docsify.glossary.items ? Docsify.glossary.items : [];
@@ -212,7 +212,7 @@
         var hide = function () {
             _fadeTimeoutId = setTimeout(function () {
                 _hoverDiv.className = 'hidden';
-            }, 500);
+            }, 10);
 
             _hideTimeoutId = setTimeout(function () {
                 hideNow();
