@@ -17,11 +17,21 @@
         var createUrl = function (item) {
             return '#/glossary?id=' + createId(item);
         };
+
+        var escapeRegex = function (str) {
+            return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+        };
     
         var createRegEx = function (item) {
             var term = item.term;
-    
-            return new RegExp('\\b(' + term + ')\\b', 'i')
+            var alts = item.allTerms || [ term + 's' ];
+
+            var allTerms = [ escapeRegex(term) ];
+            for (var i = 0; i < allTerms.length; i++) {
+                alts.push(escapeRegex(allTerms[i]));
+            }
+
+            return new RegExp('\\b(' + alts.join('|') + ')\\b', 'i')
         };
 
         Docsify.get('glossary.json').then(function (items) {
@@ -232,6 +242,22 @@
         });
 
         _hoverDiv.addEventListener('mouseleave', function () {
+            hide();
+        });
+
+        function isInHoverElement(child) {
+            var node = child;
+            while (node != null) {
+                if (node === _hoverDiv || node.className === 'glossary-item')
+                    return true;
+                node = node.parentNode;
+            }
+            return false;
+       }
+
+        window.addEventListener('click', function (e) {
+            if (isInHoverElement(e.target))
+                return;
             hide();
         });
     })();
