@@ -263,7 +263,7 @@
     })();
 
     Vue.component('glossary-term', {
-        template: '<span class="glossary-item" v-on:mouseenter="show" v-on:mouseleave="hide">{{text}}</span>',
+        template: '<span class="glossary-item" v-on:mouseenter="show" v-on:touchstart="show" v-on:mouseleave="hide">{{text}}</span>',
         props: ['text', 'term', 'definition', 'url'],
         methods: {
             show: function (e) {
