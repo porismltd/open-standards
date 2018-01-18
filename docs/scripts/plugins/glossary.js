@@ -255,7 +255,7 @@
             return false;
        }
 
-        window.addEventListener('click', function (e) {
+        window.addEventListener('touchstart', function (e) {
             if (isInHoverElement(e.target))
                 return;
             hide();
