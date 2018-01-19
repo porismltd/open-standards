@@ -4,6 +4,10 @@ SOME TEXT data data data data data data data data data data data Cardinality Con
 
 Hello thing THING things ThInGs something thingamabob good bye thing.
 
+Class; CLASS-ORANGE blue-classes-blue; class132 222thing222
+
+Business rules (Business rule) (Business rules) (Business   rule)
+
 # test Cardinality
 
 1. Cardinality

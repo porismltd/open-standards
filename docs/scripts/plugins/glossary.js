@@ -24,17 +24,14 @@
     
         var createRegEx = function (item) {
             var term = item.term;
-            var alts = item.altTerms || [ term + 's' ];
+            var alts = (item.altTerms || [ term + 's' ]).slice();
 
             var allTerms = [ escapeRegex(term) ];
-            for (var i = 0; i < allTerms.length; i++) {
-                alts.push(escapeRegex(allTerms[i]));
+            for (var i = 0; i < alts.length; i++) {
+                allTerms.push(escapeRegex(alts[i]));
             }
 
-            console.log(allTerms);
-            console.log(item);
-
-            return new RegExp('\\b(' + alts.join('|') + ')\\b', 'i')
+            return new RegExp('\\b(' + allTerms.join('|') + ')\\b', 'i')
         };
 
         Docsify.get('glossary.json').then(function (items) {
