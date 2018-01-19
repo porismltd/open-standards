@@ -1,7 +1,6 @@
 [{
-    "term": "Business rules",
-    "definition": "the logic that defines how data should be processed to achieve a specific result. These rules are separate from rules governing how data is output and displayed.",
-    "altTerms": [ ]
+    "term": "Business rule",
+    "definition": "the logic that defines how data should be processed to achieve a specific result. These rules are separate from rules governing how data is output and displayed."
 },
 {
     "term": "Cardinality",
@@ -15,13 +14,11 @@
 },
 {
     "term": "Concept",
-    "definition": "an intangible thing, such as a subject heading used to classify data",
-    "altTerms": [ "Concepts" ]
+    "definition": "an intangible thing, such as a subject heading used to classify data"
 },
 {
     "term": "Concept scheme",
-    "definition": "a structured list, which may be hierarchical, of concepts.  Concept schemes are often defined according to the SKOS standard",
-    "altTerms": [ "Concept schemes" ]
+    "definition": "a structured list, which may be hierarchical, of concepts.  Concept schemes are often defined according to the SKOS standard"
 },
 {
     "term": "Data catalogue",
@@ -61,14 +58,22 @@
     "altTerms": [ ]
 },
 {
-    "term": "Linked Data triples",
-    "definition": "sets of subject / predicate / object that make up rich data format definitions of data. Each member of a triple has a value expressed via a simple data type (string, number or date) or as a URI",
-    "altTerms": [ ]
+    "term": "Linked Data triple",
+    "definition": "sets of subject / predicate / object that make up rich data format definitions of data. Each member of a triple has a value expressed via a simple data type (string, number or date) or as a URI"
 },
 {
     "term": "Metadata",
     "definition": "data about data, such as the name and publisher of a datasets.  The distinction between data and metadata is not always clear and does not exist at all with Linked Data",
     "altTerms": [ ]
+},
+{
+    "term": "Object",
+    "definition": "an instance of a class"
+},
+{
+    "term": "Property",
+    "definition": "a piece of data describing an object, also known as a field.  A property may be populated with a simple value, such as a string or number, or with another object",
+    "altTerms": [ "Properties" ]
 },
 {
     "term": "PURL",
@@ -90,19 +95,21 @@
     "altTerms": [ ]
 },
 {
-    "term": "Schemas",
-    "definition": "documents that define the structure of data renditions in a specific format",
-    "altTerms": [ ]
+    "term": "Schema",
+    "definition": "documents that define the structure of data renditions in a specific format"
 },
 {
-    "term": "Stakeholders",
-    "definition": "people and/or organisations who have a stake in the success of a programme, project or other endeavour",
-    "altTerms": [ ]
+    "term": "Stakeholder",
+    "definition": "people and/or organisations who have a stake in the success of a programme, project or other endeavour"
 },
 {
     "term": "Taxonomy",
     "definition": "a structured set of terms describing from which descriptive data properties may be populated.  Taxonomies are usually defined as concept schemes",
     "altTerms": [ "Taxonomies" ]
+},
+{
+    "term": "Thing",
+    "definition": "the most basic type of object. Abstract concepts and tangible objects are specific types of thing"
 },
 {
     "term": "URI",
