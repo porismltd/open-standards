@@ -33,14 +33,14 @@
     "definition": "a point in time snapshot of data taken extracted from a data store"
 },
 {
-    "term": "Encoded lists of values",
+    "term": "Encoded list of values",
     "definition": "a list of values, expressed as short codes, that are acceptable for populating a data property eg, “yes”, “no”, “don’t know”",
-    "altTerms": [ ]
+    "altTerms": [ "Encoded lists of values" ]
 },
 {
     "term": "Geodetic datum",
     "definition": "a coordinate reference system used to locate places, such as the systems used to define points via latitude and longitude on earth",
-    "altTerms": [ ]
+    "altTerms": [ "Geodetic data" ]
 },
 {
     "term": "Human readable",

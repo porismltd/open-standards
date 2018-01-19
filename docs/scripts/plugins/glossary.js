@@ -24,12 +24,15 @@
     
         var createRegEx = function (item) {
             var term = item.term;
-            var alts = item.allTerms || [ term + 's' ];
+            var alts = item.altTerms || [ term + 's' ];
 
             var allTerms = [ escapeRegex(term) ];
             for (var i = 0; i < allTerms.length; i++) {
                 alts.push(escapeRegex(allTerms[i]));
             }
+
+            console.log(allTerms);
+            console.log(item);
 
             return new RegExp('\\b(' + alts.join('|') + ')\\b', 'i')
         };
@@ -226,7 +229,7 @@
 
             _hideTimeoutId = setTimeout(function () {
                 hideNow();
-            }, 1000);
+            }, 500);
         };
 
         this.hide = function () {

@@ -2,6 +2,8 @@
 
 SOME TEXT data data data data data data data data data data data Cardinality Concept Data item CLASS class data
 
+Hello thing THING things ThInGs something thingamabob good bye thing.
+
 # test Cardinality
 
 1. Cardinality
