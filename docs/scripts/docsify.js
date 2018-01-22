@@ -430,6 +430,8 @@ var progressbar = function (ref) {
 
 var cache = {};
 
+var VERSION = '1.0.1';
+
 /**
  * Simple ajax get
  * @param {string} url
@@ -447,6 +449,13 @@ function get (url, hasBar) {
 
   if (cached$$1) {
     return { then: function (cb) { return cb(cached$$1.content, cached$$1.opt); }, abort: noop }
+  }
+
+  if (url.indexOf('?') >= 0) {
+    url = url + '&v7350eeef1d39=' + VERSION;
+  }
+  else {    
+    url = url + '?v7350eeef1d39=' + VERSION;
   }
 
   xhr.open('GET', url);
