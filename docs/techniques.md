@@ -774,7 +774,7 @@ The Shapes Constraint Language (SHACL) can be used to define a kind-of schema wh
 
 Linked Data techniques can be applied to data whose structure is fluid and perhaps inconsistent between data items. A formal data structure does not need to be defined up-front. SPARQL provides a very quick and easy way to allow third parties to access your data without requiring a large investment in writing an API.
 
-!> Use Linked Data with a SPARQL endpoint to expose data of an inconsistent structure (e.g. sections of legislation and the official organisations and roles to which it refers) which someone might want to explore in small amounts at a time. If data is natively in a more structured tabular format (e.g. population statistics for a number of areas), needing quick retrieval and analysis of many records, expose it via an API.
+!> Use Linked Data with a SPARQL endpoint to expose data of an inconsistent structure (e.g. sections of legislation and the official organisations and roles to which it refers) which someone might want to explore in small amounts at a time. If data is natively in a more structured tabular format (e.g. population statistics for a number of areas), needing quick retrieval and analysis of many records, expose it via an API. See ['Publishing your own Linked Data'](tools#publishing-your-own-linked-data) for more information.
 
 #### Geographical data formats
 
