@@ -3074,8 +3074,12 @@ function btn (el, router) {
       'click',
       function (_) { return body.classList.contains('close') && toggle(); }
     );
-  on(sidebar, 'click', function (_) { return setTimeout((function (_) { return getAndActive(router, sidebar, true, true); }, 0)); }
-  );
+  on(sidebar, 'click', function (_) { 
+    return setTimeout(
+      function (_) {
+        return getAndActive(router, sidebar, true, true); 
+      }, 0); 
+  });
 }
 
 function sticky () {

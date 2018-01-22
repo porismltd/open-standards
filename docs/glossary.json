@@ -1,0 +1,127 @@
+[{
+    "term": "Business rule",
+    "definition": "the logic that defines how data should be processed to achieve a specific result. These rules are separate from rules governing how data is output and displayed."
+},
+{
+    "term": "Cardinality",
+    "definition": "the number of times a data property may or must have value.  Cardinality is expressed as a single integer (eg “1” to denote one and only one value must exist) or a range (eg 0..∞ to denote that any number of values might exist.",
+    "altTerms": [ ]
+},
+{
+    "term": "Class",
+    "definition": "a type of object, such as a house, as opposed to a specific object such as the house at number 37 Station Road",
+    "altTerms": [ "Classes" ]
+},
+{
+    "term": "Concept",
+    "definition": "an intangible thing, such as a subject heading used to classify data"
+},
+{
+    "term": "Concept scheme",
+    "definition": "a structured list, which may be hierarchical, of concepts.  Concept schemes are often defined according to the SKOS standard"
+},
+{
+    "term": "Data catalogue",
+    "definition": "a list or inventory of datasets that exist within a domain, such as the list maintained by Data.gov.uk of UK public sector open datasets"
+},
+{
+    "term": "Data item",
+    "definition": "an individual record of data within a dataset, such as a single row in a spreadsheet"
+},
+{
+    "term": "Dump",
+    "definition": "a point in time snapshot of data taken extracted from a data store"
+},
+{
+    "term": "Encoded list of values",
+    "definition": "a list of values, expressed as short codes, that are acceptable for populating a data property eg, “yes”, “no”, “don’t know”",
+    "altTerms": [ "Encoded lists of values" ]
+},
+{
+    "term": "Geodetic datum",
+    "definition": "a coordinate reference system used to locate places, such as the systems used to define points via latitude and longitude on earth",
+    "altTerms": [ "Geodetic data" ]
+},
+{
+    "term": "Human readable",
+    "definition": "content output in a format that can easily be interpreted by a person, such as data shown in a table within an HTML page rendered by a web browser",
+    "altTerms": [ ]
+},
+{
+    "term": "Machine readable",
+    "definition": "content, usually data, that can be interpreted by a computer via software",
+    "altTerms": [ ]
+},
+{
+    "term": "Linked Data",
+    "definition": "data expressed in a resource description format (RDF) as triples that can be queried via  SPARQL ",
+    "altTerms": [ ]
+},
+{
+    "term": "Linked Data triple",
+    "definition": "sets of subject / predicate / object that make up rich data format definitions of data. Each member of a triple has a value expressed via a simple data type (string, number or date) or as a URI"
+},
+{
+    "term": "Metadata",
+    "definition": "data about data, such as the name and publisher of a datasets.  The distinction between data and metadata is not always clear and does not exist at all with Linked Data",
+    "altTerms": [ ]
+},
+{
+    "term": "Object",
+    "definition": "an instance of a class"
+},
+{
+    "term": "Property",
+    "definition": "a piece of data describing an object, also known as a field.  A property may be populated with a simple value, such as a string or number, or with another object",
+    "altTerms": [ "Properties" ]
+},
+{
+    "term": "PURL",
+    "definition": "persistent uniform resource locator (PURL). This is a web address which might redirect to a different place over time if hosting of the resource to which it points changes",
+    "altTerms": [ ]
+},
+{
+    "term": "Queried",
+    "definition": "searched for, filtered by or analysed by a data query language",
+    "altTerms": [ ]
+},
+{
+    "term": "Register",
+    "definition": "a definitive dataset of tangible things, such as schools, hospitals or countries with identifiers and some other data properties.  You can normally expect a register to be complete for its scope during the period the register is maintained and sometimes for prior periods.  Registers provide identifiers that can be used to link data describing the things registered"
+},
+{
+    "term": "RSS",
+    "definition": "Rich Site Summary, RDF Site Summary or Really Simple Syndication. A means of feeding of updates (eg news or data changes) over the web",
+    "altTerms": [ ]
+},
+{
+    "term": "Schema",
+    "definition": "documents that define the structure of data renditions in a specific format"
+},
+{
+    "term": "Stakeholder",
+    "definition": "people and/or organisations who have a stake in the success of a programme, project or other endeavour"
+},
+{
+    "term": "Taxonomy",
+    "definition": "a structured set of terms describing from which descriptive data properties may be populated.  Taxonomies are usually defined as concept schemes",
+    "altTerms": [ "Taxonomies" ]
+},
+{
+    "term": "Thing",
+    "definition": "the most basic type of object. Abstract concepts and tangible objects are specific types of thing"
+},
+{
+    "term": "URI",
+    "definition": "uniform resource identifier by which an item of data is identified.  In the Linked Data world URIs provide a consistent way of defining the same data items across different datasets and so linking them.  They should resolve over the Web (and hence start with http:// or https://) to content which describes them via triples.  Such content may be rendered in different formats dependent on the content type requested (eg an HTML web page) or RDF XML machine readable data."
+},
+{
+    "term": "URL",
+    "definition": "uniform resource locator which is a globally unique address at which a resource may be found over the web.  Note that a URI may resolve to several different URLs, dependent on the content type requested"
+},
+{
+    "term": "Vocabulary",
+    "definition": "terminology used to describe properties of datasets.  Commonly used properties are defined in named vocabularies, such as Dublin Core Terms.  When using a property it is good practice to say the vocabulary from which it is taken, where its definition is given",
+    "altTerms": [ "Vocabularies" ]
+}
+]

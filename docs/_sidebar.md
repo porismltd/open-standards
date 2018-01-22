@@ -4,3 +4,4 @@
 - [Tools](tools.md)
 - [Appendices](appendices.md)
 - [Contact us](contactus.md)
+- [Glossary](glossary.md)

@@ -282,3 +282,57 @@ ol.logos li.nonlogo {
         display: inherit;
     }
 }
+
+
+.glossary .item {
+    margin-bottom: 3rem;
+}
+
+.glossary dd {
+    padding-left: 2rem;
+}
+
+.glossary-item {
+    border-bottom: dotted 1px #66aaff;
+    cursor: help;    
+}
+
+a:hover .glossary-item, .glossary-item:hover {
+    border-bottom: inherit;
+}
+
+.glossary-item:hover {
+    background-color: #ddeeff;
+}
+
+#glossary-term-hover {
+    position: fixed;
+    z-index: 10000;    
+    top: 0;
+    left: 0;
+
+    padding: 1rem;
+    min-width: 20rem;
+    max-width: 30rem;
+
+    font-size: 1.2rem;
+    line-height: 1.8;
+
+    background-color: #333;
+    color: white;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+#glossary-term-hover.visible {
+    opacity: 1;
+}
+
+#glossary-term-hover dt {
+    font-weight: bold;
+}
+
+#glossary-term-hover dd {    
+    font-style: italic;
+}

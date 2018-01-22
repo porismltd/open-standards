@@ -1,4 +1,4 @@
-var header = new Vue({
+var headerViewModel = new Vue({
     el: 'body > header',
     data: {
         q: ''
